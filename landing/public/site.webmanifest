@@ -1,0 +1,25 @@
+{
+  "name": "EquiSaaS BD",
+  "short_name": "EquiSaaS",
+  "description": "Bangladesh's community-driven SaaS ecosystem, open tech cooperative, and LMS.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#3b82f6",
+  "lang": "bn-BD",
+  "icons": [
+    {
+      "src": "/favicon.png?v=20260405",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.png?v=20260405",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

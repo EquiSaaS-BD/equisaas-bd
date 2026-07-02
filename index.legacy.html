@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags (Ultimate SEO) -->
+    <title>EquiSaaS BD | Open Tech Co-founder Program & Multi-Product SaaS Cooperative</title>
+    <meta name="title" content="EquiSaaS BD | Open Tech Co-founder Program & Multi-Product SaaS Cooperative">
+    <meta name="description" content="Join EquiSaaS BD, Bangladesh's first open tech cooperative. Learn React, Laravel, and SaaS development for free. Become a co-founder, build products (POS, HR, LMS), and share equal profits.">
+    <meta name="keywords" content="EquiSaaS BD, Tech Cooperative Bangladesh, Open Co-founder, SaaS Startup, Free Web Development Learning, React, Laravel, POS Software, HR Software, LMS, Bangladesh Software Company, Tech Community">
+    <meta name="author" content="EquiSaaS BD Team">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Bengali, English">
+    <meta name="revisit-after" content="7 days">
+    <link rel="canonical" href="https://equisaas-bd.netlify.app/">
+
+    <!-- Geo Targeting for Bangladesh -->
+    <meta name="geo.region" content="BD-13" />
+    <meta name="geo.placename" content="Dhaka" />
+    <meta name="geo.position" content="23.8103;90.4125" />
+    <meta name="ICBM" content="23.8103, 90.4125" />
+
+    <!-- Favicon Integration (URL Encoded Spaces) -->
+    <link rel="icon" type="image/svg+xml" href="Brand%20Assets/EquiSaaS%20BD%20Favicon.svg">
+    <link rel="alternate icon" href="Brand%20Assets/EquiSaaS%20BD%20Favicon.png">
+    <link rel="apple-touch-icon" href="Brand%20Assets/EquiSaaS%20BD%20Favicon.png">
+    <meta name="theme-color" content="#1e3a8a">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://equisaas-bd.netlify.app/">
+    <meta property="og:title" content="EquiSaaS BD | Build SaaS, Share Profits">
+    <meta property="og:description" content="Equal Ownership, One Vision. Join Bangladesh's revolutionary tech cooperative. Learn, build, and earn as a co-founder.">
+    <!-- Using the dedicated OG Image -->
+    <meta property="og:image" content="https://equisaas-bd.netlify.app/Brand%20Assets/EquiSaaS%20BD%20OG%20Image.png">
+    <meta property="og:site_name" content="EquiSaaS BD">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://equisaas-bd.netlify.app/">
+    <meta property="twitter:title" content="EquiSaaS BD | Build SaaS, Share Profits">
+    <meta property="twitter:description" content="Equal Ownership, One Vision. Join Bangladesh's revolutionary tech cooperative. Learn, build, and earn as a co-founder.">
+    <meta property="twitter:image" content="https://equisaas-bd.netlify.app/Brand%20Assets/EquiSaaS%20BD%20OG%20Image.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "name": "EquiSaaS BD",
+          "url": "https://equisaas-bd.netlify.app/",
+          "logo": "https://equisaas-bd.netlify.app/Brand%20Assets/EquiSaaS%20BD%20Logo.png",
+          "description": "A multi-product SaaS cooperative in Bangladesh focusing on equal ownership and shared profits.",
+          "sameAs": [
+            "https://www.facebook.com/EquiSaaSBD/"
+          ],
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Dhaka",
+            "addressCountry": "BD"
+          }
+        },
+        {
+          "@type": "WebSite",
+          "url": "https://equisaas-bd.netlify.app/",
+          "name": "EquiSaaS BD",
+          "description": "Tech Cooperative and Open Co-founder Program"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- React & Babel -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="importmap">
+        {
+            "imports": {
+                "react": "https://esm.sh/react@18.2.0",
+                "react-dom/client": "https://esm.sh/react-dom@18.2.0/client",
+                "lucide-react": "https://esm.sh/lucide-react@0.292.0"
+            }
+        }
+    </script>
+
+    <!-- Google Fonts: Hind Siliguri (Bangla) & Inter (English) -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --brand-blue: #1e3a8a; 
+            --brand-green: #10b981; 
+        }
+        
+        body {
+            font-family: 'Inter', 'Hind Siliguri', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .font-bangla {
+            font-family: 'Hind Siliguri', sans-serif;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        .smooth-transition {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+        }
+
+        /* Modal Animation Styles */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .animate-modal {
+            animation: fadeIn 0.3s ease-out forwards;
+        }
+        @keyframes blob {
+            0% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(30px, -20px) scale(1.05); }
+            66% { transform: translate(-20px, 20px) scale(0.95); }
+            100% { transform: translate(0px, 0px) scale(1); }
+        }
+        .animate-blob {
+            animation: blob 18s infinite;
+        }
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .animate-blob {
+                animation: none;
+            }
+        }\n    </style>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#1e3a8a',
+                            green: '#10b981',
+                            dark: '#0f172a',
+                            light: '#f8fafc'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Hind Siliguri', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 font-sans text-slate-800 antialiased selection:bg-brand-blue selection:text-white">
+    <div id="root"></div>
+    <script type="text/babel" data-type="module">
+import React, { useState, useEffect } from 'react';
+import { createRoot } from 'react-dom/client';
+// Import only the used icons to prevent module resolution errors
+import { Users, Target, BookOpen, ChevronRight, Briefcase, MonitorSmartphone, Rocket, ShieldCheck, Globe, GraduationCap, Megaphone, HelpCircle, PenTool, Link, CheckCircle2, Facebook, FileText, ArrowRight, Layers, Sparkles } from 'lucide-react';
+
+// === BILINGUAL DATA & CONTENT ===
+const CONTENT = {
+  bn: {
+    nav: { lms: "LMS প্ল্যাটফর্মে যান", home: "হোম" },
+    hero: {
+      badge: "ওপেন কো-ফাউন্ডার প্রোগ্রাম",
+      title1: "আমাদের মাল্টি-প্রোডাক্ট",
+      title2: "SaaS মিশন",
+      desc: "আমরা গতানুগতিক কোনো কোম্পানি নই। আমরা বাংলাদেশের প্রথম উন্মুক্ত 'টেক কো-অপারেটিভ', যেখানে সবাই সমান মালিক এবং লভ্যাংশও সবার মাঝে সমানভাবে বন্টিত হয়। আমাদের লক্ষ্য একাধিক রিয়েল SaaS প্রোডাক্ট তৈরি ও বাজারজাত করা।",
+      stats: ["সমান মালিকানা", "৩টি মূল প্রোডাক্ট", "শেয়ার্ড প্রফিট"]
+    },
+    strategy: {
+      title: "কেন আমাদের প্ল্যান ফেইল করবে না?",
+      cards: [
+        { title: "১. প্রি-সেলস এবং ভ্যালিডেশন", desc: "প্রোডাক্ট কোডিংয়ের আগেই কাস্টমার ডিমান্ড বোঝা ও সেলস নিশ্চিত করা হবে।" },
+        { title: "২. মিনিমাম ভায়াবল প্রোডাক্ট (MVP)", desc: "বছরের পর বছর বসে না থেকে, ২ মাস শিখে ৩য় মাস থেকে ছোট আকারে প্রোডাক্ট লঞ্চ।" },
+        { title: "৩. অ্যাজিলিটি এবং ফিডব্যাক লুপ", desc: "কাস্টমার সাপোর্ট ও প্রোডাক্ট টিমের মাধ্যমে প্রতিদিন ইউজার ফিডব্যাক নিয়ে ইমপ্রুভমেন্ট।" }
+      ]
+    },
+    phase2: {
+      badge: "ফেজ ২: ওয়ার্ল্ড-ক্লাস UX ও আর্কিটেকচার",
+      title: "ইন্টার‌্যাকশন, ট্রান্সপারেন্সি ও ডিজাইন পলিশ",
+      desc: "কো-অপারেটিভ ট্রাস্ট ফিচার, অনবোর্ডিং সাইকোলজি এবং প্রিমিয়াম UI মাইক্রো-ইন্টারঅ্যাকশন।"
+    },
+    howItWorks: {
+      title: "কিভাবে শুরু করবেন?",
+      steps: [
+        { title: "১. এপ্লাই করুন", desc: "গুগল ফর্ম পূরণের মাধ্যমে আমাদের ওপেন কো-ফাউন্ডার প্রোগ্রামে যোগ দিন।" },
+        { title: "২. শিখুন", desc: "আমাদের শেয়ার করা বেস্ট ফ্রি রিসোর্স দিয়ে আপনার স্কিল ডেভেলপ করুন।" },
+        { title: "৩. বিল্ড করুন", desc: "রিয়েল লাইফ প্রজেক্টে (LMS, POS, HR) আমাদের টিমের সাথে কাজ করুন।" },
+        { title: "৪. আয় করুন", desc: "প্রোডাক্ট লঞ্চ ও সেলস থেকে সমবায়ের ভিত্তিতে লভ্যাংশ শেয়ার করুন।" }
+      ]
+    },
+    faq: {
+      title: "সাধারণ জিজ্ঞাসাসমূহ (FAQ)",
+      items: [
+        { q: "কো-অপারেটিভ বা সমবায় বলতে কী বোঝায়?", a: "এর মানে হলো, টিমের সবার সমান মালিকানা থাকবে। প্রোডাক্ট বিক্রি করে যা লাভ হবে, তা সবার মাঝে সমানভাবে বন্টিত হবে। কোনো বস-এমপ্লয়ি কালচার নেই।" },
+        { q: "এখানে যোগ দিতে কি কোনো ফি লাগবে?", a: "না, এটি ১০০% ফ্রি। আমরা শুধু আপনার সময় এবং ডেডিকেশন চাচ্ছি।" },
+        { q: "আমি একদম বিগিনার, আমি কি পারবো?", a: "অবশ্যই। আমাদের রিসোর্স সেকশন থেকে আপনি জিরো লেভেল থেকে শেখা শুরু করতে পারবেন।" }
+      ]
+    },
+    deptSection: {
+      title: "আপনার স্কিল ও ডিপার্টমেন্ট বেছে নিন",
+      desc: "পুরো কোম্পানিকে আমরা ৪টি সুনির্দিষ্ট ডিপার্টমেন্টে ভাগ করেছি। আপনার আগ্রহ অনুযায়ী যেকোনো একটি বেছে নিন এবং আজই শেখা শুরু করুন।"
+    },
+    profile: {
+      title: "আপনার প্রোফাইল ও রোডম্যাপ",
+      dept: "ডিপার্টমেন্ট:",
+      btnBack: "ডিপার্টমেন্ট পরিবর্তন করুন",
+      subDeptTitle: "সাব-ডিপার্টমেন্ট স্পেশালাইজেশন",
+      roadmapTitle: "৬ মাসের মাস্টারক্লাস রোডম্যাপ",
+      resourceTitle: "বেস্ট ফ্রি রিসোর্স (বাংলা ও ইংরেজি)"
+    },
+    lmsModal: {
+      title: "LMS প্ল্যাটফর্ম তৈরি হচ্ছে!",
+      desc: "আমাদের নিজস্ব লার্নিং ম্যানেজমেন্ট সিস্টেম (LMS) এর কাজ চলছে। খুব শীঘ্রই আপনারা এখানে সব রিসোর্স গুছানো অবস্থায় পাবেন। আপাতত আমাদের 'ওপেন কো-ফাউন্ডার' প্রোগ্রামে জয়েন করুন এবং আমাদের সাথেই শিখুন ও বিল্ড করুন।",
+      closeBtn: "বন্ধ করুন"
+    }
+  },
+  en: {
+    nav: { lms: "Go to LMS Platform", home: "Home" },
+    hero: {
+      badge: "Open Co-founder Program",
+      title1: "Our Multi-Product",
+      title2: "SaaS Mission",
+      desc: "We are not a traditional company. We are Bangladesh's first open 'Tech Cooperative' where everyone is an equal owner, and profits are distributed equally. Our goal is to build and market multiple real SaaS products.",
+      stats: ["Equal Ownership", "3 Core Products", "Shared Profits"]
+    },
+    strategy: {
+      title: "Why Our Plan Won't Fail?",
+      cards: [
+        { title: "1. Pre-sales & Validation", desc: "Understanding customer demand and securing sales even before coding the product." },
+        { title: "2. Minimum Viable Product (MVP)", desc: "Instead of waiting years, we learn for 2 months and launch a small version by the 3rd month." },
+        { title: "3. Agility & Feedback Loop", desc: "Daily improvements based on user feedback via our customer support and product teams." }
+      ]
+    },
+    phase2: {
+      badge: "Phase 2: World-Class UX & Architecture",
+      title: "Interaction, Transparency, and Design Polish",
+      desc: "Co-op trust features, onboarding psychology, and premium UI micro-interactions."
+    },
+    howItWorks: {
+      title: "How It Works?",
+      steps: [
+        { title: "1. Apply", desc: "Join our open co-founder program by filling out the Google form." },
+        { title: "2. Learn", desc: "Develop your skills using our curated best free resources." },
+        { title: "3. Build", desc: "Work with the team on real-life projects like LMS, POS, and HR software." },
+        { title: "4. Earn", desc: "Share profits equally from product launches and sales as a cooperative." }
+      ]
+    },
+    faq: {
+      title: "Frequently Asked Questions (FAQ)",
+      items: [
+        { q: "What does a tech cooperative mean?", a: "It means everyone has equal ownership. The profit generated from products is shared equally. There is no boss-employee culture." },
+        { q: "Is there any joining fee?", a: "No, it's 100% free. We only require your time and dedication." },
+        { q: "I am a beginner, can I join?", a: "Absolutely. You can start learning from scratch using our resource section." }
+      ]
+    },
+    deptSection: {
+      title: "Choose Your Skill & Department",
+      desc: "We have divided the entire company into 4 specific departments. Choose any based on your interest and start learning today."
+    },
+    profile: {
+      title: "Your Profile & Roadmap",
+      dept: "Department:",
+      btnBack: "Change Department",
+      subDeptTitle: "Sub-Department Specialization",
+      roadmapTitle: "6-Month Masterclass Roadmap",
+      resourceTitle: "Best Free Resources (Bengali & English)"
+    },
+    lmsModal: {
+      title: "LMS Platform Under Construction!",
+      desc: "We are currently building our own Learning Management System (LMS). Soon you will find all resources neatly organized here. For now, please join our 'Open Co-founder' program to learn and build with us.",
+      closeBtn: "Close"
+    }
+  }
+};
+
+const departments = [
+  {
+    id: 'software',
+    icon: MonitorSmartphone,
+    color: 'blue',
+    titleBn: "সফটওয়্যার ইঞ্জিনিয়ারিং",
+    titleEn: "Software Engineering",
+    descBn: "প্রোডাক্টের মূল আর্কিটেকচার, ফ্রন্টএন্ড, ব্যাকএন্ড এবং ডেপ্লয়মেন্ট।",
+    descEn: "Core architecture, frontend, backend, and deployment of products.",
+    roles: [
+      {
+        id: 'se-frontend',
+        titleBn: "ফ্রন্ট-এন্ড ইঞ্জিনিয়ার (React/Next.js)",
+        titleEn: "Frontend Engineer (React/Next.js)",
+        roadmap: [
+          { 
+            phaseBn: "মাস ১: ফাউন্ডেশন ও ফ্রেমওয়ার্ক", 
+            phaseEn: "Month 1: Foundations & Frameworks",
+            itemsBn: ["React ও TypeScript ফাউন্ডেশন", "Next.js App Router ও রাউটিং", "Git/GitHub ও কোড কনভেনশন"],
+            itemsEn: ["React + TypeScript foundations", "Next.js App Router and routing", "Git/GitHub and code conventions"]
+          },
+          { 
+            phaseBn: "মাস ২: স্টেট আর্কিটেকচার", 
+            phaseEn: "Month 2: State Architecture",
+            itemsBn: ["Redux Toolkit/Zustand দিয়ে ক্লায়েন্ট স্টেট", "TanStack Query দিয়ে সার্ভার স্টেট ও ক্যাশিং", "ফর্ম/ভ্যালিডেশন ও ত্রুটি হ্যান্ডলিং"],
+            itemsEn: ["Client state with Redux Toolkit/Zustand", "Server state and caching with TanStack Query", "Forms, validation, and error handling"]
+          },
+          { 
+            phaseBn: "মাস ৩: UI সিস্টেম", 
+            phaseEn: "Month 3: UI System",
+            itemsBn: ["Tailwind টোকেন ও ডিজাইন সিস্টেম বেস", "রেসপনসিভ গ্রিড ও লেআউট কম্পোজিশন", "কম্পোনেন্ট লাইব্রেরি স্ট্রাকচার"],
+            itemsEn: ["Tailwind tokens and design system base", "Responsive grids and layout composition", "Component library structure"]
+          },
+          { 
+            phaseBn: "মাস ৪: পারফরম্যান্স", 
+            phaseEn: "Month 4: Performance",
+            itemsBn: ["Suspense/স্ট্রিমিং কৌশল", "কোড স্প্লিটিং ও ইমেজ অপটিমাইজেশন", "Web Vitals বাজেট ও বাণ্ডেল টিউনিং"],
+            itemsEn: ["Suspense/streaming strategy", "Code splitting and image optimization", "Web Vitals budgets and bundle tuning"]
+          },
+          { 
+            phaseBn: "মাস ৫: কোয়ালিটি ও টেস্টিং", 
+            phaseEn: "Month 5: Quality & Testing",
+            itemsBn: ["Jest দিয়ে ইউনিট টেস্ট", "Playwright দিয়ে E2E টেস্ট", "GitHub Actions CI পাইপলাইন"],
+            itemsEn: ["Unit tests with Jest", "E2E tests with Playwright", "GitHub Actions CI pipelines"]
+          },
+          { 
+            phaseBn: "মাস ৬: প্রোডাকশন রেডি", 
+            phaseEn: "Month 6: Production Ready",
+            itemsBn: ["বাংলা/ইংরেজি i18n", "অ্যাক্সেসিবিলিটি অডিট", "ইভেন্ট ট্র্যাকিং ও মনিটরিং"],
+            itemsEn: ["Bangla/English i18n", "Accessibility audit", "Event tracking and monitoring"]
+          }
+        ],
+        resources: [
+          { name: "React Documentation (English)", url: "https://react.dev/", type: "docs" },
+          { name: "Next.js Documentation (English)", url: "https://nextjs.org/docs", type: "docs" },
+          { name: "Tailwind CSS Documentation (English)", url: "https://tailwindcss.com/docs/installation", type: "docs" },
+          { name: "Redux Toolkit Documentation (English)", url: "https://redux.js.org/redux-toolkit/overview", type: "docs" },
+          { name: "Learn With Sumit (Bangla)", url: "https://learnwithsumit.com/", type: "platform" },
+          { name: "Hablu Programmer (Bangla)", url: "https://hablu-programmer.com/", type: "platform" }
+        ]
+      },
+      {
+        id: 'se-backend',
+        titleBn: "ব্যাক-এন্ড ইঞ্জিনিয়ার (Laravel/Node.js)",
+        titleEn: "Backend Engineer (Laravel/Node.js)",
+        roadmap: [
+          { 
+            phaseBn: "মাস ১: API ও কোর কনসেপ্ট", 
+            phaseEn: "Month 1: API & Core Concepts",
+            itemsBn: ["Laravel/Node কোর কনসেপ্ট", "REST API ডিজাইন", "সার্ভিস লেয়ার ও মিডলওয়্যার"],
+            itemsEn: ["Laravel/Node core concepts", "REST API design", "Service layer and middleware"]
+          },
+          { 
+            phaseBn: "মাস ২: ডাটা মডেলিং", 
+            phaseEn: "Month 2: Data Modeling",
+            itemsBn: ["PostgreSQL ডাটা মডেলিং", "মাইগ্রেশন, ইনডেক্স, কুয়েরি টিউনিং", "Eloquent/Prisma ORM প্যাটার্ন"],
+            itemsEn: ["PostgreSQL data modeling", "Migrations, indexing, query tuning", "Eloquent/Prisma ORM patterns"]
+          },
+          { 
+            phaseBn: "মাস ৩: সিকিউরিটি", 
+            phaseEn: "Month 3: Security",
+            itemsBn: ["Auth: সেশন বনাম JWT", "RBAC/ABAC ও টেন্যান্ট আইসোলেশন", "অডিট লগিং ও রেট লিমিট"],
+            itemsEn: ["Auth: sessions vs JWT", "RBAC/ABAC and tenant isolation", "Audit logging and rate limiting"]
+          },
+          { 
+            phaseBn: "মাস ৪: রিলায়েবিলিটি", 
+            phaseEn: "Month 4: Reliability",
+            itemsBn: ["Queue/Job ও ব্যাকগ্রাউন্ড ওয়ার্কার", "ক্যাশিং ও আইডেম্পোটেন্সি", "ফেইলিওর রিকভারি কৌশল"],
+            itemsEn: ["Queues/jobs and background workers", "Caching and idempotency", "Failure recovery strategies"]
+          },
+          { 
+            phaseBn: "মাস ৫: টেস্টিং ও ডেপ্লয়মেন্ট", 
+            phaseEn: "Month 5: Testing & Deployment",
+            itemsBn: ["Laravel টেস্টিং স্ট্যাক", "ইন্টেগ্রেশন/কন্ট্র্যাক্ট টেস্ট", "ডকারাইজড ডেভ এনভি ও CI"],
+            itemsEn: ["Laravel testing stack", "Integration/contract tests", "Dockerized dev env and CI"]
+          },
+          { 
+            phaseBn: "মাস ৬: সিস্টেম ডিজাইন", 
+            phaseEn: "Month 6: System Design",
+            itemsBn: ["মাল্টি‑টেন্যান্ট SaaS আর্কিটেকচার", "Well‑Architected রিভিউ", "SRE বেসিকস ও 12‑Factor"],
+            itemsEn: ["Multi‑tenant SaaS architecture", "Well‑Architected review", "SRE basics and 12‑Factor"]
+          }
+        ],
+        resources: [
+          { name: "Laravel Documentation (English)", url: "https://laravel.com/docs", type: "docs" },
+          { name: "Laravel Testing (English)", url: "https://laravel.com/docs/testing", type: "docs" },
+          { name: "Node.js Documentation (English)", url: "https://nodejs.org/api/documentation.html", type: "docs" },
+          { name: "PostgreSQL Documentation (English)", url: "https://www.postgresql.org/docs/", type: "docs" },
+          { name: "Prisma Documentation (English)", url: "https://www.prisma.io/docs", type: "docs" },
+          { name: "System Design Primer (Free)", url: "https://github.com/donnemartin/system-design-primer", type: "platform" }
+        ]
+      },
+      {
+        id: 'se-platform',
+        titleBn: "প্ল্যাটফর্ম/ডেভঅপস ইঞ্জিনিয়ার",
+        titleEn: "Platform/DevOps Engineer",
+        roadmap: [
+          { 
+            phaseBn: "মাস ১: CI বেসিকস", 
+            phaseEn: "Month 1: CI Basics",
+            itemsBn: ["Git/GitHub ফ্লো", "CI পাইপলাইন ধারণা", "এনভায়রনমেন্ট কনফিগ স্ট্যান্ডার্ড"],
+            itemsEn: ["Git/GitHub flow", "CI pipeline fundamentals", "Environment configuration standards"]
+          },
+          { 
+            phaseBn: "মাস ২: কন্টেইনারাইজেশন", 
+            phaseEn: "Month 2: Containerization",
+            itemsBn: ["Docker ও Compose", "লোকাল-প্যারিটি ডেভ এনভি", "বিল্ড আর্টিফ্যাক্ট স্ট্র্যাটেজি"],
+            itemsEn: ["Docker and Compose", "Local parity dev environments", "Build artifact strategy"]
+          },
+          { 
+            phaseBn: "মাস ৩: অর্কেস্ট্রেশন", 
+            phaseEn: "Month 3: Orchestration",
+            itemsBn: ["Kubernetes বেসিকস", "রিলিজ স্ট্র্যাটেজি (blue/green, canary)", "ডেপ্লয় চেকলিস্ট"],
+            itemsEn: ["Kubernetes fundamentals", "Release strategies (blue/green, canary)", "Deployment checklists"]
+          },
+          { 
+            phaseBn: "মাস ৪: অবজারভেবিলিটি", 
+            phaseEn: "Month 4: Observability",
+            itemsBn: ["লগ, মেট্রিকস, ট্রেসিং", "SLO ও এরর বাজেট", "এলার্টিং হাইজিন"],
+            itemsEn: ["Logs, metrics, tracing", "SLOs and error budgets", "Alerting hygiene"]
+          },
+          { 
+            phaseBn: "মাস ৫: সিকিউরিটি ও কমপ্লায়েন্স", 
+            phaseEn: "Month 5: Security & Compliance",
+            itemsBn: ["সিক্রেটস ম্যানেজমেন্ট", "ব্যাকআপ ও রিকভারি ড্রিল", "ডিপেন্ডেন্সি স্ক্যানিং"],
+            itemsEn: ["Secrets management", "Backup and recovery drills", "Dependency scanning"]
+          },
+          { 
+            phaseBn: "মাস ৬: কস্ট ও রিলায়েবিলিটি", 
+            phaseEn: "Month 6: Cost & Reliability",
+            itemsBn: ["কস্ট অপটিমাইজেশন", "Well‑Architected রিভিউ", "ইনসিডেন্ট গেম ডে"],
+            itemsEn: ["Cost optimization", "Well‑Architected reviews", "Incident game days"]
+          }
+        ],
+        resources: [
+          { name: "GitHub Actions (English)", url: "https://docs.github.com/actions", type: "docs" },
+          { name: "Docker Documentation (English)", url: "https://docs.docker.com/", type: "docs" },
+          { name: "Kubernetes Documentation (English/Bangla)", url: "https://kubernetes.io/docs/", type: "docs" },
+          { name: "AWS Well-Architected (English)", url: "https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html", type: "docs" },
+          { name: "Google SRE Books (Free)", url: "https://sre.google/books/", type: "platform" },
+          { name: "The Twelve-Factor App (Free)", url: "https://www.12factor.net/", type: "platform" }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'design',
+    icon: PenTool,
+    color: 'emerald',
+    titleBn: "ইউআই/ইউএক্স ও ডিজাইন",
+    titleEn: "UI/UX & Design",
+    descBn: "ইউজার এক্সপেরিয়েন্স, ইন্টারফেস এবং ব্র্যান্ড আইডেন্টিটি ডিজাইন।",
+    descEn: "User experience, interface design, and brand identity.",
+    roles: [
+      {
+        id: 'ui-ux',
+        titleBn: "UI/UX ডিজাইনার (Figma)",
+        titleEn: "UI/UX Designer (Figma)",
+        roadmap: [
+          { 
+            phaseBn: "মাস ১: রিসার্চ ও ফ্লো", 
+            phaseEn: "Month 1: Research & Flows",
+            itemsBn: ["পারসোনা ও JTBD", "ইনফরমেশন আর্কিটেকচার", "ইউজার ফ্লো ম্যাপিং"],
+            itemsEn: ["Personas and JTBD", "Information architecture", "User flow mapping"]
+          },
+          { 
+            phaseBn: "মাস ২: Figma মাস্টারি", 
+            phaseEn: "Month 2: Figma Mastery",
+            itemsBn: ["অটো-লেআউট ও কম্পোনেন্ট", "ভ্যারিয়েন্ট ও রেসপনসিভ গ্রিড", "ডিজাইন টোকেন বেসিক"],
+            itemsEn: ["Auto layout and components", "Variants and responsive grids", "Design token basics"]
+          },
+          { 
+            phaseBn: "মাস ৩: প্রোটোটাইপ ও মাইক্রো-ইন্টারঅ্যাকশন", 
+            phaseEn: "Month 3: Prototyping & Micro-Interactions",
+            itemsBn: ["ইন্টারঅ্যাক্টিভ প্রোটোটাইপ", "Smart Animate", "মোশন স্পেক ও টাইমিং"],
+            itemsEn: ["Interactive prototypes", "Smart Animate", "Motion spec and timing"]
+          },
+          { 
+            phaseBn: "মাস ৪: ডিজাইন সিস্টেম", 
+            phaseEn: "Month 4: Design System",
+            itemsBn: ["কম্পোনেন্ট লাইব্রেরি", "অ্যাক্সেসিবিলিটি চেকলিস্ট", "টাইপ স্কেল ও টোকেন"],
+            itemsEn: ["Component library", "Accessibility checklist", "Type scale and tokens"]
+          },
+          { 
+            phaseBn: "মাস ৫: ইউজার টেস্টিং", 
+            phaseEn: "Month 5: User Testing",
+            itemsBn: ["ইউজেবিলিটি টেস্ট", "হিটম্যাপ/ফিডব্যাক লুপ", "ডেটা-ড্রিভেন ইটারেশন"],
+            itemsEn: ["Usability tests", "Heatmaps/feedback loops", "Data-driven iteration"]
+          },
+          { 
+            phaseBn: "মাস ৬: হ্যান্ডঅফ ও QA", 
+            phaseEn: "Month 6: Handoff & QA",
+            itemsBn: ["ডেভ হ্যান্ডঅফ রুলস", "রেডলাইন ও স্পেক", "ইউআই QA চেকলিস্ট"],
+            itemsEn: ["Developer handoff rules", "Redlines and specs", "UI QA checklist"]
+          }
+        ],
+        resources: [
+          { name: "Figma Design Course (Free)", url: "https://help.figma.com/hc/en-us/articles/30848209492887", type: "docs" },
+          { name: "Figma Auto Layout", url: "https://help.figma.com/hc/en-us/articles/360040451373", type: "docs" },
+          { name: "Figma Prototyping", url: "https://help.figma.com/hc/en-us/articles/360040314193", type: "docs" },
+          { name: "Figma Smart Animate", url: "https://help.figma.com/hc/en-us/articles/360039818874", type: "docs" },
+          { name: "WCAG 2.2 (Accessibility)", url: "https://www.w3.org/TR/WCAG22/", type: "docs" },
+          { name: "WAI-ARIA APG", url: "https://www.w3.org/WAI/ARIA/apg/", type: "docs" }
+        ]
+      },
+      {
+        id: 'graphic-design',
+        titleBn: "গ্রাফিক ডিজাইনার (সোশ্যাল মিডিয়া ও ব্র্যান্ডিং)",
+        titleEn: "Graphic Designer (Social Media & Branding)",
+        roadmap: [
+          { 
+            phaseBn: "মাস ১: ব্র্যান্ড বেসিকস", 
+            phaseEn: "Month 1: Brand Basics",
+            itemsBn: ["কালার, টাইপোগ্রাফি, গ্রিড", "লোগো ও ব্র্যান্ড গাইড", "ব্র্যান্ড কিট সেটআপ"],
+            itemsEn: ["Color, typography, grids", "Logos and brand guides", "Brand kit setup"]
+          },
+          { 
+            phaseBn: "মাস ২: টেমপ্লেট সিস্টেম", 
+            phaseEn: "Month 2: Template System",
+            itemsBn: ["সোশ্যাল টেমপ্লেট কিট", "মাল্টি-ফরম্যাট এক্সপোর্ট", "CTA হায়ারার্কি"],
+            itemsEn: ["Social template kits", "Multi-format exports", "CTA hierarchy"]
+          },
+          { 
+            phaseBn: "মাস ৩: মোশন ও শর্ট ভিডিও", 
+            phaseEn: "Month 3: Motion & Short Video",
+            itemsBn: ["মাইক্রো অ্যানিমেশন", "স্টোরিবোর্ডিং", "ভিডিও অ্যাসেট পাইপলাইন"],
+            itemsEn: ["Micro animations", "Storyboarding", "Video asset pipeline"]
+          },
+          { 
+            phaseBn: "মাস ৪: ক্রিয়েটিভ টেস্টিং", 
+            phaseEn: "Month 4: Creative Testing",
+            itemsBn: ["A/B ভ্যারিয়েশন", "হুক/CTA টেস্টিং", "পারফরম্যান্স রিভিউ"],
+            itemsEn: ["A/B variations", "Hook/CTA testing", "Performance review"]
+          },
+          { 
+            phaseBn: "মাস ৫: লোকালাইজেশন", 
+            phaseEn: "Month 5: Localization",
+            itemsBn: ["বাংলা/ইংরেজি ভ্যারিয়েশন", "ইনক্লুসিভ ভিজ্যুয়াল", "কমিউনিটি অ্যাসেট লাইব্রেরি"],
+            itemsEn: ["Bangla/English variations", "Inclusive visuals", "Community asset library"]
+          },
+          { 
+            phaseBn: "মাস ৬: প্রোডাকশন পাইপলাইন", 
+            phaseEn: "Month 6: Production Pipeline",
+            itemsBn: ["ভার্সনিং ও নামকরণ", "এক্সপোর্ট স্ট্যান্ডার্ড", "ক্রস-টিম হ্যান্ডঅফ"],
+            itemsEn: ["Versioning and naming", "Export standards", "Cross-team handoff"]
+          }
+        ],
+        resources: [
+          { name: "Canva Design School (Free)", url: "https://www.canva.com/designschool/", type: "platform" },
+          { name: "Figma Community (Free Assets)", url: "https://www.figma.com/community", type: "platform" },
+          { name: "Adobe Color (Palette)", url: "https://color.adobe.com/", type: "tool" },
+          { name: "LottieFiles (Motion)", url: "https://lottiefiles.com/", type: "platform" },
+          { name: "Unsplash (Free Photos)", url: "https://unsplash.com/", type: "platform" }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'business',
+    icon: Briefcase,
+    color: 'amber',
+    titleBn: "প্রোডাক্ট ও বিজনেস অ্যানালাইসিস",
+    titleEn: "Product & Business Analysis",
+    descBn: "মার্কেট রিসার্চ, রিকোয়ারমেন্টস, প্রোডাক্ট স্ট্র্যাটেজি ও ডেলিভারি।",
+    descEn: "Market research, requirements, product strategy, and delivery.",
+    roles: [
+      {
+        id: 'pm',
+        titleBn: "প্রোডাক্ট ম্যানেজার",
+        titleEn: "Product Manager",
+        roadmap: [
+          { 
+            phaseBn: "মাস ১: ভিশন ও ডিসকভারি", 
+            phaseEn: "Month 1: Vision & Discovery",
+            itemsBn: ["মার্কেট গ্যাপ বিশ্লেষণ", "সমস্যা ফ্রেমিং", "ভ্যালু প্রপ ডিফাইন"],
+            itemsEn: ["Market gap analysis", "Problem framing", "Value prop definition"]
+          },
+          { 
+            phaseBn: "মাস ২: রোডম্যাপ ও OKR", 
+            phaseEn: "Month 2: Roadmap & OKR",
+            itemsBn: ["প্রায়োরিটাইজেশন ফ্রেমওয়ার্ক", "OKR সেটআপ", "ডিপেন্ডেন্সি ম্যাপিং"],
+            itemsEn: ["Prioritization frameworks", "OKR setup", "Dependency mapping"]
+          },
+          { 
+            phaseBn: "মাস ৩: এক্সপেরিমেন্ট ও মেট্রিকস", 
+            phaseEn: "Month 3: Experiments & Metrics",
+            itemsBn: ["হাইপোথিসিস ব্যাকলগ", "ফানেল মেট্রিকস", "ইনস্ট্রুমেন্টেশন প্ল্যান"],
+            itemsEn: ["Hypothesis backlog", "Funnel metrics", "Instrumentation plan"]
+          },
+          { 
+            phaseBn: "মাস ৪: প্রাইসিং ও প্যাকেজিং", 
+            phaseEn: "Month 4: Pricing & Packaging",
+            itemsBn: ["SaaS প্যাকেজিং", "রিটেনশন লুপ", "মনিটাইজেশন স্ট্র্যাটেজি"],
+            itemsEn: ["SaaS packaging", "Retention loops", "Monetization strategy"]
+          },
+          { 
+            phaseBn: "মাস ৫: লঞ্চ এক্সিকিউশন", 
+            phaseEn: "Month 5: Launch Execution",
+            itemsBn: ["লঞ্চ চেকলিস্ট", "স্টেকহোল্ডার এলাইনমেন্ট", "রিস্ক রেজিস্টার"],
+            itemsEn: ["Launch checklist", "Stakeholder alignment", "Risk registers"]
+          },
+          { 
+            phaseBn: "মাস ৬: গভর্ন্যান্স", 
+            phaseEn: "Month 6: Governance",
+            itemsBn: ["প্রোডাক্ট কাউন্সিল", "ট্রান্সপারেন্সি রিচুয়াল", "প্রফিট-শেয়ার ন্যারেটিভ"],
+            itemsEn: ["Product councils", "Transparency rituals", "Profit-share narrative"]
+          }
+        ],
+        resources: [
+          { name: "Agile Manifesto (Free)", url: "https://agilemanifesto.org/", type: "docs" },
+          { name: "Scrum Guide (Free)", url: "https://www.scrum.org/resources/scrum-guide", type: "docs" },
+          { name: "Atlassian Agile Coach", url: "https://www.atlassian.com/agile", type: "platform" },
+          { name: "IIBA BA Standard (Free PDF)", url: "https://www.iiba.org/globalassets/business-analysis-resources/the-business-analysis-standard/files/the-business-analysis-standard.pdf", type: "platform" },
+          { name: "Startup School (Free)", url: "https://www.startupschool.org/", type: "platform" },
+          { name: "Google Skillshop (Metrics)", url: "https://skillshop.withgoogle.com/", type: "platform" }
+        ]
+      },
+      {
+        id: 'ba-analyst',
+        titleBn: "বিজনেস অ্যানালিস্ট / এজাইল অ্যানালিস্ট",
+        titleEn: "Business Analyst / Agile Analyst",
+        roadmap: [
+          { 
+            phaseBn: "মাস ১: এলিসিটেশন", 
+            phaseEn: "Month 1: Elicitation",
+            itemsBn: ["স্টেকহোল্ডার ম্যাপিং", "প্রসেস ডায়াগ্রাম", "রিকোয়ারমেন্ট এলিসিটেশন"],
+            itemsEn: ["Stakeholder mapping", "Process diagrams", "Requirements elicitation"]
+          },
+          { 
+            phaseBn: "মাস ২: রিকোয়ারমেন্ট মডেলিং", 
+            phaseEn: "Month 2: Requirements Modeling",
+            itemsBn: ["ইউজার স্টোরি ও অ্যাকসেপ্টেন্স", "ডেটা ডিকশনারি", "ডেফিনিশন অফ ডান"],
+            itemsEn: ["User stories and acceptance", "Data dictionaries", "Definition of done"]
+          },
+          { 
+            phaseBn: "মাস ৩: ট্রেসেবিলিটি", 
+            phaseEn: "Month 3: Traceability",
+            itemsBn: ["ট্রেসেবিলিটি ম্যাট্রিক্স", "চেঞ্জ ইমপ্যাক্ট", "রিস্ক বিশ্লেষণ"],
+            itemsEn: ["Traceability matrix", "Change impact analysis", "Risk analysis"]
+          },
+          { 
+            phaseBn: "মাস ৪: এজাইল ডেলিভারি", 
+            phaseEn: "Month 4: Agile Delivery",
+            itemsBn: ["ব্যাকলগ রিফাইনমেন্ট", "স্টোরি স্লাইসিং", "এস্টিমেশন কনসিস্টেন্সি"],
+            itemsEn: ["Backlog refinement", "Story slicing", "Estimation consistency"]
+          },
+          { 
+            phaseBn: "মাস ৫: QA ও UAT", 
+            phaseEn: "Month 5: QA & UAT",
+            itemsBn: ["UAT প্ল্যানিং", "টেস্ট সিনারিও", "ডিফেক্ট ট্রায়েজ"],
+            itemsEn: ["UAT planning", "Test scenarios", "Defect triage"]
+          },
+          { 
+            phaseBn: "মাস ৬: কন্টিনিউয়াস ইমপ্রুভমেন্ট", 
+            phaseEn: "Month 6: Continuous Improvement",
+            itemsBn: ["ড্যাশবোর্ড ও রিপোর্টিং", "রেট্রো ইনসাইট", "প্রসেস অপটিমাইজেশন"],
+            itemsEn: ["Dashboards and reporting", "Retro insights", "Process optimization"]
+          }
+        ],
+        resources: [
+          { name: "IIBA BA Standard (Free PDF)", url: "https://www.iiba.org/globalassets/business-analysis-resources/the-business-analysis-standard/files/the-business-analysis-standard.pdf", type: "platform" },
+          { name: "Scrum Guide (Free)", url: "https://www.scrum.org/resources/scrum-guide", type: "docs" },
+          { name: "Atlassian Agile Coach", url: "https://www.atlassian.com/agile", type: "platform" },
+          { name: "Agile Manifesto (Free)", url: "https://agilemanifesto.org/", type: "docs" }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'marketing',
+    icon: Megaphone,
+    color: 'purple',
+    titleBn: "মার্কেটিং ও কাস্টমার সাকসেস",
+    titleEn: "Marketing & Customer Success",
+    descBn: "সেলস, ডিজিটাল মার্কেটিং, লাইফসাইকেল ও কাস্টমার সাকসেস।",
+    descEn: "Sales, digital marketing, lifecycle, and customer success.",
+    roles: [
+      {
+        id: 'digital-marketing',
+        titleBn: "গ্রোথ ও লাইফসাইকেল মার্কেটার",
+        titleEn: "Growth & Lifecycle Marketer",
+        roadmap: [
+          { 
+            phaseBn: "মাস ১: ICP ও মেসেজিং", 
+            phaseEn: "Month 1: ICP & Messaging",
+            itemsBn: ["ফানেল ম্যাপিং", "মেসেজিং গাইডলাইন", "UTM ও ট্র্যাকিং প্ল্যান"],
+            itemsEn: ["Funnel mapping", "Messaging guidelines", "UTM and tracking plan"]
+          },
+          { 
+            phaseBn: "মাস ২: SEO ও কন্টেন্ট", 
+            phaseEn: "Month 2: SEO & Content",
+            itemsBn: ["SEO বেসিকস", "কন্টেন্ট ক্যালেন্ডার", "ল্যান্ডিং পেজ কনভার্সন"],
+            itemsEn: ["SEO fundamentals", "Content calendar", "Landing page conversion"]
+          },
+          { 
+            phaseBn: "মাস ৩: পেইড অ্যাকুইজিশন", 
+            phaseEn: "Month 3: Paid Acquisition",
+            itemsBn: ["ক্রিয়েটিভ টেস্টিং", "লিড জেনারেশন", "কস্ট-টু-রেভিনিউ মডেল"],
+            itemsEn: ["Creative testing", "Lead generation", "Cost-to-revenue modeling"]
+          },
+          { 
+            phaseBn: "মাস ৪: অ্যানালিটিক্স", 
+            phaseEn: "Month 4: Analytics",
+            itemsBn: ["GA4 সেটআপ", "কোহর্ট অ্যানালিসিস", "ড্যাশবোর্ডিং"],
+            itemsEn: ["GA4 setup", "Cohort analysis", "Dashboarding"]
+          },
+          { 
+            phaseBn: "মাস ৫: অটোমেশন", 
+            phaseEn: "Month 5: Automation",
+            itemsBn: ["CRM অটোমেশন", "লিড স্কোরিং", "ইমেইল ড্রিপ"],
+            itemsEn: ["CRM automation", "Lead scoring", "Email drips"]
+          },
+          { 
+            phaseBn: "মাস ৬: কমিউনিটি গ্রোথ", 
+            phaseEn: "Month 6: Community Growth",
+            itemsBn: ["রেফারেল লুপ", "পার্টনার চ্যানেল", "রিটেনশন প্লে"],
+            itemsEn: ["Referral loops", "Partner channels", "Retention plays"]
+          }
+        ],
+        resources: [
+          { name: "HubSpot Academy (Free)", url: "https://academy.hubspot.com/", type: "platform" },
+          { name: "Google Search Central (SEO)", url: "https://developers.google.com/search/docs", type: "docs" },
+          { name: "Google Skillshop (GA4)", url: "https://skillshop.withgoogle.com/", type: "platform" },
+          { name: "Meta Blueprint Training", url: "https://trainingworkshops.facebookblueprint.com/", type: "platform" },
+          { name: "Google Analytics (Developer)", url: "https://developers.google.com/analytics", type: "docs" }
+        ]
+      },
+      {
+        id: 'customer-success',
+        titleBn: "কাস্টমার সাকসেস ও সাপোর্ট অপস",
+        titleEn: "Customer Success & Support Ops",
+        roadmap: [
+          { 
+            phaseBn: "মাস ১: অনবোর্ডিং", 
+            phaseEn: "Month 1: Onboarding",
+            itemsBn: ["টাইম-টু-ভ্যালু মেট্রিকস", "অনবোর্ডিং প্লেবুক", "গ্রাহক সেগমেন্টেশন"],
+            itemsEn: ["Time-to-value metrics", "Onboarding playbooks", "Customer segmentation"]
+          },
+          { 
+            phaseBn: "মাস ২: সাপোর্ট অপারেশন", 
+            phaseEn: "Month 2: Support Operations",
+            itemsBn: ["সাপোর্ট ট্যাক্সোনমি", "নলেজ বেস স্ট্রাকচার", "SLA ডিজাইন"],
+            itemsEn: ["Support taxonomy", "Knowledge base structure", "SLA design"]
+          },
+          { 
+            phaseBn: "মাস ৩: ভয়েস অফ কাস্টমার", 
+            phaseEn: "Month 3: Voice of Customer",
+            itemsBn: ["ফিডব্যাক ট্যাগিং", "প্রোডাক্ট লুপ", "ইনসাইট রিপোর্টিং"],
+            itemsEn: ["Feedback tagging", "Product feedback loops", "Insight reporting"]
+          },
+          { 
+            phaseBn: "মাস ৪: রিটেনশন", 
+            phaseEn: "Month 4: Retention",
+            itemsBn: ["চর্ণ কমানো স্ট্র্যাটেজি", "রিনিউয়াল প্লেবুক", "এসকেলেশন ফ্লো"],
+            itemsEn: ["Churn reduction strategies", "Renewal playbooks", "Escalation flows"]
+          },
+          { 
+            phaseBn: "মাস ৫: কমিউনিটি সাকসেস", 
+            phaseEn: "Month 5: Community Success",
+            itemsBn: ["মেন্টরশিপ প্রোগ্রাম", "ইভেন্ট ও ফোরাম", "পিয়ার-টু-পিয়ার সাপোর্ট"],
+            itemsEn: ["Mentorship programs", "Events and forums", "Peer-to-peer support"]
+          },
+          { 
+            phaseBn: "মাস ৬: কেপিআই ও রিপোর্টিং", 
+            phaseEn: "Month 6: KPI & Reporting",
+            itemsBn: ["NPS/CSAT ট্র্যাকিং", "কোহর্ট রিটেনশন", "QBR রিপোর্টিং"],
+            itemsEn: ["NPS/CSAT tracking", "Cohort retention", "QBR reporting"]
+          }
+        ],
+        resources: [
+          { name: "HubSpot Academy (Free)", url: "https://academy.hubspot.com/", type: "platform" },
+          { name: "Zendesk CX Library", url: "https://www.zendesk.com/blog/", type: "platform" },
+          { name: "Intercom Academy (Free)", url: "https://academy.intercom.com/", type: "platform" }
+        ]
+      }
+    ]
+  }
+];
+
+const phase2Tabs = [
+  {
+    id: 'trust',
+    labelBn: "স্বচ্ছতা ও আস্থা",
+    labelEn: "Co-op Trust",
+    items: [
+      {
+        titleBn: "কন্ট্রিবিউশন লেজার",
+        titleEn: "Contribution Ledger",
+        descBn: "প্রতিটি অবদান, প্রুফ লিংক ও পিয়ার রিভিউ ট্র্যাকিং।",
+        descEn: "Track every contribution, proof links, and peer reviews.",
+        icon: ShieldCheck
+      },
+      {
+        titleBn: "প্রফিট-শেয়ার সিমুলেটর",
+        titleEn: "Profit-Share Simulator",
+        descBn: "রেভিনিউ, কস্ট এবং সদস্যভিত্তিক শেয়ার ভিজুয়ালাইজেশন।",
+        descEn: "Visualize revenue, costs, and member-wise shares.",
+        icon: Briefcase
+      },
+      {
+        titleBn: "ডিসিশন জার্নাল",
+        titleEn: "Decision Journal",
+        descBn: "ভোটিং, যুক্তি এবং সিদ্ধান্তের ট্র্যাক রেকর্ড।",
+        descEn: "Voting, rationale, and decision audit trail.",
+        icon: FileText
+      },
+      {
+        titleBn: "ওপেন রোডম্যাপ",
+        titleEn: "Open Roadmap",
+        descBn: "এপিক স্ট্যাটাস, বাজেট ও রিসোর্স ট্রান্সপারেন্সি।",
+        descEn: "Epic status, budget, and resource transparency.",
+        icon: Target
+      }
+    ]
+  },
+  {
+    id: 'onboarding',
+    labelBn: "অনবোর্ডিং UX",
+    labelEn: "Onboarding UX",
+    items: [
+      {
+        titleBn: "কমিটমেন্ট গ্র্যাডিয়েন্ট",
+        titleEn: "Commitment Gradient",
+        descBn: "৭-দিন স্প্রিন্ট → ৩০-দিন কন্ট্রিবিউটর → কো-ফাউন্ডার।",
+        descEn: "7-day sprint → 30-day contributor → co-founder.",
+        icon: Rocket
+      },
+      {
+        titleBn: "প্রগ্রেসিভ ডিসক্লোজার",
+        titleEn: "Progressive Disclosure",
+        descBn: "প্রথমেই কম তথ্য, ধাপে ধাপে সিদ্ধান্তের কনফিডেন্স।",
+        descEn: "Reveal complexity in steps to build confidence.",
+        icon: ChevronRight
+      },
+      {
+        titleBn: "সোশ্যাল প্রুফ",
+        titleEn: "Social Proof",
+        descBn: "সর্বশেষ শিপড ফিচার, রেভিনিউ এবং কমিউনিটি উইন।",
+        descEn: "Latest shipped features, revenue, and community wins.",
+        icon: Users
+      },
+      {
+        titleBn: "ট্রাস্ট অ্যাঙ্কর",
+        titleEn: "Trust Anchors",
+        descBn: "গভর্ন্যান্স নীতি ও প্রফিট-শেয়ার নীতি স্পষ্ট।",
+        descEn: "Clear governance and profit-share rules.",
+        icon: ShieldCheck
+      }
+    ]
+  },
+  {
+    id: 'polish',
+    labelBn: "UI পলিশ",
+    labelEn: "UI Polish",
+    items: [
+      {
+        titleBn: "গ্লাসমরফিজম",
+        titleEn: "Glassmorphism",
+        descBn: "গ্লাস কার্ড, ব্লার ও সফট শ্যাডো দিয়ে প্রিমিয়াম লুক।",
+        descEn: "Glass cards with blur and soft shadows.",
+        icon: PenTool
+      },
+      {
+        titleBn: "নিও-ব্রুটাল",
+        titleEn: "Neo-Brutal",
+        descBn: "হেভি বর্ডার, অফসেট শ্যাডো ও বোল্ড CTA।",
+        descEn: "Heavy borders, offset shadows, bold CTAs.",
+        icon: MonitorSmartphone
+      },
+      {
+        titleBn: "এন্টারপ্রাইজ ক্লিন",
+        titleEn: "Enterprise Clean",
+        descBn: "মিউটেড প্যালেট, স্ট্রাকচার্ড স্পেসিং, দ্রুত স্ক্যানিং।",
+        descEn: "Muted palette, structured spacing, fast scanning.",
+        icon: Layers
+      },
+      {
+        titleBn: "মোশন সিস্টেম",
+        titleEn: "Motion System",
+        descBn: "স্ট্যাগারড রিভিল, হোভার মাইক্রো-ইন্টারঅ্যাকশন।",
+        descEn: "Staggered reveals and hover micro-interactions.",
+        icon: Sparkles
+      }
+    ]
+  }
+];
+// Helper Component for the Brand Logo
+const BrandLogo = ({ lang, className = "h-10" }) => {
+  // Use properly URL encoded spaces (%20)
+  const svgPath = lang === 'bn' ? "Brand%20Assets/EquiSaaS%20BD%20Logo%20Bangla.SVG" : "Brand%20Assets/EquiSaaS%20BD%20Logo.SVG";
+  const pngPath = lang === 'bn' ? "Brand%20Assets/EquiSaaS%20BD%20Logo%20Bangla.png" : "Brand%20Assets/EquiSaaS%20BD%20Logo.png";
+  
+  return (
+    <img 
+      src={svgPath} 
+      onError={(e) => { 
+        // Prevents infinite loop crash if the PNG also fails to load
+        e.currentTarget.onerror = null; 
+        e.currentTarget.src = pngPath; 
+      }}
+      alt="EquiSaaS BD Logo" 
+      className={`${className} w-auto object-contain transition-transform hover:scale-105 duration-300`}
+    />
+  );
+};
+
+const App = () => {
+  const [lang, setLang] = useState('bn');
+  const [selectedDept, setSelectedDept] = useState(null);
+  const [phase2Tab, setPhase2Tab] = useState('trust');
+  const text = CONTENT[lang];
+  const activePhase2 = phase2Tabs.find((tab) => tab.id === phase2Tab) || phase2Tabs[0];
+
+  useEffect(() => {
+    // Scroll to top when department changes for better UX
+    if(selectedDept) window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [selectedDept]);
+
+
+  // Handle Dynamic Component properly to avoid JSX warnings/crashes
+  const SelectedDeptIcon = selectedDept ? selectedDept.icon : null;
+
+  return (
+    <div className="min-h-screen flex flex-col font-sans relative">
+      {/* Navigation */}
+      <nav className="glass-nav sticky top-0 z-40 transition-all">
+        <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+          <div className="flex items-center gap-3 cursor-pointer" onClick={() => setSelectedDept(null)}>
+            <BrandLogo lang={lang} className="h-10 md:h-12" />
+          </div>
+          
+          <div className="flex items-center gap-4">
+            <button 
+              onClick={() => setLang(lang === 'bn' ? 'en' : 'bn')}
+              className="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 hover:bg-slate-200 text-sm font-bold text-slate-700 smooth-transition border border-slate-300 shadow-sm"
+            >
+              <Globe className="w-4 h-4 text-brand-blue" /> {lang === 'bn' ? 'English' : 'বাংলা'}
+            </button>
+            <button 
+              onClick={() => window.location.href = '/lms'}
+              className="hidden md:flex items-center gap-2 bg-slate-900 hover:bg-brand-blue text-white px-5 py-2.5 rounded-full text-sm font-bold shadow-md hover:shadow-xl hover:-translate-y-0.5 transition-all"
+            >
+              <GraduationCap className="w-4 h-4" /> {text.nav.lms}
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      {/* Dynamic Main Content */}
+      {!selectedDept ? (
+        <main className="flex-grow">
+          {/* Hero Section */}
+          <section className="pt-24 pb-32 px-6 relative overflow-hidden">
+            {/* Background Decorations */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-5xl h-full -z-10">
+              <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+              <div className="absolute top-20 right-10 w-72 h-72 bg-emerald-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+              <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+            </div>
+
+            <div className="container mx-auto max-w-6xl">
+              <div className="text-center max-w-4xl mx-auto flex flex-col items-center">
+                <span className="inline-block py-1.5 px-4 rounded-full bg-blue-100 text-brand-blue font-bold text-sm mb-6 border border-blue-200 shadow-sm flex items-center gap-2">
+                  <Rocket className="w-4 h-4" /> {text.hero.badge}
+                </span>
+                <h1 className="text-5xl md:text-7xl font-black text-slate-900 mb-6 leading-tight tracking-tight">
+                  {text.hero.title1} <br/>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-brand-green border-b-8 border-brand-green pb-2 inline-block">
+                    {text.hero.title2}
+                  </span>
+                </h1>
+                <p className="text-xl text-slate-600 mb-10 leading-relaxed max-w-3xl">
+                  {text.hero.desc}
+                </p>
+                
+                <div className="flex flex-wrap justify-center gap-6 text-sm font-bold text-slate-700">
+                  {text.hero.stats.map((stat, idx) => (
+                    <div key={idx} className="flex items-center gap-2 bg-white px-5 py-2.5 rounded-lg shadow-md border border-slate-200 hover:-translate-y-1 transition-transform">
+                      <CheckCircle2 className="w-5 h-5 text-brand-green" /> {stat}
+                    </div>
+                  ))}
+                </div>
+
+              <div className="flex flex-col sm:flex-row gap-4 mt-10">
+                <a 
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSeSoaRqc1wvHR-OXJh-jKFkDilxddAzog6YCP0KisGGrNBKpw/viewform?usp=dialog" 
+                  target="_blank" rel="noopener noreferrer"
+                  className="bg-brand-blue text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-brand-blue/40 hover:-translate-y-1 transition-all active:scale-95 flex items-center justify-center gap-2 group"
+                  aria-label="Apply for Open Co-founder"
+                >
+                  <FileText className="w-5 h-5" /> {lang === 'bn' ? 'এপ্লাই করুন' : 'Apply Now'}
+                </a>
+                <button 
+                  onClick={() => document.getElementById('departments').scrollIntoView({ behavior: 'smooth' })}
+                  className="bg-white text-slate-700 px-8 py-4 rounded-full font-bold text-lg border-2 border-slate-200 hover:border-brand-blue hover:text-brand-blue hover:shadow-lg transition-all active:scale-95 flex items-center justify-center gap-2 group"
+                  aria-label="Explore Departments"
+                >
+                  {text.deptSection.title}
+                  <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Core Strategy Section */}
+          <section className="py-24 bg-slate-900 text-white relative">
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-blue via-brand-green to-brand-blue"></div>
+            <div className="container mx-auto px-6 max-w-6xl">
+              <h2 className="text-3xl md:text-4xl font-black text-center mb-16">{text.strategy.title}</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {text.strategy.cards.map((card, idx) => (
+                  <div key={idx} className="bg-slate-800 p-8 rounded-[2rem] border border-slate-700 hover:border-brand-green hover:-translate-y-2 transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-brand-green/10 group">
+                    <div className="w-16 h-16 bg-slate-700/50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-brand-green group-hover:text-slate-900 transition-colors border border-slate-600 group-hover:border-transparent transform group-hover:rotate-6">
+                      {idx === 0 ? <ShieldCheck className="w-8 h-8" /> : idx === 1 ? <Rocket className="w-8 h-8" /> : <Users className="w-8 h-8" />}
+                    </div>
+                    <h3 className="text-2xl font-bold mb-4">{card.title}</h3>
+                    <p className="text-slate-400 leading-relaxed text-lg">{card.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Departments Section */}
+          <section id="departments" className="py-24 bg-slate-50">
+            <div className="container mx-auto px-6 max-w-6xl">
+              <div className="text-center max-w-3xl mx-auto mb-16">
+                <h2 className="text-4xl font-black text-slate-900 mb-6">{text.deptSection.title}</h2>
+                <p className="text-lg text-slate-600">{text.deptSection.desc}</p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {departments.map((dept) => {
+                  const Icon = dept.icon;
+                  // Color maps for dynamic tailwind classes
+                  const colorMaps = {
+                    blue: "bg-white text-blue-600 border-blue-100 hover:border-blue-400 shadow-lg shadow-blue-900/5 hover:shadow-blue-900/10",
+                    emerald: "bg-white text-emerald-600 border-emerald-100 hover:border-emerald-400 shadow-lg shadow-emerald-900/5 hover:shadow-emerald-900/10",
+                    amber: "bg-white text-amber-600 border-amber-100 hover:border-amber-400 shadow-lg shadow-amber-900/5 hover:shadow-amber-900/10",
+                    purple: "bg-white text-purple-600 border-purple-100 hover:border-purple-400 shadow-lg shadow-purple-900/5 hover:shadow-purple-900/10",
+                  };
+                  const iconBgMap = {
+                    blue: "bg-blue-50 text-blue-600", emerald: "bg-emerald-50 text-emerald-600", amber: "bg-amber-50 text-amber-600", purple: "bg-purple-50 text-purple-600"
+                  }
+
+                  return (
+                    <div 
+                      key={dept.id}
+                      onClick={() => setSelectedDept(dept)}
+                      className={`cursor-pointer rounded-[2rem] p-8 md:p-10 border-2 hover:-translate-y-2 transition-all duration-300 group relative overflow-hidden ${colorMaps[dept.color]}`}
+                    >
+                      <div className="absolute -top-10 -right-10 w-48 h-48 opacity-5 group-hover:opacity-10 transform group-hover:scale-125 group-hover:-rotate-12 transition-all duration-500 pointer-events-none">
+                        <Icon className="w-full h-full" />
+                      </div>
+                      <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-8 shadow-inner ${iconBgMap[dept.color]}`}>
+                        <Icon className="w-8 h-8" />
+                      </div>
+                      <h3 className="text-2xl md:text-3xl font-black text-slate-900 mb-4 group-hover:text-brand-blue transition-colors">
+                        {lang === 'bn' ? dept.titleBn : dept.titleEn}
+                      </h3>
+                      <p className="text-slate-600 mb-8 line-clamp-2 text-lg">
+                        {lang === 'bn' ? dept.descBn : dept.descEn}
+                      </p>
+                      <div className="flex items-center text-sm font-bold uppercase tracking-wider text-slate-400 group-hover:text-brand-blue transition-colors">
+                        {lang === 'bn' ? 'রোডম্যাপ দেখুন' : 'Explore Roadmap'} <ArrowRight className="w-5 h-5 ml-2 transform group-hover:translate-x-2 transition-transform" />
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+
+
+          {/* Phase 2 Section */}
+          <section id="phase2" className="py-24 bg-gradient-to-b from-white to-slate-50">
+            <div className="container mx-auto px-6 max-w-6xl">
+              <div className="text-center max-w-3xl mx-auto mb-12">
+                <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900 text-white text-sm font-semibold">
+                  <Sparkles className="w-4 h-4" /> {text.phase2.badge}
+                </span>
+                <h2 className="text-3xl md:text-4xl font-black text-slate-900 mt-6 mb-4">{text.phase2.title}</h2>
+                <p className="text-lg text-slate-600">{text.phase2.desc}</p>
+              </div>
+
+              <div className="flex flex-wrap justify-center gap-3 mb-10">
+                {phase2Tabs.map((tab) => (
+                  <button
+                    key={tab.id}
+                    onClick={() => setPhase2Tab(tab.id)}
+                    className={`px-5 py-2.5 rounded-full text-sm font-bold border transition-all ${
+                      phase2Tab === tab.id
+                        ? 'bg-slate-900 text-white border-slate-900 shadow-lg'
+                        : 'bg-white text-slate-700 border-slate-200 hover:border-slate-400'
+                    }`}
+                  >
+                    {lang === 'bn' ? tab.labelBn : tab.labelEn}
+                  </button>
+                ))}
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+                {activePhase2.items.map((item, idx) => {
+                  const Icon = item.icon;
+                  return (
+                    <div key={idx} className="bg-white rounded-3xl p-6 border border-slate-100 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">
+                      <div className="w-12 h-12 rounded-2xl bg-slate-900 text-white flex items-center justify-center mb-4">
+                        <Icon className="w-6 h-6" />
+                      </div>
+                      <h3 className="text-lg font-bold text-slate-900 mb-2">{lang === 'bn' ? item.titleBn : item.titleEn}</h3>
+                      <p className="text-slate-600 text-sm leading-relaxed">{lang === 'bn' ? item.descBn : item.descEn}</p>
+                    </div>
+                  );
+                })}
+              </div>
+
+              <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
+                <button
+                  onClick={() => document.getElementById('departments').scrollIntoView({ behavior: 'smooth' })}
+                  className="bg-brand-blue text-white px-6 py-3 rounded-full font-bold shadow-lg hover:shadow-brand-blue/30 hover:-translate-y-0.5 transition-all"
+                >
+                  {lang === 'bn' ? 'রোডম্যাপ দেখুন' : 'Explore Roadmaps'}
+                </button>
+                <button
+                  onClick={() => window.location.href = '/lms'}
+                  className="bg-white text-slate-700 px-6 py-3 rounded-full font-bold border border-slate-200 hover:border-brand-blue hover:text-brand-blue transition-all"
+                >
+                  {text.nav.lms}
+                </button>
+              </div>
+            </div>
+          </section>\n          {/* How It Works Section */}
+          <section className="mt-20 mb-20">
+            <h2 className="text-3xl md:text-4xl font-black text-slate-800 text-center mb-16 relative inline-block left-1/2 -translate-x-1/2">
+              {text.howItWorks?.title}
+              <div className="h-3 w-full bg-brand-green/20 absolute bottom-1 left-0 -z-10 rounded-full transform -skew-x-12"></div>
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-6 max-w-7xl mx-auto relative">
+              {/* Optional connector line for desktop */}
+              <div className="hidden lg:block absolute top-12 left-24 right-24 h-0.5 bg-gradient-to-r from-blue-100 via-brand-blue/20 to-green-100 -z-10"></div>
+              
+              {(text.howItWorks?.steps || []).map((step, idx) => (
+                <div key={idx} className="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-xl shadow-slate-200/40 hover:shadow-2xl hover:shadow-brand-blue/10 hover:-translate-y-2 transition-all duration-300 text-center group relative overflow-hidden">
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-blue to-brand-green transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                  <div className="w-20 h-20 bg-gradient-to-br from-blue-50 to-slate-50 text-brand-blue rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:from-brand-blue group-hover:to-blue-700 group-hover:text-white transition-all shadow-inner border border-blue-100/50 group-hover:border-transparent transform group-hover:rotate-6">
+                    <span className="text-3xl font-black">{idx + 1}</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-800 mb-3">{step.title}</h3>
+                  <p className="text-slate-600 leading-relaxed">{step.desc}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* FAQ Section */}
+          <section className="mb-32 px-6 max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-black text-slate-800 text-center mb-16 relative inline-block left-1/2 -translate-x-1/2">
+              {text.faq?.title}
+              <div className="h-3 w-full bg-brand-green/20 absolute bottom-1 left-0 -z-10 rounded-full transform -skew-x-12"></div>
+            </h2>
+            <div className="space-y-6">
+              {(text.faq?.items || []).map((faq, idx) => (
+                <div key={idx} className="bg-white p-6 md:p-8 rounded-[2rem] border border-slate-100 shadow-lg shadow-slate-200/30 hover:shadow-xl hover:shadow-brand-blue/5 hover:border-brand-blue/30 transition-all duration-300 group">
+                  <h3 className="text-lg md:text-xl font-bold text-slate-800 flex gap-4 items-start group-hover:text-brand-blue transition-colors">
+                    <div className="bg-blue-50 p-2.5 rounded-xl text-brand-blue mt-0.5 group-hover:bg-brand-blue group-hover:text-white transition-colors">
+                      <HelpCircle className="w-6 h-6" />
+                    </div>
+                    <span className="mt-1.5 leading-snug">{faq.q}</span>
+                  </h3>
+                  <p className="text-slate-600 mt-4 md:pl-16 pl-14 leading-relaxed text-lg">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        </main>
+      ) : (
+        /* Department Detail View */
+        <main className="flex-grow bg-slate-50 pb-24">
+          {/* Header Banner */}
+          <div className="bg-slate-900 text-white pt-12 pb-24 px-6 relative">
+            <div className="container mx-auto max-w-6xl">
+              <button 
+                onClick={() => setSelectedDept(null)}
+                className="flex items-center text-slate-300 hover:text-white mb-8 group bg-slate-800 px-5 py-2.5 rounded-full w-fit transition-colors shadow-md"
+              >
+                <ChevronRight className="w-5 h-5 rotate-180 mr-2 group-hover:-translate-x-1 transition-transform" /> 
+                {text.profile.btnBack}
+              </button>
+              
+              <div className="flex items-center gap-6">
+                <div className="w-20 h-20 bg-brand-blue rounded-2xl flex items-center justify-center shadow-xl border border-blue-400/20">
+                  <SelectedDeptIcon className="w-10 h-10 text-white" />
+                </div>
+                <div>
+                  <h1 className="text-3xl md:text-5xl font-black mb-3">
+                    {lang === 'bn' ? selectedDept.titleBn : selectedDept.titleEn}
+                  </h1>
+                  <p className="text-slate-400 text-lg max-w-2xl">
+                    {lang === 'bn' ? selectedDept.descBn : selectedDept.descEn}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="container mx-auto max-w-6xl px-6 -mt-12">
+            <div className="bg-white rounded-[2.5rem] shadow-2xl shadow-slate-200/50 border border-slate-100 overflow-hidden">
+              <div className="pt-20 md:pt-20 border-b border-slate-100 bg-slate-50/50">
+                <h2 className="text-2xl md:text-3xl font-black text-slate-800 flex items-center gap-3">
+                  <Target className="w-8 h-8 text-brand-blue" />
+                  {text.profile.subDeptTitle}
+                </h2>
+              </div>
+              
+              <div className="p-8 md:p-10">
+                <div className="mb-10 flex items-center gap-3 text-xs md:text-sm font-bold uppercase tracking-widest text-slate-500">
+                  <span className="h-2 w-2 rounded-full bg-brand-green"></span>
+                  {text.profile.roadmapTitle}
+                </div>
+                {selectedDept.roles.map((role, idx) => (
+                  <div key={role.id} className={`mb-20 last:mb-0 ${idx !== 0 ? 'pt-16 border-t border-slate-200' : ''}`}>
+                    <h3 className="text-2xl md:text-3xl font-bold text-brand-blue mb-10 flex items-center gap-4">
+                      <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-lg shadow-sm">
+                        {idx + 1}
+                      </div>
+                      {lang === 'bn' ? role.titleBn : role.titleEn}
+                    </h3>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mb-12">
+                      {role.roadmap.map((phase, pIdx) => (
+                        <div key={pIdx} className="bg-white rounded-3xl p-8 h-full flex flex-col border border-slate-100 shadow-xl shadow-slate-200/40 hover:border-brand-green/50 hover:shadow-2xl hover:shadow-brand-green/10 transition-all duration-300 relative overflow-hidden group">
+                          <div className="absolute top-0 right-0 w-24 h-24 bg-brand-green/5 rounded-bl-[100px] -z-10 group-hover:scale-125 transition-transform duration-500"></div>
+                          <h4 className="font-black text-slate-800 mb-6 pb-4 border-b border-slate-100 text-xl flex items-center gap-3">
+                            <span className="w-2 h-8 bg-brand-green rounded-full"></span>
+                            {lang === 'bn' ? phase.phaseBn : phase.phaseEn}
+                          </h4>
+                          <ul className="space-y-4">
+                            {(lang === 'bn' ? phase.itemsBn : phase.itemsEn).map((item, iIdx) => (
+                              <li key={iIdx} className="flex items-start gap-3 text-slate-600 font-medium">
+                                <div className="mt-1 bg-green-50 p-1 rounded-md text-brand-green flex-shrink-0">
+                                  <CheckCircle2 className="w-4 h-4" />
+                                </div>
+                                <span className="leading-relaxed">{item}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="bg-gradient-to-br from-blue-50 to-slate-50 rounded-[2rem] p-8 md:p-10 border border-blue-100/50 shadow-inner">
+                      <h4 className="font-bold text-slate-800 mb-8 flex items-center gap-3 text-xl md:text-2xl">
+                        <div className="bg-brand-blue text-white p-2.5 rounded-xl shadow-md">
+                          <BookOpen className="w-6 h-6" />
+                        </div>
+                        {text.profile.resourceTitle}
+                      </h4>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        {role.resources.map((res, rIdx) => (
+                          <a 
+                            key={rIdx} 
+                            href={res.url} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-between p-5 md:p-6 rounded-2xl bg-white border border-slate-100 hover:border-brand-blue hover:shadow-xl hover:shadow-brand-blue/10 hover:-translate-y-1 transition-all duration-300 group"
+                          >
+                            <div className="flex items-center gap-4">
+                              <div className="bg-slate-50 p-3 rounded-xl group-hover:bg-blue-50 transition-colors border border-slate-100 group-hover:border-blue-100">
+                                <Link className="w-5 h-5 text-slate-400 group-hover:text-brand-blue" />
+                              </div>
+                              <span className="font-bold text-slate-700 group-hover:text-brand-blue text-base md:text-lg">{res.name}</span>
+                            </div>
+                            <ChevronRight className="w-6 h-6 text-slate-300 group-hover:text-brand-blue transform group-hover:translate-x-1 transition-transform" />
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </main>
+      )}
+
+      {/* Global Footer */}
+      <footer className="bg-slate-900 text-slate-300 py-12 border-t border-slate-800">
+        <div className="container mx-auto px-6 max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+          <div>
+            <div className="flex items-center justify-center md:justify-start gap-3 mb-6">
+              <BrandLogo lang={lang} className="h-12 brightness-0 invert" />
+            </div>
+            <p className="text-sm text-slate-400 mb-6 leading-relaxed max-w-sm mx-auto md:mx-0">
+              Equal Ownership, One Vision. Building real SaaS products for the Bangladesh market. Join the movement.
+            </p>
+          </div>
+          <div>
+            <h4 className="text-white font-bold mb-5 uppercase tracking-wide text-sm">Quick Links</h4>
+            <div className="flex flex-col gap-3">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSeSoaRqc1wvHR-OXJh-jKFkDilxddAzog6YCP0KisGGrNBKpw/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" className="hover:text-brand-blue transition-colors w-fit mx-auto md:mx-0 block md:inline-block" aria-label="Apply Now">
+                {lang === 'bn' ? 'এপ্লাই করুন' : 'Apply Now'}
+              </a>
+              <button onClick={() => window.location.href = '/lms'} className="hover:text-brand-blue transition-colors text-left w-fit mx-auto md:mx-0 block md:inline-block" aria-label="LMS Portal">
+                {lang === 'bn' ? 'LMS পোর্টাল' : 'LMS Portal'}
+              </button>
+            </div>
+          </div>
+          <div>
+            <h4 className="text-white font-bold mb-5 uppercase tracking-wide text-sm">Connect With Us</h4>
+            <a href="https://www.facebook.com/EquiSaaSBD/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-slate-800 hover:bg-brand-blue px-5 py-3 rounded-xl text-white transition-colors shadow-md hover:shadow-lg w-fit mx-auto md:mx-0">
+              <Facebook className="w-5 h-5" /> Facebook Page
+            </a>
+          </div>
+        </div>
+        <div className="mt-12 pt-8 border-t border-slate-800 text-center text-sm text-slate-500">
+          &copy; {new Date().getFullYear()} EquiSaaS BD. All rights reserved.
+        </div>
+      </footer>
+      
+      {/* Mobile LMS Sticky Button */}
+      <div className="md:hidden fixed bottom-6 left-6 right-6 z-40">
+        <button 
+          onClick={() => window.location.href = '/lms'}
+          className="w-full flex justify-center items-center gap-2 bg-gradient-to-r from-brand-blue to-brand-green text-white px-6 py-4 rounded-2xl font-bold shadow-2xl shadow-blue-900/20 active:scale-95 transition-transform"
+        >
+          <GraduationCap className="w-6 h-6" /> {text.nav.lms}
+        </button>
+      </div>
+    </div>
+  );
+}
+
+const root = createRoot(document.getElementById('root'));
+root.render(<App />);
+    </script>
+</body>
+</html>

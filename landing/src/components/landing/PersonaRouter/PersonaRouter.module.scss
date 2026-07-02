@@ -1,0 +1,221 @@
+@use "../../../styles/mixins" as *;
+
+// ── Persona Router Section ──
+.persona-router {
+  padding: var(--space-5xl) 0;
+  background-color: var(--color-background);
+  position: relative;
+
+  @include mobile {
+    padding: var(--space-4xl) 0;
+  }
+
+  @include tablet {
+    padding: var(--space-5xl) 0;
+  }
+}
+
+// ── Header ──
+.persona-router__header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto var(--space-5xl);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-xs) var(--space-lg);
+  background-color: rgba(15, 118, 110, 0.1);
+  border: 1px solid rgba(15, 118, 110, 0.2);
+  border-radius: var(--radius-full);
+  color: var(--color-primary);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-xl);
+}
+
+.badge__dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(15, 118, 110, 0.5);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.persona-router__title {
+  font-size: clamp(1.75rem, 5vw, 3rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--color-foreground);
+  margin: 0 0 var(--space-lg);
+}
+
+.persona-router__description {
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+  line-height: 1.625;
+  color: var(--color-muted-foreground);
+  margin: 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// ── Grid ──
+.persona-router__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-2xl);
+  }
+
+  @include desktop {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-2xl);
+  }
+}
+
+// ── Persona Card ──
+.persona-card {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-2xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  box-shadow: var(--shadow-card);
+  transition: all var(--transition-normal);
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card-hover);
+    border-color: rgba(15, 118, 110, 0.2);
+  }
+
+  &:focus-within {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+  }
+}
+
+.persona-card__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-xl);
+  background-color: rgba(15, 118, 110, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon {
+  width: 28px;
+  height: 28px;
+  color: var(--color-primary);
+}
+
+.persona-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.persona-card__title {
+  font-size: var(--font-size-xl);
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--color-foreground);
+  margin: 0;
+}
+
+.persona-card__description {
+  font-size: var(--font-size-base);
+  line-height: 1.625;
+  color: var(--color-muted-foreground);
+  margin: 0;
+  flex-grow: 1;
+}
+
+.persona-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-lg);
+  background-color: rgba(15, 118, 110, 0.1);
+  border: 1px solid rgba(15, 118, 110, 0.2);
+  border-radius: var(--radius-xl);
+  color: var(--color-primary);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  align-self: flex-start;
+
+  &:hover {
+    background-color: rgba(15, 118, 110, 0.15);
+    transform: translateX(2px);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+  }
+}
+
+.cta__icon {
+  width: 16px;
+  height: 16px;
+  transition: transform var(--transition-fast);
+}
+
+.persona-card__cta:hover .cta__icon {
+  transform: translateX(2px);
+}
+
+// ── Dark Mode Adjustments ──
+[data-theme="dark"] {
+  .badge {
+    background-color: rgba(20, 184, 166, 0.15);
+    border-color: rgba(20, 184, 166, 0.3);
+    color: var(--color-coop);
+  }
+
+  .badge__dot {
+    background-color: var(--color-coop);
+    box-shadow: 0 0 10px rgba(52, 211, 153, 0.5);
+  }
+
+  .persona-card__icon {
+    background-color: rgba(52, 211, 153, 0.15);
+  }
+
+  .icon {
+    color: var(--color-coop);
+  }
+
+  .persona-card__cta {
+    background-color: rgba(52, 211, 153, 0.15);
+    border-color: rgba(52, 211, 153, 0.3);
+    color: var(--color-coop);
+
+    &:hover {
+      background-color: rgba(52, 211, 153, 0.2);
+    }
+  }
+}
+
+// ── Animations ──
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.8; }
+}

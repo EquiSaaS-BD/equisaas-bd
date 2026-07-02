@@ -1,0 +1,131 @@
+@use "../../styles/mixins" as *;
+
+.section {
+  position: relative;
+  width: 100%;
+  background-color: var(--color-background);
+
+  // Padding variants
+  &-padding-sm {
+    padding: clamp(2.5rem, 2rem + 1.2vw, 3.5rem) 0;
+  }
+
+  &-padding-normal {
+    padding: clamp(4rem, 3rem + 2vw, 5.75rem) 0;
+  }
+
+  &-padding-lg {
+    padding: clamp(4.75rem, 3.8rem + 2.6vw, 6.75rem) 0;
+  }
+
+  &-padding-xl {
+    padding: clamp(5.5rem, 4.5rem + 3vw, 7.5rem) 0;
+  }
+
+  // Variant styles
+  &-muted {
+    background-color: var(--color-muted);
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(1200px 600px at 10% 0%, rgba(15, 118, 110, 0.08) 0%, transparent 40%),
+                  radial-gradient(1200px 600px at 90% 0%, rgba(59, 130, 246, 0.08) 0%, transparent 40%);
+      pointer-events: none;
+    }
+  }
+
+  &-card {
+    background: linear-gradient(180deg, var(--color-background), var(--color-muted));
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  &-gradient {
+    background: linear-gradient(180deg, var(--color-background), var(--color-muted));
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(15, 118, 110, 0.05), transparent 40%),
+                  linear-gradient(0deg, rgba(59, 130, 246, 0.05), transparent 40%);
+      pointer-events: none;
+    }
+  }
+
+  // Dark mode variants
+  &[data-theme="dark"] {
+    &-muted {
+      background-color: color-mix(in oklab, var(--color-muted), black 10%);
+
+      &::before {
+        background: radial-gradient(1200px 600px at 10% 0%, rgba(20, 184, 166, 0.12) 0%, transparent 40%),
+                    radial-gradient(1200px 600px at 90% 0%, rgba(96, 165, 250, 0.12) 0%, transparent 40%);
+      }
+    }
+
+    &-card {
+      background: linear-gradient(180deg, var(--color-background), color-mix(in oklab, var(--color-muted), black 10%));
+    }
+
+    &-gradient {
+      background: linear-gradient(180deg, var(--color-background), color-mix(in oklab, var(--color-muted), black 10%));
+
+      &::before {
+        background: linear-gradient(180deg, rgba(20, 184, 166, 0.08), transparent 40%),
+                    linear-gradient(0deg, rgba(96, 165, 250, 0.08), transparent 40%);
+      }
+    }
+  }
+
+  // Container wrapper
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  // Responsive adjustments
+  @include mobile {
+    &-padding-sm {
+      padding: clamp(1.5rem, 1.25rem + 1.2vw, 2.25rem) 0;
+    }
+
+    &-padding-normal {
+      padding: clamp(2.75rem, 2.25rem + 1.8vw, 3.5rem) 0;
+    }
+
+    &-padding-lg {
+      padding: clamp(3.25rem, 2.6rem + 2vw, 4.25rem) 0;
+    }
+
+    &-padding-xl {
+      padding: clamp(3.75rem, 3rem + 2.2vw, 4.75rem) 0;
+    }
+  }
+
+  @include tablet {
+    &-padding-sm {
+      padding: clamp(2rem, 1.8rem + 1.1vw, 2.75rem) 0;
+    }
+
+    &-padding-normal {
+      padding: clamp(3.5rem, 3rem + 1.7vw, 4.75rem) 0;
+    }
+
+    &-padding-lg {
+      padding: clamp(4rem, 3.3rem + 2vw, 5.5rem) 0;
+    }
+  }
+
+  // Scroll margin for anchor links
+  &:target {
+    scroll-margin-top: 80px;
+  }
+
+  // Smooth transitions
+  transition: background-color var(--transition-normal);
+}

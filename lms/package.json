@@ -1,0 +1,53 @@
+{
+  "name": "equisaas-bd-lms",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "lint:copy": "node ../scripts/lint-no-ai-punctuation.mjs",
+    "prebuild": "node ./scripts/load-build-env.mjs",
+    "build": "npm run lint:copy && next build",
+    "build:ci": "npm run prebuild && npm run lint:copy && next build",
+    "start": "next start",
+
+    "audit:v1": "node ./scripts/audit-v1-live.mjs",
+    "audit:catalog": "node ./scripts/audit-resource-catalog.mjs",
+    "audit:resources": "node ./scripts/audit-resource-links.mjs",
+    "cleanup:smoke": "node ./scripts/cleanup-test-artifacts.mjs",
+    "smoke:roles": "node ./scripts/smoke-test-role-flows.mjs",
+    "seed:v1": "node ./scripts/seed-v1-content.mjs",
+    "restore:legacy": "node ./scripts/restore-legacy-resources.mjs",
+    "sync:department-counts": "node ./scripts/sync-department-counts.mjs",
+    "migrate:users": "node ./scripts/migrate-v1-users.mjs",
+    "set:super-admin": "node ./scripts/set-admin-claim.mjs --email kholifaahmadalamin@gmail.com",
+    "activate:v1": "node ./scripts/activate-v1.mjs"
+  },
+  "dependencies": {
+    "@microsoft/clarity": "^1.0.2",
+    "@radix-ui/react-alert-dialog": "^1.1.15",
+    "@radix-ui/react-dropdown-menu": "^2.1.16",
+    "@radix-ui/react-menubar": "^1.1.16",
+    "@radix-ui/react-progress": "^1.1.8",
+    "@radix-ui/react-slot": "^1.2.4",
+    "@radix-ui/react-tooltip": "^1.2.8",
+    "@serwist/next": "^9.5.11",
+    "browser-image-compression": "^2.0.2",
+    "canvas-confetti": "^1.9.4",
+    "firebase": "^11.7.1",
+    "framer-motion": "^12.38.0",
+    "html-to-image": "^1.11.13",
+    "jspdf": "^4.2.1",
+    "lucide-react": "^1.7.0",
+    "next": "^15.2.0",
+    "pdfjs-dist": "^5.6.205",
+    "qrcode": "^1.5.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-pageflip": "^2.0.3",
+    "sonner": "^2.0.7"
+  },
+  "devDependencies": {
+    "@types/canvas-confetti": "^1.9.0"
+  }
+}

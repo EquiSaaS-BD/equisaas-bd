@@ -1,0 +1,35 @@
+{
+  "name": "EquiSaaS BD",
+  "short_name": "EquiSaaS",
+  "description": "Bangladesh's first open tech co-operative. Learn, build, and co-own a real SaaS product.",
+  "start_url": "/lms/",
+  "scope": "/lms/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0f172a",
+  "theme_color": "#3b82f6",
+  "lang": "bn",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "productivity"],
+  "screenshots": [
+    {
+      "src": "/og-image.png",
+      "sizes": "1200x630",
+      "type": "image/png",
+      "label": "EquiSaaS BD LMS Dashboard"
+    }
+  ]
+}

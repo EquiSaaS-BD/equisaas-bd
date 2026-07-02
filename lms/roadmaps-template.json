@@ -1,0 +1,2596 @@
+{
+  "roadmaps": [
+    {
+      "subdeptId": "frontend",
+      "deptId": "engineering",
+      "paths": [
+        {
+          "id": "se-frontend",
+          "deptId": "engineering",
+          "subdeptId": "frontend",
+          "titleBn": "ফ্রন্টএন্ড ডেভেলপার পাথ",
+          "titleEn": "Frontend Developer Path",
+          "descBn": "React/Next.js দিয়ে স্কেলেবল UI তৈরি, স্টেট ম্যানেজমেন্ট ও পারফরম্যান্স অপটিমাইজেশন।",
+          "descEn": "Build scalable UI with React/Next.js, state management, and performance optimization.",
+          "level": "Beginner",
+          "lang": "EN+BN",
+          "duration": "28h",
+          "prereqBn": "বেসিক HTML, CSS, JavaScript জানলে ভালো।",
+          "prereqEn": "Basic HTML, CSS, JavaScript recommended.",
+          "outcomesBn": [
+            "কমপোনেন্ট-ভিত্তিক UI তৈরি",
+            "ডাটা ফেচিং ও ক্যাশিং",
+            "রেসপনসিভ ও পারফরম্যান্ট স্ক্রিন"
+          ],
+          "outcomesEn": [
+            "Build component-driven UI",
+            "Data fetching and caching",
+            "Responsive, performant screens"
+          ],
+          "modules": [
+            {
+              "id": "fe-foundations",
+              "titleBn": "ফ্রন্টএন্ড ফাউন্ডেশন",
+              "titleEn": "Frontend Foundations",
+              "summaryBn": "HTML, CSS, আধুনিক লেআউট এবং JS বেসিক।",
+              "summaryEn": "HTML, CSS, modern layout, and JS basics.",
+              "duration": "8h",
+              "lessons": [
+                {
+                  "id": "fe-1-1",
+                  "titleBn": "HTML ও সেমান্টিক",
+                  "titleEn": "HTML and semantics",
+                  "duration": "30m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://developer.mozilla.org/en-US/docs/Learn/HTML",
+                  "videoUrl": "https://www.studywithanis.com/"
+                },
+                {
+                  "id": "fe-1-2",
+                  "titleBn": "CSS লেআউট ও রেসপনসিভ",
+                  "titleEn": "CSS layout and responsive",
+                  "duration": "40m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_boxes",
+                  "videoUrl": "https://learnwithsumit.com/"
+                },
+                {
+                  "id": "fe-1-3",
+                  "titleBn": "JavaScript ফান্ডামেন্টাল",
+                  "titleEn": "JavaScript fundamentals",
+                  "duration": "45m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide",
+                  "videoUrl": "https://learnwithsumit.com/"
+                }
+              ]
+            },
+            {
+              "id": "fe-react",
+              "titleBn": "React ও Next.js Core",
+              "titleEn": "React and Next.js Core",
+              "summaryBn": "কমপোনেন্ট, রাউটিং, ডাটা ফেচিং।",
+              "summaryEn": "Components, routing, data fetching.",
+              "duration": "12h",
+              "lessons": [
+                {
+                  "id": "fe-2-1",
+                  "titleBn": "কমপোনেন্ট ও হুক",
+                  "titleEn": "Components and hooks",
+                  "duration": "50m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://react.dev/learn",
+                  "videoUrl": "https://learnwithsumit.com/"
+                },
+                {
+                  "id": "fe-2-2",
+                  "titleBn": "Next.js App Router",
+                  "titleEn": "Next.js App Router",
+                  "duration": "45m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://nextjs.org/learn/dashboard-app",
+                  "videoUrl": "https://www.stacklearner.com/"
+                },
+                {
+                  "id": "fe-2-3",
+                  "titleBn": "স্টেট ও ডাটা ফ্লো",
+                  "titleEn": "State and data flow",
+                  "duration": "55m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://redux-toolkit.js.org/usage/usage-guide",
+                  "videoUrl": "https://hablu-programmer.com/"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "monthlyActivities": [
+        {
+          "id": "frontend-2026-03",
+          "month": "2026-03",
+          "titleEn": "Frontend Foundations Sprint 1",
+          "titleBn": "ফ্রন্টএন্ড ফাউন্ডেশন স্প্রিন্ট ১",
+          "items": [
+            {
+              "id": "2026-03-learn",
+              "titleEn": "Finish Frontend Foundations lessons 1-2",
+              "titleBn": "ফ্রন্টএন্ড ফাউন্ডেশন লেসন ১-২ শেষ করুন",
+              "typeEn": "Learning",
+              "typeBn": "লার্নিং"
+            },
+            {
+              "id": "2026-03-task",
+              "titleEn": "Assignment: Frontend Foundations mini task",
+              "titleBn": "অ্যাসাইনমেন্ট: ফ্রন্টএন্ড ফাউন্ডেশন মিনি টাস্ক",
+              "typeEn": "Assignment",
+              "typeBn": "অ্যাসাইনমেন্ট"
+            },
+            {
+              "id": "2026-03-review",
+              "titleEn": "Weekly reflection log",
+              "titleBn": "সাপ্তাহিক রিফ্লেকশন লগ",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        },
+        {
+          "id": "frontend-2026-04",
+          "month": "2026-04",
+          "titleEn": "Frontend Foundations Sprint 2",
+          "titleBn": "ফ্রন্টএন্ড ফাউন্ডেশন স্প্রিন্ট ২",
+          "items": [
+            {
+              "id": "2026-04-learn",
+              "titleEn": "Finish Frontend Foundations lesson 3",
+              "titleBn": "ফ্রন্টএন্ড ফাউন্ডেশন লেসন ৩ শেষ করুন",
+              "typeEn": "Learning",
+              "typeBn": "লার্নিং"
+            },
+            {
+              "id": "2026-04-build",
+              "titleEn": "Mini project: apply Frontend Foundations",
+              "titleBn": "মিনি প্রোজেক্ট: ফ্রন্টএন্ড ফাউন্ডেশন প্রয়োগ",
+              "typeEn": "Assignment",
+              "typeBn": "অ্যাসাইনমেন্ট"
+            },
+            {
+              "id": "2026-04-review",
+              "titleEn": "Peer review + feedback",
+              "titleBn": "পিয়ার রিভিউ + ফিডব্যাক",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        },
+        {
+          "id": "frontend-2026-05",
+          "month": "2026-05",
+          "titleEn": "React and Next.js Core Sprint 1",
+          "titleBn": "React ও Next.js Core স্প্রিন্ট ১",
+          "items": [
+            {
+              "id": "2026-05-learn",
+              "titleEn": "Finish React and Next.js Core lessons 1-2",
+              "titleBn": "React ও Next.js Core লেসন ১-২ শেষ করুন",
+              "typeEn": "Learning",
+              "typeBn": "লার্নিং"
+            },
+            {
+              "id": "2026-05-task",
+              "titleEn": "Assignment: React and Next.js Core workflow",
+              "titleBn": "অ্যাসাইনমেন্ট: React ও Next.js Core ওয়ার্কফ্লো",
+              "typeEn": "Assignment",
+              "typeBn": "অ্যাসাইনমেন্ট"
+            },
+            {
+              "id": "2026-05-review",
+              "titleEn": "Weekly reflection log",
+              "titleBn": "সাপ্তাহিক রিফ্লেকশন লগ",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        },
+        {
+          "id": "frontend-2026-06",
+          "month": "2026-06",
+          "titleEn": "React and Next.js Core Sprint 2",
+          "titleBn": "React ও Next.js Core স্প্রিন্ট ২",
+          "items": [
+            {
+              "id": "2026-06-learn",
+              "titleEn": "Finish React and Next.js Core lesson 3",
+              "titleBn": "React ও Next.js Core লেসন ৩ শেষ করুন",
+              "typeEn": "Learning",
+              "typeBn": "লার্নিং"
+            },
+            {
+              "id": "2026-06-build",
+              "titleEn": "Mini project: apply React and Next.js Core",
+              "titleBn": "মিনি প্রোজেক্ট: React ও Next.js Core প্রয়োগ",
+              "typeEn": "Assignment",
+              "typeBn": "অ্যাসাইনমেন্ট"
+            },
+            {
+              "id": "2026-06-review",
+              "titleEn": "Peer review + feedback",
+              "titleBn": "পিয়ার রিভিউ + ফিডব্যাক",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        },
+        {
+          "id": "frontend-2026-07",
+          "month": "2026-07",
+          "titleEn": "Capstone Sprint",
+          "titleBn": "ক্যাপস্টোন স্প্রিন্ট",
+          "items": [
+            {
+              "id": "2026-07-scope",
+              "titleEn": "Capstone scope for Frontend Developer Path",
+              "titleBn": "ফ্রন্টএন্ড ডেভেলপার পাথ‑এর জন্য ক্যাপস্টোন স্কোপ",
+              "typeEn": "Assignment",
+              "typeBn": "অ্যাসাইনমেন্ট"
+            },
+            {
+              "id": "2026-07-build",
+              "titleEn": "Build + document your deliverable",
+              "titleBn": "ডেলিভারেবল তৈরি + ডকুমেন্টেশন",
+              "typeEn": "Delivery",
+              "typeBn": "ডেলিভারি"
+            },
+            {
+              "id": "2026-07-review",
+              "titleEn": "Mentor review checkpoint",
+              "titleBn": "মেন্টর রিভিউ চেকপয়েন্ট",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        },
+        {
+          "id": "frontend-2026-08",
+          "month": "2026-08",
+          "titleEn": "Co-op Contribution",
+          "titleBn": "কো-অপ কন্ট্রিবিউশন",
+          "items": [
+            {
+              "id": "2026-08-contrib",
+              "titleEn": "Contribute to a live EquiSaaS feature",
+              "titleBn": "লাইভ EquiSaaS ফিচারে কন্ট্রিবিউট করুন",
+              "typeEn": "Contribution",
+              "typeBn": "কন্ট্রিবিউশন"
+            },
+            {
+              "id": "2026-08-demo",
+              "titleEn": "Demo + share learnings",
+              "titleBn": "ডেমো + লার্নিং শেয়ার",
+              "typeEn": "Delivery",
+              "typeBn": "ডেলিভারি"
+            },
+            {
+              "id": "2026-08-retro",
+              "titleEn": "Retro + next steps",
+              "titleBn": "রেট্রো + নেক্সট স্টেপ",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subdeptId": "backend",
+      "deptId": "engineering",
+      "paths": [
+        {
+          "id": "se-backend",
+          "deptId": "engineering",
+          "subdeptId": "backend",
+          "titleBn": "ব্যাকএন্ড ইঞ্জিনিয়ার পাথ",
+          "titleEn": "Backend Engineer Path",
+          "descBn": "Laravel/Node.js দিয়ে সিকিউর API, ডাটা মডেলিং এবং মাল্টি-টেন্যান্ট SaaS আর্কিটেকচার।",
+          "descEn": "Secure APIs, data modeling, and multi-tenant SaaS architecture with Laravel/Node.js.",
+          "level": "Intermediate",
+          "lang": "EN+BN",
+          "duration": "30h",
+          "prereqBn": "বেসিক API ধারণা, ডাটাবেস নলেজ।",
+          "prereqEn": "Basic API and database knowledge.",
+          "outcomesBn": [
+            "সিকিউর REST API ডিজাইন",
+            "মাল্টি-টেন্যান্ট ডাটা মডেল",
+            "ব্যাকগ্রাউন্ড জব"
+          ],
+          "outcomesEn": [
+            "Design secure REST APIs",
+            "Multi-tenant data models",
+            "Background jobs"
+          ],
+          "modules": [
+            {
+              "id": "be-api",
+              "titleBn": "API ও অথেন্টিকেশন",
+              "titleEn": "API and authentication",
+              "summaryBn": "রাউটিং, অথ, রোল-পারমিশন।",
+              "summaryEn": "Routing, auth, roles and permissions.",
+              "duration": "10h",
+              "lessons": [
+                {
+                  "id": "be-1-1",
+                  "titleBn": "REST API স্ট্রাকচার",
+                  "titleEn": "REST API structure",
+                  "duration": "35m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://expressjs.com/en/starter/basic-routing.html",
+                  "videoUrl": "https://www.stacklearner.com/"
+                },
+                {
+                  "id": "be-1-2",
+                  "titleBn": "অথ ও টোকেন",
+                  "titleEn": "Auth and tokens",
+                  "duration": "40m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://jwt.io/introduction/",
+                  "videoUrl": "https://hablu-programmer.com/"
+                },
+                {
+                  "id": "be-1-3",
+                  "titleBn": "রোল ও পারমিশন",
+                  "titleEn": "Roles and permissions",
+                  "duration": "35m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://laravel.com/docs/11.x/authorization",
+                  "videoUrl": "https://learnwithsumit.com/"
+                }
+              ]
+            },
+            {
+              "id": "be-saas",
+              "titleBn": "SaaS আর্কিটেকচার",
+              "titleEn": "SaaS architecture",
+              "summaryBn": "টেন্যান্সি, কিউ, অডিট লগ।",
+              "summaryEn": "Tenancy, queues, audit logs.",
+              "duration": "12h",
+              "lessons": [
+                {
+                  "id": "be-2-1",
+                  "titleBn": "টেন্যান্ট আইসোলেশন",
+                  "titleEn": "Tenant isolation",
+                  "duration": "45m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://docs.aws.amazon.com/whitepapers/latest/saas-architecture-fundamentals/tenant-isolation.html",
+                  "videoUrl": "https://www.stacklearner.com/"
+                },
+                {
+                  "id": "be-2-2",
+                  "titleBn": "কিউ ও জব",
+                  "titleEn": "Queues and jobs",
+                  "duration": "40m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://laravel.com/docs/11.x/queues",
+                  "videoUrl": "https://learnwithsumit.com/"
+                },
+                {
+                  "id": "be-2-3",
+                  "titleBn": "অডিট লগিং",
+                  "titleEn": "Audit logging",
+                  "duration": "30m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html",
+                  "videoUrl": "https://hablu-programmer.com/"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "monthlyActivities": [
+        {
+          "id": "backend-2026-03",
+          "month": "2026-03",
+          "titleEn": "API and authentication Sprint 1",
+          "titleBn": "API ও অথেন্টিকেশন স্প্রিন্ট ১",
+          "items": [
+            {
+              "id": "2026-03-learn",
+              "titleEn": "Finish API and authentication lessons 1-2",
+              "titleBn": "API ও অথেন্টিকেশন লেসন ১-২ শেষ করুন",
+              "typeEn": "Learning",
+              "typeBn": "লার্নিং"
+            },
+            {
+              "id": "2026-03-task",
+              "titleEn": "Assignment: API and authentication mini task",
+              "titleBn": "অ্যাসাইনমেন্ট: API ও অথেন্টিকেশন মিনি টাস্ক",
+              "typeEn": "Assignment",
+              "typeBn": "অ্যাসাইনমেন্ট"
+            },
+            {
+              "id": "2026-03-review",
+              "titleEn": "Weekly reflection log",
+              "titleBn": "সাপ্তাহিক রিফ্লেকশন লগ",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        },
+        {
+          "id": "backend-2026-04",
+          "month": "2026-04",
+          "titleEn": "API and authentication Sprint 2",
+          "titleBn": "API ও অথেন্টিকেশন স্প্রিন্ট ২",
+          "items": [
+            {
+              "id": "2026-04-learn",
+              "titleEn": "Finish API and authentication lesson 3",
+              "titleBn": "API ও অথেন্টিকেশন লেসন ৩ শেষ করুন",
+              "typeEn": "Learning",
+              "typeBn": "লার্নিং"
+            },
+            {
+              "id": "2026-04-build",
+              "titleEn": "Mini project: apply API and authentication",
+              "titleBn": "মিনি প্রোজেক্ট: API ও অথেন্টিকেশন প্রয়োগ",
+              "typeEn": "Assignment",
+              "typeBn": "অ্যাসাইনমেন্ট"
+            },
+            {
+              "id": "2026-04-review",
+              "titleEn": "Peer review + feedback",
+              "titleBn": "পিয়ার রিভিউ + ফিডব্যাক",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        },
+        {
+          "id": "backend-2026-05",
+          "month": "2026-05",
+          "titleEn": "SaaS architecture Sprint 1",
+          "titleBn": "SaaS আর্কিটেকচার স্প্রিন্ট ১",
+          "items": [
+            {
+              "id": "2026-05-learn",
+              "titleEn": "Finish SaaS architecture lessons 1-2",
+              "titleBn": "SaaS আর্কিটেকচার লেসন ১-২ শেষ করুন",
+              "typeEn": "Learning",
+              "typeBn": "লার্নিং"
+            },
+            {
+              "id": "2026-05-task",
+              "titleEn": "Assignment: SaaS architecture workflow",
+              "titleBn": "অ্যাসাইনমেন্ট: SaaS আর্কিটেকচার ওয়ার্কফ্লো",
+              "typeEn": "Assignment",
+              "typeBn": "অ্যাসাইনমেন্ট"
+            },
+            {
+              "id": "2026-05-review",
+              "titleEn": "Weekly reflection log",
+              "titleBn": "সাপ্তাহিক রিফ্লেকশন লগ",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        },
+        {
+          "id": "backend-2026-06",
+          "month": "2026-06",
+          "titleEn": "SaaS architecture Sprint 2",
+          "titleBn": "SaaS আর্কিটেকচার স্প্রিন্ট ২",
+          "items": [
+            {
+              "id": "2026-06-learn",
+              "titleEn": "Finish SaaS architecture lesson 3",
+              "titleBn": "SaaS আর্কিটেকচার লেসন ৩ শেষ করুন",
+              "typeEn": "Learning",
+              "typeBn": "লার্নিং"
+            },
+            {
+              "id": "2026-06-build",
+              "titleEn": "Mini project: apply SaaS architecture",
+              "titleBn": "মিনি প্রোজেক্ট: SaaS আর্কিটেকচার প্রয়োগ",
+              "typeEn": "Assignment",
+              "typeBn": "অ্যাসাইনমেন্ট"
+            },
+            {
+              "id": "2026-06-review",
+              "titleEn": "Peer review + feedback",
+              "titleBn": "পিয়ার রিভিউ + ফিডব্যাক",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        },
+        {
+          "id": "backend-2026-07",
+          "month": "2026-07",
+          "titleEn": "Capstone Sprint",
+          "titleBn": "ক্যাপস্টোন স্প্রিন্ট",
+          "items": [
+            {
+              "id": "2026-07-scope",
+              "titleEn": "Capstone scope for Backend Engineer Path",
+              "titleBn": "ব্যাকএন্ড ইঞ্জিনিয়ার পাথ‑এর জন্য ক্যাপস্টোন স্কোপ",
+              "typeEn": "Assignment",
+              "typeBn": "অ্যাসাইনমেন্ট"
+            },
+            {
+              "id": "2026-07-build",
+              "titleEn": "Build + document your deliverable",
+              "titleBn": "ডেলিভারেবল তৈরি + ডকুমেন্টেশন",
+              "typeEn": "Delivery",
+              "typeBn": "ডেলিভারি"
+            },
+            {
+              "id": "2026-07-review",
+              "titleEn": "Mentor review checkpoint",
+              "titleBn": "মেন্টর রিভিউ চেকপয়েন্ট",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        },
+        {
+          "id": "backend-2026-08",
+          "month": "2026-08",
+          "titleEn": "Co-op Contribution",
+          "titleBn": "কো-অপ কন্ট্রিবিউশন",
+          "items": [
+            {
+              "id": "2026-08-contrib",
+              "titleEn": "Contribute to a live EquiSaaS feature",
+              "titleBn": "লাইভ EquiSaaS ফিচারে কন্ট্রিবিউট করুন",
+              "typeEn": "Contribution",
+              "typeBn": "কন্ট্রিবিউশন"
+            },
+            {
+              "id": "2026-08-demo",
+              "titleEn": "Demo + share learnings",
+              "titleBn": "ডেমো + লার্নিং শেয়ার",
+              "typeEn": "Delivery",
+              "typeBn": "ডেলিভারি"
+            },
+            {
+              "id": "2026-08-retro",
+              "titleEn": "Retro + next steps",
+              "titleBn": "রেট্রো + নেক্সট স্টেপ",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subdeptId": "devops",
+      "deptId": "engineering",
+      "paths": [
+        {
+          "id": "se-devops",
+          "deptId": "engineering",
+          "subdeptId": "devops",
+          "titleBn": "DevOps ও QA পাথ",
+          "titleEn": "DevOps and QA Path",
+          "descBn": "CI/CD, টেস্টিং এবং মনিটরিং দিয়ে রিলিজ কোয়ালিটি নিশ্চিত করুন।",
+          "descEn": "Ensure release quality with CI/CD, testing, and monitoring.",
+          "level": "Intermediate",
+          "lang": "EN+BN",
+          "duration": "22h",
+          "prereqBn": "গিট ও বেসিক ডেপ্লয় ধারণা।",
+          "prereqEn": "Git and basic deployment knowledge.",
+          "outcomesBn": [
+            "CI/CD পাইপলাইন সেটআপ",
+            "অটোমেটেড টেস্টিং",
+            "মনিটরিং ও অ্যালার্ট"
+          ],
+          "outcomesEn": [
+            "Set up CI/CD pipelines",
+            "Automated testing",
+            "Monitoring and alerts"
+          ],
+          "modules": [
+            {
+              "id": "devops-ci",
+              "titleBn": "CI/CD ও ডেপ্লয়",
+              "titleEn": "CI/CD and deploy",
+              "summaryBn": "বিল্ড, টেস্ট, ডেপ্লয় অটোমেশন।",
+              "summaryEn": "Build, test, deploy automation.",
+              "duration": "8h",
+              "lessons": [
+                {
+                  "id": "do-1-1",
+                  "titleBn": "পাইপলাইন ডিজাইন",
+                  "titleEn": "Pipeline design",
+                  "duration": "35m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://docs.github.com/en/actions/",
+                  "videoUrl": "https://www.stacklearner.com/"
+                },
+                {
+                  "id": "do-1-2",
+                  "titleBn": "এনভায়রনমেন্ট ম্যানেজমেন্ট",
+                  "titleEn": "Environment management",
+                  "duration": "30m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://docs.github.com/en/actions/",
+                  "videoUrl": "https://www.stacklearner.com/"
+                },
+                {
+                  "id": "do-1-3",
+                  "titleBn": "রিলিজ চেকলিস্ট",
+                  "titleEn": "Release checklist",
+                  "duration": "25m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://martinfowler.com/articles/practical-test-pyramid.html",
+                  "videoUrl": "https://www.stacklearner.com/"
+                }
+              ]
+            },
+            {
+              "id": "devops-qa",
+              "titleBn": "QA ও অবজারভেবিলিটি",
+              "titleEn": "QA and observability",
+              "summaryBn": "টেস্টিং, লগিং, মনিটরিং।",
+              "summaryEn": "Testing, logging, monitoring.",
+              "duration": "6h",
+              "lessons": [
+                {
+                  "id": "do-2-1",
+                  "titleBn": "টেস্ট পিরামিড",
+                  "titleEn": "Test pyramid",
+                  "duration": "30m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://martinfowler.com/articles/practical-test-pyramid.html",
+                  "videoUrl": "https://www.stacklearner.com/"
+                },
+                {
+                  "id": "do-2-2",
+                  "titleBn": "লগিং স্ট্র্যাটেজি",
+                  "titleEn": "Logging strategy",
+                  "duration": "30m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html",
+                  "videoUrl": "https://www.stacklearner.com/"
+                },
+                {
+                  "id": "do-2-3",
+                  "titleBn": "মনিটরিং ও অ্যালার্ট",
+                  "titleEn": "Monitoring and alerting",
+                  "duration": "35m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://sre.google/sre-book/monitoring-distributed-systems/",
+                  "videoUrl": "https://www.stacklearner.com/"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "monthlyActivities": [
+        {
+          "id": "devops-2026-03",
+          "month": "2026-03",
+          "titleEn": "CI/CD and deploy Sprint 1",
+          "titleBn": "CI/CD ও ডেপ্লয় স্প্রিন্ট ১",
+          "items": [
+            {
+              "id": "2026-03-learn",
+              "titleEn": "Finish CI/CD and deploy lessons 1-2",
+              "titleBn": "CI/CD ও ডেপ্লয় লেসন ১-২ শেষ করুন",
+              "typeEn": "Learning",
+              "typeBn": "লার্নিং"
+            },
+            {
+              "id": "2026-03-task",
+              "titleEn": "Assignment: CI/CD and deploy mini task",
+              "titleBn": "অ্যাসাইনমেন্ট: CI/CD ও ডেপ্লয় মিনি টাস্ক",
+              "typeEn": "Assignment",
+              "typeBn": "অ্যাসাইনমেন্ট"
+            },
+            {
+              "id": "2026-03-review",
+              "titleEn": "Weekly reflection log",
+              "titleBn": "সাপ্তাহিক রিফ্লেকশন লগ",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        },
+        {
+          "id": "devops-2026-04",
+          "month": "2026-04",
+          "titleEn": "CI/CD and deploy Sprint 2",
+          "titleBn": "CI/CD ও ডেপ্লয় স্প্রিন্ট ২",
+          "items": [
+            {
+              "id": "2026-04-learn",
+              "titleEn": "Finish CI/CD and deploy lesson 3",
+              "titleBn": "CI/CD ও ডেপ্লয় লেসন ৩ শেষ করুন",
+              "typeEn": "Learning",
+              "typeBn": "লার্নিং"
+            },
+            {
+              "id": "2026-04-build",
+              "titleEn": "Mini project: apply CI/CD and deploy",
+              "titleBn": "মিনি প্রোজেক্ট: CI/CD ও ডেপ্লয় প্রয়োগ",
+              "typeEn": "Assignment",
+              "typeBn": "অ্যাসাইনমেন্ট"
+            },
+            {
+              "id": "2026-04-review",
+              "titleEn": "Peer review + feedback",
+              "titleBn": "পিয়ার রিভিউ + ফিডব্যাক",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        },
+        {
+          "id": "devops-2026-05",
+          "month": "2026-05",
+          "titleEn": "QA and observability Sprint 1",
+          "titleBn": "QA ও অবজারভেবিলিটি স্প্রিন্ট ১",
+          "items": [
+            {
+              "id": "2026-05-learn",
+              "titleEn": "Finish QA and observability lessons 1-2",
+              "titleBn": "QA ও অবজারভেবিলিটি লেসন ১-২ শেষ করুন",
+              "typeEn": "Learning",
+              "typeBn": "লার্নিং"
+            },
+            {
+              "id": "2026-05-task",
+              "titleEn": "Assignment: QA and observability workflow",
+              "titleBn": "অ্যাসাইনমেন্ট: QA ও অবজারভেবিলিটি ওয়ার্কফ্লো",
+              "typeEn": "Assignment",
+              "typeBn": "অ্যাসাইনমেন্ট"
+            },
+            {
+              "id": "2026-05-review",
+              "titleEn": "Weekly reflection log",
+              "titleBn": "সাপ্তাহিক রিফ্লেকশন লগ",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        },
+        {
+          "id": "devops-2026-06",
+          "month": "2026-06",
+          "titleEn": "QA and observability Sprint 2",
+          "titleBn": "QA ও অবজারভেবিলিটি স্প্রিন্ট ২",
+          "items": [
+            {
+              "id": "2026-06-learn",
+              "titleEn": "Finish QA and observability lesson 3",
+              "titleBn": "QA ও অবজারভেবিলিটি লেসন ৩ শেষ করুন",
+              "typeEn": "Learning",
+              "typeBn": "লার্নিং"
+            },
+            {
+              "id": "2026-06-build",
+              "titleEn": "Mini project: apply QA and observability",
+              "titleBn": "মিনি প্রোজেক্ট: QA ও অবজারভেবিলিটি প্রয়োগ",
+              "typeEn": "Assignment",
+              "typeBn": "অ্যাসাইনমেন্ট"
+            },
+            {
+              "id": "2026-06-review",
+              "titleEn": "Peer review + feedback",
+              "titleBn": "পিয়ার রিভিউ + ফিডব্যাক",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        },
+        {
+          "id": "devops-2026-07",
+          "month": "2026-07",
+          "titleEn": "Capstone Sprint",
+          "titleBn": "ক্যাপস্টোন স্প্রিন্ট",
+          "items": [
+            {
+              "id": "2026-07-scope",
+              "titleEn": "Capstone scope for DevOps and QA Path",
+              "titleBn": "DevOps ও QA পাথ‑এর জন্য ক্যাপস্টোন স্কোপ",
+              "typeEn": "Assignment",
+              "typeBn": "অ্যাসাইনমেন্ট"
+            },
+            {
+              "id": "2026-07-build",
+              "titleEn": "Build + document your deliverable",
+              "titleBn": "ডেলিভারেবল তৈরি + ডকুমেন্টেশন",
+              "typeEn": "Delivery",
+              "typeBn": "ডেলিভারি"
+            },
+            {
+              "id": "2026-07-review",
+              "titleEn": "Mentor review checkpoint",
+              "titleBn": "মেন্টর রিভিউ চেকপয়েন্ট",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        },
+        {
+          "id": "devops-2026-08",
+          "month": "2026-08",
+          "titleEn": "Co-op Contribution",
+          "titleBn": "কো-অপ কন্ট্রিবিউশন",
+          "items": [
+            {
+              "id": "2026-08-contrib",
+              "titleEn": "Contribute to a live EquiSaaS feature",
+              "titleBn": "লাইভ EquiSaaS ফিচারে কন্ট্রিবিউট করুন",
+              "typeEn": "Contribution",
+              "typeBn": "কন্ট্রিবিউশন"
+            },
+            {
+              "id": "2026-08-demo",
+              "titleEn": "Demo + share learnings",
+              "titleBn": "ডেমো + লার্নিং শেয়ার",
+              "typeEn": "Delivery",
+              "typeBn": "ডেলিভারি"
+            },
+            {
+              "id": "2026-08-retro",
+              "titleEn": "Retro + next steps",
+              "titleBn": "রেট্রো + নেক্সট স্টেপ",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subdeptId": "ux",
+      "deptId": "design",
+      "paths": [
+        {
+          "id": "design-ux",
+          "deptId": "design",
+          "subdeptId": "ux",
+          "titleBn": "UI/UX ডিজাইনার পাথ",
+          "titleEn": "UI/UX Designer Path",
+          "descBn": "রিসার্চ থেকে প্রোটোটাইপ, UI সিস্টেম তৈরি করুন।",
+          "descEn": "Go from research to prototypes and UI systems.",
+          "level": "Beginner",
+          "lang": "EN+BN",
+          "duration": "24h",
+          "prereqBn": "ডিজাইন ইন্টারেস্ট ও বেসিক Figma জানা ভালো।",
+          "prereqEn": "Basic Figma knowledge recommended.",
+          "outcomesBn": [
+            "ইউজার ফ্লো ও ওয়্যারফ্রেম",
+            "ডিজাইন সিস্টেম",
+            "ইন্টারঅ্যাকটিভ প্রোটোটাইপ"
+          ],
+          "outcomesEn": [
+            "User flows and wireframes",
+            "Design systems",
+            "Interactive prototypes"
+          ],
+          "modules": [
+            {
+              "id": "ux-foundations",
+              "titleBn": "UX ফাউন্ডেশন",
+              "titleEn": "UX foundations",
+              "summaryBn": "রিসার্চ, পারসোনা, ফ্লো।",
+              "summaryEn": "Research, personas, flows.",
+              "duration": "8h",
+              "lessons": [
+                {
+                  "id": "ux-1-1",
+                  "titleBn": "ইউজার রিসার্চ",
+                  "titleEn": "User research",
+                  "duration": "35m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://www.dhs.gov/cx/learning-trainings/cx-learning/basics-of-user-research",
+                  "videoUrl": "https://www.youtube.com/watch?v=X0tTPfruEQM"
+                },
+                {
+                  "id": "ux-1-2",
+                  "titleBn": "পারসোনা ও জার্নি",
+                  "titleEn": "Personas and journey",
+                  "duration": "30m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://usability.yale.edu/understanding-your-user/user-journey-maps",
+                  "videoUrl": "https://www.youtube.com/watch?v=X0tTPfruEQM"
+                },
+                {
+                  "id": "ux-1-3",
+                  "titleBn": "ইনফো আর্কিটেকচার",
+                  "titleEn": "Information architecture",
+                  "duration": "30m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://digital.gov/topics/information-architecture",
+                  "videoUrl": "https://www.youtube.com/watch?v=X0tTPfruEQM"
+                }
+              ]
+            },
+            {
+              "id": "ux-figma",
+              "titleBn": "Figma প্রোডাক্ট ডিজাইন",
+              "titleEn": "Figma product design",
+              "summaryBn": "কমপোনেন্ট, অটো লেআউট, প্রোটোটাইপ।",
+              "summaryEn": "Components, auto layout, prototypes.",
+              "duration": "10h",
+              "lessons": [
+                {
+                  "id": "ux-2-1",
+                  "titleBn": "অটো লেআউট",
+                  "titleEn": "Auto layout",
+                  "duration": "25m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://help.figma.com/hc/en-us/articles/360040451373-Guide-to-auto-layout",
+                  "videoUrl": "https://www.youtube.com/watch?v=X0tTPfruEQM"
+                },
+                {
+                  "id": "ux-2-2",
+                  "titleBn": "ডিজাইন সিস্টেম",
+                  "titleEn": "Design system",
+                  "duration": "35m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://help.figma.com/hc/en-us/articles/30848209492887-Course-overview-Figma-Design-for-beginners-2025",
+                  "videoUrl": "https://www.youtube.com/watch?v=X0tTPfruEQM"
+                },
+                {
+                  "id": "ux-2-3",
+                  "titleBn": "ইন্টারঅ্যাকটিভ প্রোটোটাইপ",
+                  "titleEn": "Interactive prototype",
+                  "duration": "40m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://help.figma.com/hc/en-us/articles/30848209492887-Course-overview-Figma-Design-for-beginners-2025",
+                  "videoUrl": "https://www.youtube.com/watch?v=X0tTPfruEQM"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "monthlyActivities": [
+        {
+          "id": "ux-2026-03",
+          "month": "2026-03",
+          "titleEn": "UX foundations Sprint 1",
+          "titleBn": "UX ফাউন্ডেশন স্প্রিন্ট ১",
+          "items": [
+            {
+              "id": "2026-03-learn",
+              "titleEn": "Finish UX foundations lessons 1-2",
+              "titleBn": "UX ফাউন্ডেশন লেসন ১-২ শেষ করুন",
+              "typeEn": "Learning",
+              "typeBn": "লার্নিং"
+            },
+            {
+              "id": "2026-03-task",
+              "titleEn": "Assignment: UX foundations mini task",
+              "titleBn": "অ্যাসাইনমেন্ট: UX ফাউন্ডেশন মিনি টাস্ক",
+              "typeEn": "Assignment",
+              "typeBn": "অ্যাসাইনমেন্ট"
+            },
+            {
+              "id": "2026-03-review",
+              "titleEn": "Weekly reflection log",
+              "titleBn": "সাপ্তাহিক রিফ্লেকশন লগ",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        },
+        {
+          "id": "ux-2026-04",
+          "month": "2026-04",
+          "titleEn": "UX foundations Sprint 2",
+          "titleBn": "UX ফাউন্ডেশন স্প্রিন্ট ২",
+          "items": [
+            {
+              "id": "2026-04-learn",
+              "titleEn": "Finish UX foundations lesson 3",
+              "titleBn": "UX ফাউন্ডেশন লেসন ৩ শেষ করুন",
+              "typeEn": "Learning",
+              "typeBn": "লার্নিং"
+            },
+            {
+              "id": "2026-04-build",
+              "titleEn": "Mini project: apply UX foundations",
+              "titleBn": "মিনি প্রোজেক্ট: UX ফাউন্ডেশন প্রয়োগ",
+              "typeEn": "Assignment",
+              "typeBn": "অ্যাসাইনমেন্ট"
+            },
+            {
+              "id": "2026-04-review",
+              "titleEn": "Peer review + feedback",
+              "titleBn": "পিয়ার রিভিউ + ফিডব্যাক",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        },
+        {
+          "id": "ux-2026-05",
+          "month": "2026-05",
+          "titleEn": "Figma product design Sprint 1",
+          "titleBn": "Figma প্রোডাক্ট ডিজাইন স্প্রিন্ট ১",
+          "items": [
+            {
+              "id": "2026-05-learn",
+              "titleEn": "Finish Figma product design lessons 1-2",
+              "titleBn": "Figma প্রোডাক্ট ডিজাইন লেসন ১-২ শেষ করুন",
+              "typeEn": "Learning",
+              "typeBn": "লার্নিং"
+            },
+            {
+              "id": "2026-05-task",
+              "titleEn": "Assignment: Figma product design workflow",
+              "titleBn": "অ্যাসাইনমেন্ট: Figma প্রোডাক্ট ডিজাইন ওয়ার্কফ্লো",
+              "typeEn": "Assignment",
+              "typeBn": "অ্যাসাইনমেন্ট"
+            },
+            {
+              "id": "2026-05-review",
+              "titleEn": "Weekly reflection log",
+              "titleBn": "সাপ্তাহিক রিফ্লেকশন লগ",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        },
+        {
+          "id": "ux-2026-06",
+          "month": "2026-06",
+          "titleEn": "Figma product design Sprint 2",
+          "titleBn": "Figma প্রোডাক্ট ডিজাইন স্প্রিন্ট ২",
+          "items": [
+            {
+              "id": "2026-06-learn",
+              "titleEn": "Finish Figma product design lesson 3",
+              "titleBn": "Figma প্রোডাক্ট ডিজাইন লেসন ৩ শেষ করুন",
+              "typeEn": "Learning",
+              "typeBn": "লার্নিং"
+            },
+            {
+              "id": "2026-06-build",
+              "titleEn": "Mini project: apply Figma product design",
+              "titleBn": "মিনি প্রোজেক্ট: Figma প্রোডাক্ট ডিজাইন প্রয়োগ",
+              "typeEn": "Assignment",
+              "typeBn": "অ্যাসাইনমেন্ট"
+            },
+            {
+              "id": "2026-06-review",
+              "titleEn": "Peer review + feedback",
+              "titleBn": "পিয়ার রিভিউ + ফিডব্যাক",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        },
+        {
+          "id": "ux-2026-07",
+          "month": "2026-07",
+          "titleEn": "Capstone Sprint",
+          "titleBn": "ক্যাপস্টোন স্প্রিন্ট",
+          "items": [
+            {
+              "id": "2026-07-scope",
+              "titleEn": "Capstone scope for UI/UX Designer Path",
+              "titleBn": "UI/UX ডিজাইনার পাথ‑এর জন্য ক্যাপস্টোন স্কোপ",
+              "typeEn": "Assignment",
+              "typeBn": "অ্যাসাইনমেন্ট"
+            },
+            {
+              "id": "2026-07-build",
+              "titleEn": "Build + document your deliverable",
+              "titleBn": "ডেলিভারেবল তৈরি + ডকুমেন্টেশন",
+              "typeEn": "Delivery",
+              "typeBn": "ডেলিভারি"
+            },
+            {
+              "id": "2026-07-review",
+              "titleEn": "Mentor review checkpoint",
+              "titleBn": "মেন্টর রিভিউ চেকপয়েন্ট",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        },
+        {
+          "id": "ux-2026-08",
+          "month": "2026-08",
+          "titleEn": "Co-op Contribution",
+          "titleBn": "কো-অপ কন্ট্রিবিউশন",
+          "items": [
+            {
+              "id": "2026-08-contrib",
+              "titleEn": "Contribute to a live EquiSaaS feature",
+              "titleBn": "লাইভ EquiSaaS ফিচারে কন্ট্রিবিউট করুন",
+              "typeEn": "Contribution",
+              "typeBn": "কন্ট্রিবিউশন"
+            },
+            {
+              "id": "2026-08-demo",
+              "titleEn": "Demo + share learnings",
+              "titleBn": "ডেমো + লার্নিং শেয়ার",
+              "typeEn": "Delivery",
+              "typeBn": "ডেলিভারি"
+            },
+            {
+              "id": "2026-08-retro",
+              "titleEn": "Retro + next steps",
+              "titleBn": "রেট্রো + নেক্সট স্টেপ",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subdeptId": "graphic",
+      "deptId": "design",
+      "paths": [
+        {
+          "id": "design-brand",
+          "deptId": "design",
+          "subdeptId": "graphic",
+          "titleBn": "ব্র্যান্ড ও কন্টেন্ট ডিজাইন পাথ",
+          "titleEn": "Brand and Content Design Path",
+          "descBn": "ভিজ্যুয়াল আইডেন্টিটি, সোশ্যাল টেমপ্লেট, ক্যাম্পেইন।",
+          "descEn": "Visual identity, social templates, and campaigns.",
+          "level": "Beginner",
+          "lang": "EN+BN",
+          "duration": "18h",
+          "prereqBn": "ডিজাইন বেসিক ধারণা।",
+          "prereqEn": "Basic design knowledge.",
+          "outcomesBn": [
+            "ব্র্যান্ড গাইড তৈরি",
+            "সোশ্যাল কিট ডিজাইন",
+            "ক্যাম্পেইন কনটেন্ট"
+          ],
+          "outcomesEn": [
+            "Create brand guides",
+            "Design social kits",
+            "Campaign content"
+          ],
+          "modules": [
+            {
+              "id": "brand-system",
+              "titleBn": "ব্র্যান্ড সিস্টেম",
+              "titleEn": "Brand system",
+              "summaryBn": "লোগো, টাইপোগ্রাফি, কালার।",
+              "summaryEn": "Logo, typography, color.",
+              "duration": "6h",
+              "lessons": [
+                {
+                  "id": "bd-1-1",
+                  "titleBn": "আইডেন্টিটি বেসিক",
+                  "titleEn": "Identity basics",
+                  "duration": "25m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://www.youtube.com/watch?v=YSE3X70BFn4",
+                  "videoUrl": "https://tutorialbangla.com/courses/graphic-design/"
+                },
+                {
+                  "id": "bd-1-2",
+                  "titleBn": "টাইপ ও রঙ",
+                  "titleEn": "Type and color",
+                  "duration": "30m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://m1.material.io/style/color.html",
+                  "videoUrl": "https://tutorialbangla.com/courses/graphic-design/"
+                },
+                {
+                  "id": "bd-1-3",
+                  "titleBn": "লেআউট সিস্টেম",
+                  "titleEn": "Layout system",
+                  "duration": "30m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://help.figma.com/hc/en-us/articles/360040451373-Guide-to-auto-layout",
+                  "videoUrl": "https://tutorialbangla.com/courses/graphic-design/"
+                }
+              ]
+            },
+            {
+              "id": "content-social",
+              "titleBn": "সোশ্যাল কন্টেন্ট",
+              "titleEn": "Social content",
+              "summaryBn": "ক্যাম্পেইন থিম ও ভিজ্যুয়াল।",
+              "summaryEn": "Campaign themes and visuals.",
+              "duration": "6h",
+              "lessons": [
+                {
+                  "id": "bd-2-1",
+                  "titleBn": "কন্টেন্ট ক্যালেন্ডার",
+                  "titleEn": "Content calendar",
+                  "duration": "20m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://academy.hubspot.com/courses/digital-marketing",
+                  "videoUrl": "https://tutorialbangla.com/courses/digital-marketing/"
+                },
+                {
+                  "id": "bd-2-2",
+                  "titleBn": "টেমপ্লেট সিস্টেম",
+                  "titleEn": "Template system",
+                  "duration": "25m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://www.youtube.com/watch?v=YSE3X70BFn4",
+                  "videoUrl": "https://tutorialbangla.com/courses/graphic-design/"
+                },
+                {
+                  "id": "bd-2-3",
+                  "titleBn": "ক্যাম্পেইন ভিজ্যুয়াল",
+                  "titleEn": "Campaign visuals",
+                  "duration": "30m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://www.youtube.com/watch?v=YSE3X70BFn4",
+                  "videoUrl": "https://tutorialbangla.com/courses/graphic-design/"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "monthlyActivities": [
+        {
+          "id": "graphic-2026-03",
+          "month": "2026-03",
+          "titleEn": "Brand system Sprint 1",
+          "titleBn": "ব্র্যান্ড সিস্টেম স্প্রিন্ট ১",
+          "items": [
+            {
+              "id": "2026-03-learn",
+              "titleEn": "Finish Brand system lessons 1-2",
+              "titleBn": "ব্র্যান্ড সিস্টেম লেসন ১-২ শেষ করুন",
+              "typeEn": "Learning",
+              "typeBn": "লার্নিং"
+            },
+            {
+              "id": "2026-03-task",
+              "titleEn": "Assignment: Brand system mini task",
+              "titleBn": "অ্যাসাইনমেন্ট: ব্র্যান্ড সিস্টেম মিনি টাস্ক",
+              "typeEn": "Assignment",
+              "typeBn": "অ্যাসাইনমেন্ট"
+            },
+            {
+              "id": "2026-03-review",
+              "titleEn": "Weekly reflection log",
+              "titleBn": "সাপ্তাহিক রিফ্লেকশন লগ",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        },
+        {
+          "id": "graphic-2026-04",
+          "month": "2026-04",
+          "titleEn": "Brand system Sprint 2",
+          "titleBn": "ব্র্যান্ড সিস্টেম স্প্রিন্ট ২",
+          "items": [
+            {
+              "id": "2026-04-learn",
+              "titleEn": "Finish Brand system lesson 3",
+              "titleBn": "ব্র্যান্ড সিস্টেম লেসন ৩ শেষ করুন",
+              "typeEn": "Learning",
+              "typeBn": "লার্নিং"
+            },
+            {
+              "id": "2026-04-build",
+              "titleEn": "Mini project: apply Brand system",
+              "titleBn": "মিনি প্রোজেক্ট: ব্র্যান্ড সিস্টেম প্রয়োগ",
+              "typeEn": "Assignment",
+              "typeBn": "অ্যাসাইনমেন্ট"
+            },
+            {
+              "id": "2026-04-review",
+              "titleEn": "Peer review + feedback",
+              "titleBn": "পিয়ার রিভিউ + ফিডব্যাক",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        },
+        {
+          "id": "graphic-2026-05",
+          "month": "2026-05",
+          "titleEn": "Social content Sprint 1",
+          "titleBn": "সোশ্যাল কন্টেন্ট স্প্রিন্ট ১",
+          "items": [
+            {
+              "id": "2026-05-learn",
+              "titleEn": "Finish Social content lessons 1-2",
+              "titleBn": "সোশ্যাল কন্টেন্ট লেসন ১-২ শেষ করুন",
+              "typeEn": "Learning",
+              "typeBn": "লার্নিং"
+            },
+            {
+              "id": "2026-05-task",
+              "titleEn": "Assignment: Social content workflow",
+              "titleBn": "অ্যাসাইনমেন্ট: সোশ্যাল কন্টেন্ট ওয়ার্কফ্লো",
+              "typeEn": "Assignment",
+              "typeBn": "অ্যাসাইনমেন্ট"
+            },
+            {
+              "id": "2026-05-review",
+              "titleEn": "Weekly reflection log",
+              "titleBn": "সাপ্তাহিক রিফ্লেকশন লগ",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        },
+        {
+          "id": "graphic-2026-06",
+          "month": "2026-06",
+          "titleEn": "Social content Sprint 2",
+          "titleBn": "সোশ্যাল কন্টেন্ট স্প্রিন্ট ২",
+          "items": [
+            {
+              "id": "2026-06-learn",
+              "titleEn": "Finish Social content lesson 3",
+              "titleBn": "সোশ্যাল কন্টেন্ট লেসন ৩ শেষ করুন",
+              "typeEn": "Learning",
+              "typeBn": "লার্নিং"
+            },
+            {
+              "id": "2026-06-build",
+              "titleEn": "Mini project: apply Social content",
+              "titleBn": "মিনি প্রোজেক্ট: সোশ্যাল কন্টেন্ট প্রয়োগ",
+              "typeEn": "Assignment",
+              "typeBn": "অ্যাসাইনমেন্ট"
+            },
+            {
+              "id": "2026-06-review",
+              "titleEn": "Peer review + feedback",
+              "titleBn": "পিয়ার রিভিউ + ফিডব্যাক",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        },
+        {
+          "id": "graphic-2026-07",
+          "month": "2026-07",
+          "titleEn": "Capstone Sprint",
+          "titleBn": "ক্যাপস্টোন স্প্রিন্ট",
+          "items": [
+            {
+              "id": "2026-07-scope",
+              "titleEn": "Capstone scope for Brand and Content Design Path",
+              "titleBn": "ব্র্যান্ড ও কন্টেন্ট ডিজাইন পাথ‑এর জন্য ক্যাপস্টোন স্কোপ",
+              "typeEn": "Assignment",
+              "typeBn": "অ্যাসাইনমেন্ট"
+            },
+            {
+              "id": "2026-07-build",
+              "titleEn": "Build + document your deliverable",
+              "titleBn": "ডেলিভারেবল তৈরি + ডকুমেন্টেশন",
+              "typeEn": "Delivery",
+              "typeBn": "ডেলিভারি"
+            },
+            {
+              "id": "2026-07-review",
+              "titleEn": "Mentor review checkpoint",
+              "titleBn": "মেন্টর রিভিউ চেকপয়েন্ট",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        },
+        {
+          "id": "graphic-2026-08",
+          "month": "2026-08",
+          "titleEn": "Co-op Contribution",
+          "titleBn": "কো-অপ কন্ট্রিবিউশন",
+          "items": [
+            {
+              "id": "2026-08-contrib",
+              "titleEn": "Contribute to a live EquiSaaS feature",
+              "titleBn": "লাইভ EquiSaaS ফিচারে কন্ট্রিবিউট করুন",
+              "typeEn": "Contribution",
+              "typeBn": "কন্ট্রিবিউশন"
+            },
+            {
+              "id": "2026-08-demo",
+              "titleEn": "Demo + share learnings",
+              "titleBn": "ডেমো + লার্নিং শেয়ার",
+              "typeEn": "Delivery",
+              "typeBn": "ডেলিভারি"
+            },
+            {
+              "id": "2026-08-retro",
+              "titleEn": "Retro + next steps",
+              "titleBn": "রেট্রো + নেক্সট স্টেপ",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subdeptId": "ba",
+      "deptId": "product",
+      "paths": [
+        {
+          "id": "product-ba",
+          "deptId": "product",
+          "subdeptId": "ba",
+          "titleBn": "বিজনেস অ্যানালিস্ট পাথ",
+          "titleEn": "Business Analyst Path",
+          "descBn": "রিকোয়ারমেন্ট, প্রসেস ডিজাইন, এবং KPI ট্র্যাকিং।",
+          "descEn": "Requirements, process design, and KPI tracking.",
+          "level": "Beginner",
+          "lang": "EN+BN",
+          "duration": "20h",
+          "prereqBn": "বেসিক ডকুমেন্টেশন ও কমিউনিকেশন স্কিল।",
+          "prereqEn": "Basic documentation and communication skills.",
+          "outcomesBn": [
+            "রিকোয়ারমেন্ট ডকুমেন্ট",
+            "স্টেকহোল্ডার অ্যালাইনমেন্ট",
+            "মেট্রিক্স রিপোর্ট"
+          ],
+          "outcomesEn": [
+            "Requirement docs",
+            "Stakeholder alignment",
+            "Metrics reports"
+          ],
+          "modules": [
+            {
+              "id": "ba-discovery",
+              "titleBn": "ডিসকভারি ও রিকোয়ারমেন্ট",
+              "titleEn": "Discovery and requirements",
+              "summaryBn": "ইন্টারভিউ, ইউজার স্টোরি।",
+              "summaryEn": "Interviews, user stories.",
+              "duration": "6h",
+              "lessons": [
+                {
+                  "id": "ba-1-1",
+                  "titleBn": "স্টেকহোল্ডার ইন্টারভিউ",
+                  "titleEn": "Stakeholder interviews",
+                  "duration": "30m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://www.dhs.gov/cx/learning-trainings/cx-learning/basics-of-user-research",
+                  "videoUrl": "https://scrumguides.org/download.html"
+                },
+                {
+                  "id": "ba-1-2",
+                  "titleBn": "ইউজার স্টোরি লেখা",
+                  "titleEn": "Writing user stories",
+                  "duration": "30m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://www.youtube.com/watch?v=MQzS30PtsiM",
+                  "videoUrl": "https://scrumguides.org/download.html"
+                },
+                {
+                  "id": "ba-1-3",
+                  "titleBn": "রিকোয়ারমেন্ট প্রায়োরিটি",
+                  "titleEn": "Requirement prioritization",
+                  "duration": "30m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://www.atlassian.com/agile/product-management/product-roadmaps",
+                  "videoUrl": "https://scrumguides.org/download.html"
+                }
+              ]
+            },
+            {
+              "id": "ba-process",
+              "titleBn": "প্রসেস ও মেট্রিক্স",
+              "titleEn": "Process and metrics",
+              "summaryBn": "প্রসেস ম্যাপিং, KPI।",
+              "summaryEn": "Process mapping and KPIs.",
+              "duration": "6h",
+              "lessons": [
+                {
+                  "id": "ba-2-1",
+                  "titleBn": "প্রসেস ম্যাপ",
+                  "titleEn": "Process maps",
+                  "duration": "25m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://www.communications.gov.uk/guidance/external-affairs/customer-journey-mapping/",
+                  "videoUrl": "https://scrumguides.org/download.html"
+                },
+                {
+                  "id": "ba-2-2",
+                  "titleBn": "KPI সেটআপ",
+                  "titleEn": "KPI setup",
+                  "duration": "25m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://www.atlassian.com/team-playbook/plays/okr",
+                  "videoUrl": "https://scrumguides.org/download.html"
+                },
+                {
+                  "id": "ba-2-3",
+                  "titleBn": "রিপোর্টিং স্টাইল",
+                  "titleEn": "Reporting style",
+                  "duration": "25m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://developers.google.com/analytics/learn",
+                  "videoUrl": "https://scrumguides.org/download.html"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "monthlyActivities": [
+        {
+          "id": "ba-2026-03",
+          "month": "2026-03",
+          "titleEn": "Discovery and requirements Sprint 1",
+          "titleBn": "ডিসকভারি ও রিকোয়ারমেন্ট স্প্রিন্ট ১",
+          "items": [
+            {
+              "id": "2026-03-learn",
+              "titleEn": "Finish Discovery and requirements lessons 1-2",
+              "titleBn": "ডিসকভারি ও রিকোয়ারমেন্ট লেসন ১-২ শেষ করুন",
+              "typeEn": "Learning",
+              "typeBn": "লার্নিং"
+            },
+            {
+              "id": "2026-03-task",
+              "titleEn": "Assignment: Discovery and requirements mini task",
+              "titleBn": "অ্যাসাইনমেন্ট: ডিসকভারি ও রিকোয়ারমেন্ট মিনি টাস্ক",
+              "typeEn": "Assignment",
+              "typeBn": "অ্যাসাইনমেন্ট"
+            },
+            {
+              "id": "2026-03-review",
+              "titleEn": "Weekly reflection log",
+              "titleBn": "সাপ্তাহিক রিফ্লেকশন লগ",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        },
+        {
+          "id": "ba-2026-04",
+          "month": "2026-04",
+          "titleEn": "Discovery and requirements Sprint 2",
+          "titleBn": "ডিসকভারি ও রিকোয়ারমেন্ট স্প্রিন্ট ২",
+          "items": [
+            {
+              "id": "2026-04-learn",
+              "titleEn": "Finish Discovery and requirements lesson 3",
+              "titleBn": "ডিসকভারি ও রিকোয়ারমেন্ট লেসন ৩ শেষ করুন",
+              "typeEn": "Learning",
+              "typeBn": "লার্নিং"
+            },
+            {
+              "id": "2026-04-build",
+              "titleEn": "Mini project: apply Discovery and requirements",
+              "titleBn": "মিনি প্রোজেক্ট: ডিসকভারি ও রিকোয়ারমেন্ট প্রয়োগ",
+              "typeEn": "Assignment",
+              "typeBn": "অ্যাসাইনমেন্ট"
+            },
+            {
+              "id": "2026-04-review",
+              "titleEn": "Peer review + feedback",
+              "titleBn": "পিয়ার রিভিউ + ফিডব্যাক",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        },
+        {
+          "id": "ba-2026-05",
+          "month": "2026-05",
+          "titleEn": "Process and metrics Sprint 1",
+          "titleBn": "প্রসেস ও মেট্রিক্স স্প্রিন্ট ১",
+          "items": [
+            {
+              "id": "2026-05-learn",
+              "titleEn": "Finish Process and metrics lessons 1-2",
+              "titleBn": "প্রসেস ও মেট্রিক্স লেসন ১-২ শেষ করুন",
+              "typeEn": "Learning",
+              "typeBn": "লার্নিং"
+            },
+            {
+              "id": "2026-05-task",
+              "titleEn": "Assignment: Process and metrics workflow",
+              "titleBn": "অ্যাসাইনমেন্ট: প্রসেস ও মেট্রিক্স ওয়ার্কফ্লো",
+              "typeEn": "Assignment",
+              "typeBn": "অ্যাসাইনমেন্ট"
+            },
+            {
+              "id": "2026-05-review",
+              "titleEn": "Weekly reflection log",
+              "titleBn": "সাপ্তাহিক রিফ্লেকশন লগ",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        },
+        {
+          "id": "ba-2026-06",
+          "month": "2026-06",
+          "titleEn": "Process and metrics Sprint 2",
+          "titleBn": "প্রসেস ও মেট্রিক্স স্প্রিন্ট ২",
+          "items": [
+            {
+              "id": "2026-06-learn",
+              "titleEn": "Finish Process and metrics lesson 3",
+              "titleBn": "প্রসেস ও মেট্রিক্স লেসন ৩ শেষ করুন",
+              "typeEn": "Learning",
+              "typeBn": "লার্নিং"
+            },
+            {
+              "id": "2026-06-build",
+              "titleEn": "Mini project: apply Process and metrics",
+              "titleBn": "মিনি প্রোজেক্ট: প্রসেস ও মেট্রিক্স প্রয়োগ",
+              "typeEn": "Assignment",
+              "typeBn": "অ্যাসাইনমেন্ট"
+            },
+            {
+              "id": "2026-06-review",
+              "titleEn": "Peer review + feedback",
+              "titleBn": "পিয়ার রিভিউ + ফিডব্যাক",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        },
+        {
+          "id": "ba-2026-07",
+          "month": "2026-07",
+          "titleEn": "Capstone Sprint",
+          "titleBn": "ক্যাপস্টোন স্প্রিন্ট",
+          "items": [
+            {
+              "id": "2026-07-scope",
+              "titleEn": "Capstone scope for Business Analyst Path",
+              "titleBn": "বিজনেস অ্যানালিস্ট পাথ‑এর জন্য ক্যাপস্টোন স্কোপ",
+              "typeEn": "Assignment",
+              "typeBn": "অ্যাসাইনমেন্ট"
+            },
+            {
+              "id": "2026-07-build",
+              "titleEn": "Build + document your deliverable",
+              "titleBn": "ডেলিভারেবল তৈরি + ডকুমেন্টেশন",
+              "typeEn": "Delivery",
+              "typeBn": "ডেলিভারি"
+            },
+            {
+              "id": "2026-07-review",
+              "titleEn": "Mentor review checkpoint",
+              "titleBn": "মেন্টর রিভিউ চেকপয়েন্ট",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        },
+        {
+          "id": "ba-2026-08",
+          "month": "2026-08",
+          "titleEn": "Co-op Contribution",
+          "titleBn": "কো-অপ কন্ট্রিবিউশন",
+          "items": [
+            {
+              "id": "2026-08-contrib",
+              "titleEn": "Contribute to a live EquiSaaS feature",
+              "titleBn": "লাইভ EquiSaaS ফিচারে কন্ট্রিবিউট করুন",
+              "typeEn": "Contribution",
+              "typeBn": "কন্ট্রিবিউশন"
+            },
+            {
+              "id": "2026-08-demo",
+              "titleEn": "Demo + share learnings",
+              "titleBn": "ডেমো + লার্নিং শেয়ার",
+              "typeEn": "Delivery",
+              "typeBn": "ডেলিভারি"
+            },
+            {
+              "id": "2026-08-retro",
+              "titleEn": "Retro + next steps",
+              "titleBn": "রেট্রো + নেক্সট স্টেপ",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subdeptId": "pm",
+      "deptId": "product",
+      "paths": [
+        {
+          "id": "product-pm",
+          "deptId": "product",
+          "subdeptId": "pm",
+          "titleBn": "প্রোডাক্ট ম্যানেজার পাথ",
+          "titleEn": "Product Manager Path",
+          "descBn": "স্ট্র্যাটেজি থেকে রিলিজ পর্যন্ত পুরো প্রোডাক্ট লাইফসাইকেল।",
+          "descEn": "Full product lifecycle from strategy to release.",
+          "level": "Intermediate",
+          "lang": "EN+BN",
+          "duration": "26h",
+          "prereqBn": "বেসিক প্রোডাক্ট ও টিম কাজের ধারণা।",
+          "prereqEn": "Basic product and team workflow knowledge.",
+          "outcomesBn": [
+            "রোডম্যাপ ও OKR",
+            "ফিচার প্রায়োরিটি",
+            "লঞ্চ এক্সিকিউশন"
+          ],
+          "outcomesEn": [
+            "Roadmaps and OKRs",
+            "Feature prioritization",
+            "Launch execution"
+          ],
+          "modules": [
+            {
+              "id": "pm-strategy",
+              "titleBn": "স্ট্র্যাটেজি ও রোডম্যাপ",
+              "titleEn": "Strategy and roadmap",
+              "summaryBn": "ভিশন, OKR, রোডম্যাপ।",
+              "summaryEn": "Vision, OKRs, roadmaps.",
+              "duration": "8h",
+              "lessons": [
+                {
+                  "id": "pm-1-1",
+                  "titleBn": "ভিশন স্টেটমেন্ট",
+                  "titleEn": "Vision statement",
+                  "duration": "30m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://www.atlassian.com/agile/product-management/product-roadmaps",
+                  "videoUrl": "https://scrumguides.org/download.html"
+                },
+                {
+                  "id": "pm-1-2",
+                  "titleBn": "OKR সেটিং",
+                  "titleEn": "OKR setting",
+                  "duration": "30m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://www.atlassian.com/team-playbook/plays/okr",
+                  "videoUrl": "https://scrumguides.org/download.html"
+                },
+                {
+                  "id": "pm-1-3",
+                  "titleBn": "রোডম্যাপ ফ্রেম",
+                  "titleEn": "Roadmap framing",
+                  "duration": "35m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://www.atlassian.com/agile/product-management/product-roadmaps",
+                  "videoUrl": "https://scrumguides.org/download.html"
+                }
+              ]
+            },
+            {
+              "id": "pm-delivery",
+              "titleBn": "ডেলিভারি ও গ্রোথ",
+              "titleEn": "Delivery and growth",
+              "summaryBn": "স্প্রিন্ট, গ্রোথ এক্সপেরিমেন্ট।",
+              "summaryEn": "Sprints and growth experiments.",
+              "duration": "8h",
+              "lessons": [
+                {
+                  "id": "pm-2-1",
+                  "titleBn": "স্প্রিন্ট প্ল্যানিং",
+                  "titleEn": "Sprint planning",
+                  "duration": "30m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://scrumguides.org/download.html",
+                  "videoUrl": "https://scrumguides.org/download.html"
+                },
+                {
+                  "id": "pm-2-2",
+                  "titleBn": "গ্রোথ এক্সপেরিমেন্ট",
+                  "titleEn": "Growth experiments",
+                  "duration": "30m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://academy.hubspot.com/courses/digital-marketing",
+                  "videoUrl": "https://scrumguides.org/download.html"
+                },
+                {
+                  "id": "pm-2-3",
+                  "titleBn": "রিলিজ চেকলিস্ট",
+                  "titleEn": "Release checklist",
+                  "duration": "25m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://martinfowler.com/articles/practical-test-pyramid.html",
+                  "videoUrl": "https://scrumguides.org/download.html"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "monthlyActivities": [
+        {
+          "id": "pm-2026-03",
+          "month": "2026-03",
+          "titleEn": "Strategy and roadmap Sprint 1",
+          "titleBn": "স্ট্র্যাটেজি ও রোডম্যাপ স্প্রিন্ট ১",
+          "items": [
+            {
+              "id": "2026-03-learn",
+              "titleEn": "Finish Strategy and roadmap lessons 1-2",
+              "titleBn": "স্ট্র্যাটেজি ও রোডম্যাপ লেসন ১-২ শেষ করুন",
+              "typeEn": "Learning",
+              "typeBn": "লার্নিং"
+            },
+            {
+              "id": "2026-03-task",
+              "titleEn": "Assignment: Strategy and roadmap mini task",
+              "titleBn": "অ্যাসাইনমেন্ট: স্ট্র্যাটেজি ও রোডম্যাপ মিনি টাস্ক",
+              "typeEn": "Assignment",
+              "typeBn": "অ্যাসাইনমেন্ট"
+            },
+            {
+              "id": "2026-03-review",
+              "titleEn": "Weekly reflection log",
+              "titleBn": "সাপ্তাহিক রিফ্লেকশন লগ",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        },
+        {
+          "id": "pm-2026-04",
+          "month": "2026-04",
+          "titleEn": "Strategy and roadmap Sprint 2",
+          "titleBn": "স্ট্র্যাটেজি ও রোডম্যাপ স্প্রিন্ট ২",
+          "items": [
+            {
+              "id": "2026-04-learn",
+              "titleEn": "Finish Strategy and roadmap lesson 3",
+              "titleBn": "স্ট্র্যাটেজি ও রোডম্যাপ লেসন ৩ শেষ করুন",
+              "typeEn": "Learning",
+              "typeBn": "লার্নিং"
+            },
+            {
+              "id": "2026-04-build",
+              "titleEn": "Mini project: apply Strategy and roadmap",
+              "titleBn": "মিনি প্রোজেক্ট: স্ট্র্যাটেজি ও রোডম্যাপ প্রয়োগ",
+              "typeEn": "Assignment",
+              "typeBn": "অ্যাসাইনমেন্ট"
+            },
+            {
+              "id": "2026-04-review",
+              "titleEn": "Peer review + feedback",
+              "titleBn": "পিয়ার রিভিউ + ফিডব্যাক",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        },
+        {
+          "id": "pm-2026-05",
+          "month": "2026-05",
+          "titleEn": "Delivery and growth Sprint 1",
+          "titleBn": "ডেলিভারি ও গ্রোথ স্প্রিন্ট ১",
+          "items": [
+            {
+              "id": "2026-05-learn",
+              "titleEn": "Finish Delivery and growth lessons 1-2",
+              "titleBn": "ডেলিভারি ও গ্রোথ লেসন ১-২ শেষ করুন",
+              "typeEn": "Learning",
+              "typeBn": "লার্নিং"
+            },
+            {
+              "id": "2026-05-task",
+              "titleEn": "Assignment: Delivery and growth workflow",
+              "titleBn": "অ্যাসাইনমেন্ট: ডেলিভারি ও গ্রোথ ওয়ার্কফ্লো",
+              "typeEn": "Assignment",
+              "typeBn": "অ্যাসাইনমেন্ট"
+            },
+            {
+              "id": "2026-05-review",
+              "titleEn": "Weekly reflection log",
+              "titleBn": "সাপ্তাহিক রিফ্লেকশন লগ",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        },
+        {
+          "id": "pm-2026-06",
+          "month": "2026-06",
+          "titleEn": "Delivery and growth Sprint 2",
+          "titleBn": "ডেলিভারি ও গ্রোথ স্প্রিন্ট ২",
+          "items": [
+            {
+              "id": "2026-06-learn",
+              "titleEn": "Finish Delivery and growth lesson 3",
+              "titleBn": "ডেলিভারি ও গ্রোথ লেসন ৩ শেষ করুন",
+              "typeEn": "Learning",
+              "typeBn": "লার্নিং"
+            },
+            {
+              "id": "2026-06-build",
+              "titleEn": "Mini project: apply Delivery and growth",
+              "titleBn": "মিনি প্রোজেক্ট: ডেলিভারি ও গ্রোথ প্রয়োগ",
+              "typeEn": "Assignment",
+              "typeBn": "অ্যাসাইনমেন্ট"
+            },
+            {
+              "id": "2026-06-review",
+              "titleEn": "Peer review + feedback",
+              "titleBn": "পিয়ার রিভিউ + ফিডব্যাক",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        },
+        {
+          "id": "pm-2026-07",
+          "month": "2026-07",
+          "titleEn": "Capstone Sprint",
+          "titleBn": "ক্যাপস্টোন স্প্রিন্ট",
+          "items": [
+            {
+              "id": "2026-07-scope",
+              "titleEn": "Capstone scope for Product Manager Path",
+              "titleBn": "প্রোডাক্ট ম্যানেজার পাথ‑এর জন্য ক্যাপস্টোন স্কোপ",
+              "typeEn": "Assignment",
+              "typeBn": "অ্যাসাইনমেন্ট"
+            },
+            {
+              "id": "2026-07-build",
+              "titleEn": "Build + document your deliverable",
+              "titleBn": "ডেলিভারেবল তৈরি + ডকুমেন্টেশন",
+              "typeEn": "Delivery",
+              "typeBn": "ডেলিভারি"
+            },
+            {
+              "id": "2026-07-review",
+              "titleEn": "Mentor review checkpoint",
+              "titleBn": "মেন্টর রিভিউ চেকপয়েন্ট",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        },
+        {
+          "id": "pm-2026-08",
+          "month": "2026-08",
+          "titleEn": "Co-op Contribution",
+          "titleBn": "কো-অপ কন্ট্রিবিউশন",
+          "items": [
+            {
+              "id": "2026-08-contrib",
+              "titleEn": "Contribute to a live EquiSaaS feature",
+              "titleBn": "লাইভ EquiSaaS ফিচারে কন্ট্রিবিউট করুন",
+              "typeEn": "Contribution",
+              "typeBn": "কন্ট্রিবিউশন"
+            },
+            {
+              "id": "2026-08-demo",
+              "titleEn": "Demo + share learnings",
+              "titleBn": "ডেমো + লার্নিং শেয়ার",
+              "typeEn": "Delivery",
+              "typeBn": "ডেলিভারি"
+            },
+            {
+              "id": "2026-08-retro",
+              "titleEn": "Retro + next steps",
+              "titleBn": "রেট্রো + নেক্সট স্টেপ",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subdeptId": "growth",
+      "deptId": "marketing",
+      "paths": [
+        {
+          "id": "marketing-growth",
+          "deptId": "marketing",
+          "subdeptId": "growth",
+          "titleBn": "গ্রোথ মার্কেটিং পাথ",
+          "titleEn": "Growth Marketing Path",
+          "descBn": "অ্যাকুইজিশন, SEO, এবং ক্যাম্পেইন অপ্টিমাইজেশন।",
+          "descEn": "Acquisition, SEO, and campaign optimization.",
+          "level": "Beginner",
+          "lang": "EN+BN",
+          "duration": "20h",
+          "prereqBn": "বেসিক ডিজিটাল মার্কেটিং ধারণা।",
+          "prereqEn": "Basic digital marketing knowledge.",
+          "outcomesBn": [
+            "SEO ও কন্টেন্ট প্ল্যান",
+            "পেইড ক্যাম্পেইন",
+            "অ্যানালিটিক্স রিপোর্ট"
+          ],
+          "outcomesEn": [
+            "SEO and content plan",
+            "Paid campaigns",
+            "Analytics reports"
+          ],
+          "modules": [
+            {
+              "id": "mkt-acquisition",
+              "titleBn": "অ্যাকুইজিশন ও SEO",
+              "titleEn": "Acquisition and SEO",
+              "summaryBn": "কিওয়ার্ড, কন্টেন্ট, লিড।",
+              "summaryEn": "Keywords, content, leads.",
+              "duration": "6h",
+              "lessons": [
+                {
+                  "id": "mk-1-1",
+                  "titleBn": "SEO বেসিক",
+                  "titleEn": "SEO basics",
+                  "duration": "25m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+                  "videoUrl": "https://www.youtube.com/watch?v=or_-uu3kgc4"
+                },
+                {
+                  "id": "mk-1-2",
+                  "titleBn": "কন্টেন্ট স্ট্র্যাটেজি",
+                  "titleEn": "Content strategy",
+                  "duration": "25m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://academy.hubspot.com/courses/digital-marketing",
+                  "videoUrl": "https://www.youtube.com/watch?v=-e_EZTsmFks"
+                },
+                {
+                  "id": "mk-1-3",
+                  "titleBn": "লিড ক্যাপচার",
+                  "titleEn": "Lead capture",
+                  "duration": "25m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://academy.hubspot.com/courses/inbound",
+                  "videoUrl": "https://www.youtube.com/watch?v=-e_EZTsmFks"
+                }
+              ]
+            },
+            {
+              "id": "mkt-ads",
+              "titleBn": "পেইড ও অ্যানালিটিক্স",
+              "titleEn": "Paid and analytics",
+              "summaryBn": "Ads সেটআপ ও রিপোর্টিং।",
+              "summaryEn": "Ads setup and reporting.",
+              "duration": "6h",
+              "lessons": [
+                {
+                  "id": "mk-2-1",
+                  "titleBn": "ক্যাম্পেইন সেটআপ",
+                  "titleEn": "Campaign setup",
+                  "duration": "25m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://academy.hubspot.com/courses/digital-advertising",
+                  "videoUrl": "https://www.youtube.com/watch?v=-e_EZTsmFks"
+                },
+                {
+                  "id": "mk-2-2",
+                  "titleBn": "অডিয়েন্স টার্গেটিং",
+                  "titleEn": "Audience targeting",
+                  "duration": "25m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://academy.hubspot.com/courses/digital-advertising",
+                  "videoUrl": "https://www.youtube.com/watch?v=-e_EZTsmFks"
+                },
+                {
+                  "id": "mk-2-3",
+                  "titleBn": "পারফরম্যান্স রিপোর্ট",
+                  "titleEn": "Performance reporting",
+                  "duration": "25m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://developers.google.com/analytics/learn",
+                  "videoUrl": "https://tutorialbangla.com/courses/digital-marketing/"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "monthlyActivities": [
+        {
+          "id": "growth-2026-03",
+          "month": "2026-03",
+          "titleEn": "Acquisition and SEO Sprint 1",
+          "titleBn": "অ্যাকুইজিশন ও SEO স্প্রিন্ট ১",
+          "items": [
+            {
+              "id": "2026-03-learn",
+              "titleEn": "Finish Acquisition and SEO lessons 1-2",
+              "titleBn": "অ্যাকুইজিশন ও SEO লেসন ১-২ শেষ করুন",
+              "typeEn": "Learning",
+              "typeBn": "লার্নিং"
+            },
+            {
+              "id": "2026-03-task",
+              "titleEn": "Assignment: Acquisition and SEO mini task",
+              "titleBn": "অ্যাসাইনমেন্ট: অ্যাকুইজিশন ও SEO মিনি টাস্ক",
+              "typeEn": "Assignment",
+              "typeBn": "অ্যাসাইনমেন্ট"
+            },
+            {
+              "id": "2026-03-review",
+              "titleEn": "Weekly reflection log",
+              "titleBn": "সাপ্তাহিক রিফ্লেকশন লগ",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        },
+        {
+          "id": "growth-2026-04",
+          "month": "2026-04",
+          "titleEn": "Acquisition and SEO Sprint 2",
+          "titleBn": "অ্যাকুইজিশন ও SEO স্প্রিন্ট ২",
+          "items": [
+            {
+              "id": "2026-04-learn",
+              "titleEn": "Finish Acquisition and SEO lesson 3",
+              "titleBn": "অ্যাকুইজিশন ও SEO লেসন ৩ শেষ করুন",
+              "typeEn": "Learning",
+              "typeBn": "লার্নিং"
+            },
+            {
+              "id": "2026-04-build",
+              "titleEn": "Mini project: apply Acquisition and SEO",
+              "titleBn": "মিনি প্রোজেক্ট: অ্যাকুইজিশন ও SEO প্রয়োগ",
+              "typeEn": "Assignment",
+              "typeBn": "অ্যাসাইনমেন্ট"
+            },
+            {
+              "id": "2026-04-review",
+              "titleEn": "Peer review + feedback",
+              "titleBn": "পিয়ার রিভিউ + ফিডব্যাক",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        },
+        {
+          "id": "growth-2026-05",
+          "month": "2026-05",
+          "titleEn": "Paid and analytics Sprint 1",
+          "titleBn": "পেইড ও অ্যানালিটিক্স স্প্রিন্ট ১",
+          "items": [
+            {
+              "id": "2026-05-learn",
+              "titleEn": "Finish Paid and analytics lessons 1-2",
+              "titleBn": "পেইড ও অ্যানালিটিক্স লেসন ১-২ শেষ করুন",
+              "typeEn": "Learning",
+              "typeBn": "লার্নিং"
+            },
+            {
+              "id": "2026-05-task",
+              "titleEn": "Assignment: Paid and analytics workflow",
+              "titleBn": "অ্যাসাইনমেন্ট: পেইড ও অ্যানালিটিক্স ওয়ার্কফ্লো",
+              "typeEn": "Assignment",
+              "typeBn": "অ্যাসাইনমেন্ট"
+            },
+            {
+              "id": "2026-05-review",
+              "titleEn": "Weekly reflection log",
+              "titleBn": "সাপ্তাহিক রিফ্লেকশন লগ",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        },
+        {
+          "id": "growth-2026-06",
+          "month": "2026-06",
+          "titleEn": "Paid and analytics Sprint 2",
+          "titleBn": "পেইড ও অ্যানালিটিক্স স্প্রিন্ট ২",
+          "items": [
+            {
+              "id": "2026-06-learn",
+              "titleEn": "Finish Paid and analytics lesson 3",
+              "titleBn": "পেইড ও অ্যানালিটিক্স লেসন ৩ শেষ করুন",
+              "typeEn": "Learning",
+              "typeBn": "লার্নিং"
+            },
+            {
+              "id": "2026-06-build",
+              "titleEn": "Mini project: apply Paid and analytics",
+              "titleBn": "মিনি প্রোজেক্ট: পেইড ও অ্যানালিটিক্স প্রয়োগ",
+              "typeEn": "Assignment",
+              "typeBn": "অ্যাসাইনমেন্ট"
+            },
+            {
+              "id": "2026-06-review",
+              "titleEn": "Peer review + feedback",
+              "titleBn": "পিয়ার রিভিউ + ফিডব্যাক",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        },
+        {
+          "id": "growth-2026-07",
+          "month": "2026-07",
+          "titleEn": "Capstone Sprint",
+          "titleBn": "ক্যাপস্টোন স্প্রিন্ট",
+          "items": [
+            {
+              "id": "2026-07-scope",
+              "titleEn": "Capstone scope for Growth Marketing Path",
+              "titleBn": "গ্রোথ মার্কেটিং পাথ‑এর জন্য ক্যাপস্টোন স্কোপ",
+              "typeEn": "Assignment",
+              "typeBn": "অ্যাসাইনমেন্ট"
+            },
+            {
+              "id": "2026-07-build",
+              "titleEn": "Build + document your deliverable",
+              "titleBn": "ডেলিভারেবল তৈরি + ডকুমেন্টেশন",
+              "typeEn": "Delivery",
+              "typeBn": "ডেলিভারি"
+            },
+            {
+              "id": "2026-07-review",
+              "titleEn": "Mentor review checkpoint",
+              "titleBn": "মেন্টর রিভিউ চেকপয়েন্ট",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        },
+        {
+          "id": "growth-2026-08",
+          "month": "2026-08",
+          "titleEn": "Co-op Contribution",
+          "titleBn": "কো-অপ কন্ট্রিবিউশন",
+          "items": [
+            {
+              "id": "2026-08-contrib",
+              "titleEn": "Contribute to a live EquiSaaS feature",
+              "titleBn": "লাইভ EquiSaaS ফিচারে কন্ট্রিবিউট করুন",
+              "typeEn": "Contribution",
+              "typeBn": "কন্ট্রিবিউশন"
+            },
+            {
+              "id": "2026-08-demo",
+              "titleEn": "Demo + share learnings",
+              "titleBn": "ডেমো + লার্নিং শেয়ার",
+              "typeEn": "Delivery",
+              "typeBn": "ডেলিভারি"
+            },
+            {
+              "id": "2026-08-retro",
+              "titleEn": "Retro + next steps",
+              "titleBn": "রেট্রো + নেক্সট স্টেপ",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "subdeptId": "success",
+      "deptId": "marketing",
+      "paths": [
+        {
+          "id": "marketing-success",
+          "deptId": "marketing",
+          "subdeptId": "success",
+          "titleBn": "কাস্টমার সাকসেস পাথ",
+          "titleEn": "Customer Success Path",
+          "descBn": "অনবোর্ডিং, CRM, এবং সাপোর্ট অপারেশন।",
+          "descEn": "Onboarding, CRM, and support operations.",
+          "level": "Beginner",
+          "lang": "EN+BN",
+          "duration": "18h",
+          "prereqBn": "কাস্টমার কমিউনিকেশন স্কিল।",
+          "prereqEn": "Customer communication skills.",
+          "outcomesBn": [
+            "অনবোর্ডিং প্লেবুক",
+            "টিকেটিং ফ্লো",
+            "রিটেনশন রিপোর্ট"
+          ],
+          "outcomesEn": [
+            "Onboarding playbooks",
+            "Ticketing flows",
+            "Retention reports"
+          ],
+          "modules": [
+            {
+              "id": "cs-onboarding",
+              "titleBn": "অনবোর্ডিং ও CRM",
+              "titleEn": "Onboarding and CRM",
+              "summaryBn": "ফ্লো, টেমপ্লেট, CRM ট্যাগ।",
+              "summaryEn": "Flows, templates, CRM tags.",
+              "duration": "6h",
+              "lessons": [
+                {
+                  "id": "cs-1-1",
+                  "titleBn": "অনবোর্ডিং স্টেপ",
+                  "titleEn": "Onboarding steps",
+                  "duration": "25m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://academy.hubspot.com/courses/service-hub-software",
+                  "videoUrl": "https://xubisoft.com/training/professional-customer-service-course/"
+                },
+                {
+                  "id": "cs-1-2",
+                  "titleBn": "CRM ট্যাগিং",
+                  "titleEn": "CRM tagging",
+                  "duration": "20m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://academy.hubspot.com/courses/hubspot-free-tools",
+                  "videoUrl": "https://www.sattacademy.com/online-customer-service/"
+                },
+                {
+                  "id": "cs-1-3",
+                  "titleBn": "সাকসেস মেট্রিক্স",
+                  "titleEn": "Success metrics",
+                  "duration": "25m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://academy.hubspot.com/courses/customer-support",
+                  "videoUrl": "https://teachers.gov.bd/blog/details/758902"
+                }
+              ]
+            },
+            {
+              "id": "cs-support",
+              "titleBn": "সাপোর্ট অপারেশন",
+              "titleEn": "Support operations",
+              "summaryBn": "টিকেটিং, SLA, ফিডব্যাক।",
+              "summaryEn": "Ticketing, SLAs, feedback.",
+              "duration": "6h",
+              "lessons": [
+                {
+                  "id": "cs-2-1",
+                  "titleBn": "টিকেটিং ও SLA",
+                  "titleEn": "Ticketing and SLA",
+                  "duration": "25m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://academy.hubspot.com/courses/customer-support",
+                  "videoUrl": "https://www.sattacademy.com/online-customer-service/"
+                },
+                {
+                  "id": "cs-2-2",
+                  "titleBn": "ফিডব্যাক লুপ",
+                  "titleEn": "Feedback loop",
+                  "duration": "20m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://academy.hubspot.com/courses/service-hub-software",
+                  "videoUrl": "https://teachers.gov.bd/blog/details/758902"
+                },
+                {
+                  "id": "cs-2-3",
+                  "titleBn": "রিটেনশন প্ল্যান",
+                  "titleEn": "Retention plan",
+                  "duration": "25m",
+                  "typeBn": "ভিডিও",
+                  "typeEn": "Video",
+                  "resourceUrl": "https://academy.hubspot.com/courses/inbound",
+                  "videoUrl": "https://xubisoft.com/training/professional-customer-service-course/"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "monthlyActivities": [
+        {
+          "id": "success-2026-03",
+          "month": "2026-03",
+          "titleEn": "Onboarding and CRM Sprint 1",
+          "titleBn": "অনবোর্ডিং ও CRM স্প্রিন্ট ১",
+          "items": [
+            {
+              "id": "2026-03-learn",
+              "titleEn": "Finish Onboarding and CRM lessons 1-2",
+              "titleBn": "অনবোর্ডিং ও CRM লেসন ১-২ শেষ করুন",
+              "typeEn": "Learning",
+              "typeBn": "লার্নিং"
+            },
+            {
+              "id": "2026-03-task",
+              "titleEn": "Assignment: Onboarding and CRM mini task",
+              "titleBn": "অ্যাসাইনমেন্ট: অনবোর্ডিং ও CRM মিনি টাস্ক",
+              "typeEn": "Assignment",
+              "typeBn": "অ্যাসাইনমেন্ট"
+            },
+            {
+              "id": "2026-03-review",
+              "titleEn": "Weekly reflection log",
+              "titleBn": "সাপ্তাহিক রিফ্লেকশন লগ",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        },
+        {
+          "id": "success-2026-04",
+          "month": "2026-04",
+          "titleEn": "Onboarding and CRM Sprint 2",
+          "titleBn": "অনবোর্ডিং ও CRM স্প্রিন্ট ২",
+          "items": [
+            {
+              "id": "2026-04-learn",
+              "titleEn": "Finish Onboarding and CRM lesson 3",
+              "titleBn": "অনবোর্ডিং ও CRM লেসন ৩ শেষ করুন",
+              "typeEn": "Learning",
+              "typeBn": "লার্নিং"
+            },
+            {
+              "id": "2026-04-build",
+              "titleEn": "Mini project: apply Onboarding and CRM",
+              "titleBn": "মিনি প্রোজেক্ট: অনবোর্ডিং ও CRM প্রয়োগ",
+              "typeEn": "Assignment",
+              "typeBn": "অ্যাসাইনমেন্ট"
+            },
+            {
+              "id": "2026-04-review",
+              "titleEn": "Peer review + feedback",
+              "titleBn": "পিয়ার রিভিউ + ফিডব্যাক",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        },
+        {
+          "id": "success-2026-05",
+          "month": "2026-05",
+          "titleEn": "Support operations Sprint 1",
+          "titleBn": "সাপোর্ট অপারেশন স্প্রিন্ট ১",
+          "items": [
+            {
+              "id": "2026-05-learn",
+              "titleEn": "Finish Support operations lessons 1-2",
+              "titleBn": "সাপোর্ট অপারেশন লেসন ১-২ শেষ করুন",
+              "typeEn": "Learning",
+              "typeBn": "লার্নিং"
+            },
+            {
+              "id": "2026-05-task",
+              "titleEn": "Assignment: Support operations workflow",
+              "titleBn": "অ্যাসাইনমেন্ট: সাপোর্ট অপারেশন ওয়ার্কফ্লো",
+              "typeEn": "Assignment",
+              "typeBn": "অ্যাসাইনমেন্ট"
+            },
+            {
+              "id": "2026-05-review",
+              "titleEn": "Weekly reflection log",
+              "titleBn": "সাপ্তাহিক রিফ্লেকশন লগ",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        },
+        {
+          "id": "success-2026-06",
+          "month": "2026-06",
+          "titleEn": "Support operations Sprint 2",
+          "titleBn": "সাপোর্ট অপারেশন স্প্রিন্ট ২",
+          "items": [
+            {
+              "id": "2026-06-learn",
+              "titleEn": "Finish Support operations lesson 3",
+              "titleBn": "সাপোর্ট অপারেশন লেসন ৩ শেষ করুন",
+              "typeEn": "Learning",
+              "typeBn": "লার্নিং"
+            },
+            {
+              "id": "2026-06-build",
+              "titleEn": "Mini project: apply Support operations",
+              "titleBn": "মিনি প্রোজেক্ট: সাপোর্ট অপারেশন প্রয়োগ",
+              "typeEn": "Assignment",
+              "typeBn": "অ্যাসাইনমেন্ট"
+            },
+            {
+              "id": "2026-06-review",
+              "titleEn": "Peer review + feedback",
+              "titleBn": "পিয়ার রিভিউ + ফিডব্যাক",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        },
+        {
+          "id": "success-2026-07",
+          "month": "2026-07",
+          "titleEn": "Capstone Sprint",
+          "titleBn": "ক্যাপস্টোন স্প্রিন্ট",
+          "items": [
+            {
+              "id": "2026-07-scope",
+              "titleEn": "Capstone scope for Customer Success Path",
+              "titleBn": "কাস্টমার সাকসেস পাথ‑এর জন্য ক্যাপস্টোন স্কোপ",
+              "typeEn": "Assignment",
+              "typeBn": "অ্যাসাইনমেন্ট"
+            },
+            {
+              "id": "2026-07-build",
+              "titleEn": "Build + document your deliverable",
+              "titleBn": "ডেলিভারেবল তৈরি + ডকুমেন্টেশন",
+              "typeEn": "Delivery",
+              "typeBn": "ডেলিভারি"
+            },
+            {
+              "id": "2026-07-review",
+              "titleEn": "Mentor review checkpoint",
+              "titleBn": "মেন্টর রিভিউ চেকপয়েন্ট",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        },
+        {
+          "id": "success-2026-08",
+          "month": "2026-08",
+          "titleEn": "Co-op Contribution",
+          "titleBn": "কো-অপ কন্ট্রিবিউশন",
+          "items": [
+            {
+              "id": "2026-08-contrib",
+              "titleEn": "Contribute to a live EquiSaaS feature",
+              "titleBn": "লাইভ EquiSaaS ফিচারে কন্ট্রিবিউট করুন",
+              "typeEn": "Contribution",
+              "typeBn": "কন্ট্রিবিউশন"
+            },
+            {
+              "id": "2026-08-demo",
+              "titleEn": "Demo + share learnings",
+              "titleBn": "ডেমো + লার্নিং শেয়ার",
+              "typeEn": "Delivery",
+              "typeBn": "ডেলিভারি"
+            },
+            {
+              "id": "2026-08-retro",
+              "titleEn": "Retro + next steps",
+              "titleBn": "রেট্রো + নেক্সট স্টেপ",
+              "typeEn": "Review",
+              "typeBn": "রিভিউ"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Env
+.env
+.env.local
+.env.cloudflare
+.env.cloudflare.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.build
+lms/.env.build
+lms/.env.build.local
+lms/.env.local
+lms/.env.development.local
+lms/.env.test.local
+lms/.env.production.local
+functions/.env*
+
+# Firebase
+.firebase/
+firebase-debug.log
+firebase-debug.*.log
+
+# Next.js LMS
+lms/.next/
+lms/out/
+
+# Build assembly
+dist_deploy/
+
+# BD ERP POS public delivery binaries are copied locally before deploy.
+# Keep them out of Git because GitHub rejects 100MB+ files.
+landing/public/downloads/bd-erp-pos/*.exe
+landing/public/erp-pos/stable/*.nupkg
+landing/public/erp-pos/stable/*.zip
+landing/public/erp-pos/stable/*.exe
+
+# Local test artifacts and temporary debug files
+artifacts/
+tmp*
+.Jules/
+deploy_error.log
+smoke_output.txt
+test.txt
+
+# Security - Keys and Secrets (CRITICAL)
+*.key
+*.pem
+*.sqlite
+BdErpPos.LicenseGenerator.exe
+
+# Editor transient state
+.puku/
+
+# Auto-generated temp/debug files
+tmp-*
+tmp_*
+build_error.txt
+deploy_error.log
+smoke_output.txt
+update-og-tags.log

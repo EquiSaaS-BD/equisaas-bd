@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EquiSaaS BD - Pitch Deck 2026</title>
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { blue: '#2563eb', green: '#10b981', dark: '#0b1120', slate: '#1e293b' }
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], heading: ['Inter', 'sans-serif'] },
+                    animation: {
+                        'gradient-x': 'gradient-x 15s ease infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        'gradient-x': {
+                            '0%, 100%': { 'background-size': '200% 200%', 'background-position': 'left center' },
+                            '50%': { 'background-size': '200% 200%', 'background-position': 'right center' },
+                        },
+                        'float': {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --brand-blue: #3b82f6;
+            --brand-deep-blue: #1e40af;
+            --brand-green: #10b981;
+            --brand-deep-green: #059669;
+            --brand-dark: #0b1120;
+            --brand-slate: #0f172a;
+        }
+
+        body { 
+            background: radial-gradient(circle at 15% 20%, rgba(59,130,246,0.18), transparent 30%),
+                        radial-gradient(circle at 85% 30%, rgba(16,185,129,0.18), transparent 30%),
+                        var(--brand-dark); 
+            color: #f8fafc; 
+            overflow: hidden; 
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Moving Mesh Gradient Background */
+        .mesh-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.25), transparent 30%),
+                        radial-gradient(circle at 85% 30%, rgba(16, 185, 129, 0.22), transparent 30%),
+                        radial-gradient(circle at 30% 80%, rgba(14, 165, 233, 0.18), transparent 35%);
+            z-index: -2;
+            animation: drift 16s ease-in-out infinite alternate;
+        }
+
+        .aurora-bg {
+            position: fixed;
+            inset: -20%;
+            background: conic-gradient(from 90deg at 50% 50%, rgba(59,130,246,0.35), rgba(16,185,129,0.3), rgba(99,102,241,0.2), rgba(59,130,246,0.35));
+            filter: blur(120px);
+            opacity: 0.5;
+            z-index: -3;
+            animation: aurora 20s ease-in-out infinite;
+            mix-blend-mode: screen;
+        }
+
+        /* Ambient Grid */
+        .grid-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: -1;
+        }
+
+        /* Slide Container Logic */
+        #slides-container { position: relative; width: 100vw; height: 100vh; }
+        
+        .slide {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(30px) scale(0.98);
+            transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: clamp(3.5rem, 6vw, 6rem) clamp(1.5rem, 5vw, 5rem) clamp(2rem, 5vw, 4rem);
+            text-align: center;
+        }
+
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+            z-index: 10;
+        }
+
+        /* Staggered Animations for Children */
+        .slide > * { opacity: 0; transform: translateY(20px); transition: all 0.5s ease; position: relative; z-index: 1; }
+        .slide.active > *:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.2s; }
+        .slide.active > *:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.35s; }
+        .slide.active > *:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.5s; }
+        .slide.active > *:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 0.65s; }
+        .slide.active > *:nth-child(5) { opacity: 1; transform: translateY(0); transition-delay: 0.8s; }
+
+        .slide::before {
+            content: "";
+            position: absolute;
+            inset: clamp(1rem, 3vw, 2.5rem);
+            border-radius: clamp(1.5rem, 4vw, 3rem);
+            background: linear-gradient(145deg, rgba(15,23,42,0.6), rgba(15,23,42,0.25));
+            border: 1px solid rgba(148,163,184,0.12);
+            box-shadow: 0 30px 70px -40px rgba(15,23,42,0.9);
+            z-index: 0;
+        }
+
+        .slide h1,
+        .slide h2 {
+            text-shadow: 0 20px 60px rgba(59, 130, 246, 0.25);
+            letter-spacing: -0.02em;
+        }
+
+        /* Premium Glass Card */
+        .glass-panel {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.55), rgba(15, 23, 42, 0.35));
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 35px 70px -45px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255,255,255,0.1);
+            border-radius: 2rem;
+        }
+
+        .glass-panel::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, rgba(59,130,246,0.16), transparent 60%);
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #ffffff 0%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .text-gradient-brand {
+            background: linear-gradient(135deg, #60a5fa 0%, #34d399 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Progress Bar */
+        #progress-container {
+            position: fixed; top: 0; left: 0; width: 100%; height: 4px; background: rgba(255,255,255,0.1); z-index: 50;
+        }
+        #progress-bar {
+            height: 100%; width: 0%; background: linear-gradient(90deg, #3b82f6, #10b981); transition: width 0.4s ease;
+        }
+
+        /* Deck Header */
+        .deck-header {
+            position: fixed;
+            top: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: min(1200px, calc(100% - 3rem));
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            z-index: 50;
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(148,163,184,0.16);
+            border-radius: 9999px;
+            padding: 0.6rem 1.5rem;
+            box-shadow: 0 20px 40px -30px rgba(15, 23, 42, 0.9);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .brand-chip {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 700;
+            color: #e2e8f0;
+        }
+
+        .brand-chip img { height: 36px; width: auto; }
+        .brand-chip span { font-size: 0.75rem; color: #94a3b8; display: block; }
+
+        .deck-meta {
+            text-align: center;
+            flex: 1;
+        }
+
+        .deck-meta small {
+            display: block;
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #94a3b8;
+        }
+
+        #slide-title {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #f8fafc;
+            text-transform: none;
+        }
+
+        .deck-hints {
+            display: flex;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .hint-chip {
+            border: 1px solid rgba(148,163,184,0.2);
+            padding: 0.25rem 0.6rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            color: #cbd5e1;
+            background: rgba(15,23,42,0.6);
+        }
+
+        /* Navigation UI */
+        .nav-ui {
+            position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%);
+            display: flex; gap: 0.8rem; align-items: center; z-index: 50;
+            background: rgba(15, 23, 42, 0.82); backdrop-filter: blur(10px);
+            padding: 0.6rem 1rem; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.12);
+            flex-wrap: wrap; justify-content: center;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .nav-btn {
+            color: #94a3b8; cursor: pointer; padding: 0.5rem; border-radius: 50%; transition: all 0.2s;
+        }
+        .nav-btn:hover { color: #fff; background: rgba(255,255,255,0.1); }
+        .nav-indicator { font-family: monospace; font-size: 0.95rem; color: #cbd5e1; font-weight: bold; }
+        .dot-nav { display: flex; align-items: center; gap: 0.4rem; }
+        .dot-btn {
+            width: 10px; height: 10px; border-radius: 9999px;
+            border: 1px solid rgba(148,163,184,0.4);
+            background: rgba(51,65,85,0.6);
+            position: relative;
+            transition: all 0.2s ease;
+        }
+        .dot-btn.active {
+            width: 30px;
+            background: linear-gradient(90deg, var(--brand-blue), var(--brand-green));
+            border-color: transparent;
+            box-shadow: 0 0 12px rgba(59,130,246,0.4);
+        }
+        .dot-btn::after {
+            content: attr(data-title);
+            position: absolute;
+            bottom: 140%;
+            left: 50%;
+            transform: translateX(-50%) translateY(6px);
+            background: rgba(15,23,42,0.9);
+            color: #e2e8f0;
+            font-size: 0.7rem;
+            padding: 0.3rem 0.5rem;
+            border-radius: 0.5rem;
+            border: 1px solid rgba(148,163,184,0.2);
+            opacity: 0;
+            pointer-events: none;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+        }
+        .dot-btn:hover::after {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .ui-hidden {
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(8px);
+        }
+
+        .cursor-hidden { cursor: none; }
+        .premium-cursor-dot,
+        .premium-cursor-ring {
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate3d(-50%, -50%, 0);
+        }
+        .premium-cursor-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 999px;
+            background: radial-gradient(circle at 30% 30%, #ffffff, #60a5fa);
+            box-shadow: 0 0 18px rgba(96,165,250,0.65);
+        }
+        .premium-cursor-ring {
+            width: 42px;
+            height: 42px;
+            border-radius: 999px;
+            border: 1px solid rgba(96,165,250,0.5);
+            background: radial-gradient(circle, rgba(59,130,246,0.08), rgba(15,23,42,0));
+            backdrop-filter: blur(6px);
+            box-shadow: 0 0 30px rgba(16,185,129,0.25);
+            transition: transform 0.15s ease, border-color 0.15s ease;
+        }
+        .premium-cursor-ring.is-hover {
+            transform: translate3d(-50%, -50%, 0) scale(1.25);
+            border-color: rgba(16,185,129,0.8);
+        }
+        .premium-cursor-ring.is-down {
+            transform: translate3d(-50%, -50%, 0) scale(0.9);
+        }
+
+        .cursor-off {
+            opacity: 0;
+        }
+
+        @keyframes drift {
+            0% { transform: translate3d(0, 0, 0) scale(1); }
+            50% { transform: translate3d(2%, -2%, 0) scale(1.03); }
+            100% { transform: translate3d(-2%, 1%, 0) scale(1.02); }
+        }
+
+        @keyframes aurora {
+            0% { transform: translate3d(0, 0, 0) rotate(0deg); }
+            50% { transform: translate3d(-4%, 2%, 0) rotate(8deg); }
+            100% { transform: translate3d(4%, -2%, 0) rotate(-6deg); }
+        }
+
+        @media (pointer: coarse) {
+            .premium-cursor-dot, .premium-cursor-ring { display: none; }
+        }
+
+        @media (max-width: 900px) {
+            .deck-header {
+                flex-direction: column;
+                padding: 0.9rem 1.2rem;
+                border-radius: 1.5rem;
+            }
+            .deck-meta { order: 3; }
+            .deck-hints { justify-content: center; }
+        }
+
+        @media (max-width: 640px) {
+            .deck-header { top: 0.8rem; }
+            .brand-chip img { height: 30px; }
+            .nav-ui { bottom: 1rem; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * { animation: none !important; transition: none !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="aurora-bg"></div>
+    <div class="mesh-bg"></div>
+    <div class="grid-bg"></div>
+    <div id="cursor-ring" class="premium-cursor-ring"></div>
+    <div id="cursor-dot" class="premium-cursor-dot"></div>
+    
+    <div id="progress-container"><div id="progress-bar"></div></div>
+
+    <div class="deck-header">
+        <div class="brand-chip">
+            <img src="./logo.svg" alt="EquiSaaS BD Logo">
+            <div>
+                <div class="font-heading text-base font-black">EquiSaaS BD</div>
+                <span>Pitch Deck</span>
+            </div>
+        </div>
+        <div class="deck-meta" aria-live="polite">
+            <small>Current Slide</small>
+            <div id="slide-title">Welcome & Intro</div>
+        </div>
+        <div class="deck-hints">
+            <div class="hint-chip">← → Navigate</div>
+            <div class="hint-chip">Space Next</div>
+            <div class="hint-chip">F Fullscreen</div>
+        </div>
+    </div>
+
+    <div id="slides-container">
+        <!-- SLIDE 1: Title & Identity -->
+        <div class="slide active" data-title="The Vision">
+            <div class="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-brand-blue/10 border border-brand-blue/30 text-blue-400 font-bold mb-8 shadow-[0_0_15px_rgba(37,99,235,0.2)]">
+                <i class="fa-solid fa-earth-americas animate-pulse"></i> Global Pitch Deck
+            </div>
+            <h1 class="text-6xl md:text-[5.5rem] font-heading font-black text-center leading-tight mb-6">
+                Bangladesh's First <br> <span class="text-gradient-brand">Open Tech Cooperative</span>
+            </h1>
+            <p class="text-2xl text-slate-300 font-medium mb-12 text-center max-w-4xl leading-relaxed">
+                A bootstrapped, massive 64-district community-driven ecosystem aiming to democratize SME software and ignite a nationwide IT revolution.
+            </p>
+            <div class="flex gap-8">
+                <div class="glass-panel px-8 py-4 flex items-center gap-4 text-xl font-bold">
+                    <i class="fa-solid fa-code text-brand-green text-2xl"></i> Multi-product SaaS Ecosystem
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 2: The Core Problem -->
+        <div class="slide" data-title="The Problem">
+            <h2 class="text-5xl font-heading font-black text-white mb-4 text-center">Systematic IT Exploitation</h2>
+            <p class="text-2xl text-blue-400 text-center mb-16">The three core problems we are directly disrupting</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-7xl">
+                <div class="glass-panel p-10 flex flex-col items-center text-center group hover:border-red-500/50 transition-colors">
+                    <div class="w-20 h-20 bg-red-500/10 text-red-400 rounded-full flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Unpaid Internships</h3>
+                    <p class="text-slate-400 text-lg">Traditional structures force learners to work for months without proper compensation or real job security.</p>
+                </div>
+                <div class="glass-panel p-10 flex flex-col items-center text-center group hover:border-purple-500/50 transition-colors">
+                    <div class="w-20 h-20 bg-purple-500/10 text-purple-400 rounded-full flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-city"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Centralized Opportunities</h3>
+                    <p class="text-slate-400 text-lg">The tech industry is highly Dhaka-centric. We are building a massive revolution by uniting brilliant minds across all 64 districts into one ecosystem.</p>
+                </div>
+                <div class="glass-panel p-10 flex flex-col items-center text-center group hover:border-amber-500/50 transition-colors">
+                    <div class="w-20 h-20 bg-amber-500/10 text-amber-400 rounded-full flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-person-digging"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Labor Exploitation</h3>
+                    <p class="text-slate-400 text-lg">Developers build high-value software but receive zero company equity while the sole business owner takes all the profits.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 3: The Solution -->
+        <div class="slide" data-title="The Solution">
+            <h2 class="text-5xl font-heading font-black text-white mb-4 text-center">Our Cooperative Masterplan</h2>
+            <p class="text-2xl text-brand-green text-center mb-16">A sustainable 'Sweat Equity' model for the next generation</p>
+            
+            <div class="w-full max-w-6xl glass-panel p-12 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-brand-green/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+                
+                <div class="space-y-10">
+                    <div class="flex items-start gap-8">
+                        <div class="w-16 h-16 bg-blue-500/20 text-blue-400 rounded-2xl flex items-center justify-center text-3xl shrink-0 border border-blue-500/30"><i class="fa-solid fa-handshake"></i></div>
+                        <div>
+                            <h3 class="text-3xl font-bold text-white mb-2">Sustainable Sweat Equity</h3>
+                            <p class="text-xl text-slate-400">Eliminating unpaid tech internships by allowing developers and designers to earn direct corporate ownership through real-world contributions.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-8">
+                        <div class="w-16 h-16 bg-purple-500/20 text-purple-400 rounded-2xl flex items-center justify-center text-3xl shrink-0 border border-purple-500/30"><i class="fa-solid fa-network-wired"></i></div>
+                        <div>
+                            <h3 class="text-3xl font-bold text-white mb-2">Decentralizing Opportunities</h3>
+                            <p class="text-xl text-slate-400">Reaching talent across all 64 districts of Bangladesh. Building a wide, well-supported, decentralized network of technical co-founders.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-8">
+                        <div class="w-16 h-16 bg-brand-green/20 text-brand-green rounded-2xl flex items-center justify-center text-3xl shrink-0 border border-brand-green/30"><i class="fa-solid fa-store"></i></div>
+                        <div>
+                            <h3 class="text-3xl font-bold text-white mb-2">B2B SaaS for SMEs</h3>
+                            <p class="text-xl text-slate-400">Democratizing software access for local businesses by building scalable enterprise tools (POS, HR, ERP) designed for the SME market.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 4: Market Opportunity -->
+        <div class="slide" data-title="Market Size">
+            <h2 class="text-5xl font-heading font-black text-white mb-4 text-center">The Market Opportunity</h2>
+            <p class="text-2xl text-slate-400 text-center mb-16">Capturing the digital transformation of South Asian SMEs</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 w-full max-w-6xl">
+                <div class="glass-panel p-12 text-center flex flex-col justify-center border-t-4 border-t-blue-500 relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <h3 class="text-6xl font-black text-white mb-4">7.8M+</h3>
+                    <p class="text-2xl text-blue-400 font-bold mb-4">SMEs in Bangladesh</p>
+                    <p class="text-lg text-slate-400">A massive untapped market rapidly transitioning from analog ledgers to digital operations.</p>
+                </div>
+                
+                <div class="glass-panel p-12 text-center flex flex-col justify-center border-t-4 border-t-brand-green relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-brand-green/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <h3 class="text-6xl font-black text-white mb-4">$1B+</h3>
+                    <p class="text-2xl text-brand-green font-bold mb-4">Addressable SaaS Market</p>
+                    <p class="text-lg text-slate-400">Huge demand for localized, affordable, and culturally aligned enterprise software (POS, ERP, HR).</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 5: Product Ecosystem -->
+        <div class="slide" data-title="Products">
+            <h2 class="text-5xl font-heading font-black text-white mb-4 text-center">Our Product Ecosystem</h2>
+            <p class="text-2xl text-slate-400 text-center mb-12">Building localized enterprise tools and platforms for the Bangladesh market</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-7xl mx-auto">
+                <div class="glass-panel p-8 flex flex-col gap-6 hover:border-blue-500/50 transition-colors">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 bg-blue-500/20 text-blue-400 rounded-xl flex items-center justify-center text-2xl shrink-0"><i class="fa-solid fa-desktop"></i></div>
+                        <h3 class="text-2xl font-bold text-white">BD ERP POS</h3>
+                    </div>
+                    <p class="text-lg text-slate-400">The Ultimate Offline Retail Engine. Built specifically for Bangladesh's retail reality. Features Windows setup, offline activation, and thermal printing.</p>
+                </div>
+                <div class="glass-panel p-8 flex flex-col gap-6 hover:border-brand-green/50 transition-colors">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 bg-brand-green/20 text-brand-green rounded-xl flex items-center justify-center text-2xl shrink-0"><i class="fa-solid fa-microchip"></i></div>
+                        <h3 class="text-2xl font-bold text-white">EquiPulse AI</h3>
+                    </div>
+                    <p class="text-lg text-slate-400">Bangladesh's most advanced AI-native ERP & POS system. Features Split Payments, Digital Bakir Khata, and Gemini AI forecasting.</p>
+                </div>
+                <div class="glass-panel p-8 flex flex-col gap-6 hover:border-amber-500/50 transition-colors">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 bg-amber-500/20 text-amber-400 rounded-xl flex items-center justify-center text-2xl shrink-0"><i class="fa-solid fa-leaf"></i></div>
+                        <h3 class="text-2xl font-bold text-white">AgroLink BD</h3>
+                    </div>
+                    <p class="text-lg text-slate-400">Supply chain platform bridging the gap between farmers and consumers. Buy fresh produce direct from Bangladeshi farmers.</p>
+                </div>
+                <div class="glass-panel p-8 flex flex-col gap-6 hover:border-purple-500/50 transition-colors">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 bg-purple-500/20 text-purple-400 rounded-xl flex items-center justify-center text-2xl shrink-0"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <h3 class="text-2xl font-bold text-white">EquiSaaS LMS</h3>
+                    </div>
+                    <p class="text-lg text-slate-400">Our free open-source Learning Management System. Equips our 64-district network with B2B SaaS building skills.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 6: Channel Ecosystem & Pipeline -->
+        <div class="slide" data-title="Channels">
+            <h2 class="text-5xl font-heading font-black text-white mb-4 text-center">Channel Ecosystem & Progress</h2>
+            <p class="text-2xl text-slate-400 text-center mb-12">Cross-community learning streams to educate and grow our team</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-7xl">
+                <div class="glass-panel p-8 flex flex-col gap-6 border-t-4 border-t-brand-green hover:bg-slate-800/50 transition-colors">
+                    <div class="w-16 h-16 bg-brand-green/20 text-brand-green rounded-2xl flex items-center justify-center text-3xl shrink-0 mx-auto"><i class="fa-solid fa-rocket"></i></div>
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold text-white mb-2">SaaS Pipeline</h3>
+                        <p class="text-lg text-slate-400">Squads are actively scaling internal tools into commercial Point-of-Sale (POS) and HR Management products to pitch directly to local business clients.</p>
+                    </div>
+                </div>
+                <div class="glass-panel p-8 flex flex-col gap-6 border-t-4 border-t-blue-500 hover:bg-slate-800/50 transition-colors">
+                    <div class="w-16 h-16 bg-blue-500/20 text-blue-400 rounded-2xl flex items-center justify-center text-3xl shrink-0 mx-auto"><i class="fa-solid fa-language"></i></div>
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold text-white mb-2">Skill Extensions</h3>
+                        <p class="text-lg text-slate-400">Beyond core coding, we operate localized cross-skill groups such as the <strong>Spoken English: EquiSaaS BD x GLC program</strong> to improve international communication.</p>
+                    </div>
+                </div>
+                <div class="glass-panel p-8 flex flex-col gap-6 border-t-4 border-t-purple-500 hover:bg-slate-800/50 transition-colors">
+                    <div class="w-16 h-16 bg-purple-500/20 text-purple-400 rounded-2xl flex items-center justify-center text-3xl shrink-0 mx-auto"><i class="fa-brands fa-youtube"></i></div>
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold text-white mb-2">Community Platforms</h3>
+                        <p class="text-lg text-slate-400">Our workflows and community hubs span across our YouTube platform, LinkedIn, and highly active developer communication channels.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 7: Ecosystem Validation -->
+        <div class="slide" data-title="Validation">
+            <h2 class="text-5xl font-heading font-black text-white mb-16 text-center">Ecosystem Validation & Recognition</h2>
+            
+            <div class="w-full max-w-7xl relative">
+                <!-- Connecting Line -->
+                <div class="absolute top-1/2 left-0 w-full h-2 bg-slate-800 -translate-y-1/2 rounded-full z-0">
+                    <div class="h-full bg-gradient-to-r from-blue-500 via-brand-green to-amber-500 w-full opacity-50"></div>
+                </div>
+                
+                <div class="grid grid-cols-3 gap-6 relative z-10">
+                    <div class="flex flex-col items-center text-center group">
+                        <div class="w-24 h-24 bg-slate-900 border-4 border-blue-500 text-blue-400 rounded-full flex items-center justify-center text-4xl font-bold mb-6 shadow-[0_0_30px_rgba(59,130,246,0.3)] group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-trophy"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Infinity AI BuildFest 2026</h3>
+                        <span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-300 rounded-md mb-3 font-semibold text-sm">National Finalist</span>
+                        <p class="text-slate-400 text-lg">Officially selected as a finalist for the Final Round under the Online Commerce division at BRAC University.</p>
+                    </div>
+                    
+                    <div class="flex flex-col items-center text-center group">
+                        <div class="w-24 h-24 bg-slate-900 border-4 border-brand-green text-brand-green rounded-full flex items-center justify-center text-4xl font-bold mb-6 shadow-[0_0_30px_rgba(16,185,129,0.3)] group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-globe"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Strategic Global Collaboration</h3>
+                        <span class="inline-block px-3 py-1 bg-brand-green/20 text-brand-green rounded-md mb-3 font-semibold text-sm">UN Strategic Roundtable</span>
+                        <p class="text-slate-400 text-lg">Hosted a high-level session with MD Khorshed Alam (UN Data, AI & Policy Specialist) focusing on Responsible AI and SaaS Policy.</p>
+                    </div>
+                    
+                    <div class="flex flex-col items-center text-center group">
+                        <div class="w-24 h-24 bg-slate-900 border-4 border-amber-500 text-amber-400 rounded-full flex items-center justify-center text-4xl font-bold mb-6 shadow-[0_0_30px_rgba(245,158,11,0.3)] group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-leaf"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">National Champion - Zero Olympiad</h3>
+                        <span class="inline-block px-3 py-1 bg-amber-500/20 text-amber-300 rounded-md mb-3 font-semibold text-sm">SDG Achiever (Champion) - SDG 15</span>
+                        <p class="text-slate-400 text-lg">Out of 9,332 Round 1 contestants narrowed to 3,407 in Round 2, our Founder &amp; CEO Kholipha Ahmmad Al-Amin emerged as the official SDG ACHIEVER (CHAMPION) at the Grand Finale on June 13, 2026, representing Atish Dipankar University of Science &amp; Technology. Evaluated by TESOL Bangladesh on relevance, creativity, communication, technical quality, and environmental impact.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 8: Operational Excellence -->
+        <div class="slide" data-title="Operations">
+            <h2 class="text-5xl font-heading font-black text-white mb-4 text-center">Operational Excellence & Governance</h2>
+            <p class="text-2xl text-slate-400 text-center mb-12">A highly structured organizational framework built for scale</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-7xl">
+                <div class="glass-panel p-10 text-center relative overflow-hidden group">
+                    <div class="text-6xl text-blue-400 mb-6"><i class="fa-solid fa-users-gear"></i></div>
+                    <h3 class="text-5xl font-black text-white mb-4">23</h3>
+                    <p class="text-xl text-slate-400 font-bold uppercase tracking-widest">Active Core Members</p>
+                </div>
+                
+                <div class="glass-panel p-10 text-center relative overflow-hidden group">
+                    <div class="text-6xl text-brand-green mb-6"><i class="fa-solid fa-layer-group"></i></div>
+                    <h3 class="text-5xl font-black text-white mb-4">9</h3>
+                    <p class="text-xl text-slate-400 font-bold uppercase tracking-widest">Specialized Departments</p>
+                </div>
+
+                <div class="glass-panel p-10 text-center relative overflow-hidden group">
+                    <div class="text-6xl text-amber-400 mb-6"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3 class="text-5xl font-black text-white mb-4">100%</h3>
+                    <p class="text-xl text-slate-400 font-bold uppercase tracking-widest">Corporate Governance</p>
+                    <p class="text-sm text-slate-500 mt-4">Rigorous constitution ensuring transparency & data security.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 9: Equity & Ownership -->
+        <div class="slide" data-title="Business Model">
+            <h2 class="text-5xl font-heading font-black text-white mb-4 text-center">The Sweat Equity Model</h2>
+            <p class="text-2xl text-slate-400 text-center mb-12">How our cooperative retains ownership and distributes profits</p>
+            
+            <div class="flex items-center gap-12 w-full max-w-7xl">
+                <div class="w-1/2 space-y-6">
+                    <div class="glass-panel p-6 flex gap-4 border-l-4 border-brand-green">
+                        <div class="text-brand-green text-3xl mt-1"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-2">Point System</h3>
+                            <p class="text-lg text-slate-400">Members earn equity points based on the tasks and tickets they successfully complete. The higher the contribution, the higher their ownership percentage.</p>
+                        </div>
+                    </div>
+                    <div class="glass-panel p-6 flex gap-4 border-l-4 border-blue-500">
+                        <div class="text-blue-400 text-3xl mt-1"><i class="fa-solid fa-chart-pie"></i></div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-2">70% Profit Distribution</h3>
+                            <p class="text-lg text-slate-400">When a product is sold, 70% of profits are distributed directly to squad members. <strong class="text-brand-green font-bold">Revolutionary Publishing:</strong> Independent creators from any district can publish their hard-built products through us and keep 70% of the profits.</p>
+                        </div>
+                    </div>
+                    <div class="glass-panel p-6 flex gap-4 border-l-4 border-purple-500">
+                        <div class="text-purple-400 text-3xl mt-1"><i class="fa-solid fa-server"></i></div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-2">30% Platform Fund</h3>
+                            <p class="text-lg text-slate-400">The remaining 30% is strictly reserved for server costs, marketing, and the corporate platform fund to fuel future expansion.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="w-1/2 glass-panel p-16 text-center relative overflow-hidden flex flex-col items-center justify-center">
+                    <div class="absolute inset-0 bg-gradient-to-br from-brand-green/10 to-blue-500/10 z-0"></div>
+                    <div class="relative z-10 w-32 h-32 bg-slate-900 rounded-full border-4 border-brand-green flex items-center justify-center text-5xl text-brand-green shadow-[0_0_40px_rgba(16,185,129,0.4)] mb-8">
+                        <i class="fa-solid fa-handshake"></i>
+                    </div>
+                    <h3 class="text-4xl font-bold text-white mb-4">Together We Build,</h3>
+                    <h3 class="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-brand-green to-blue-500">Together We Own.</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 10: Q&A / Contact -->
+        <div class="slide" data-title="The Ask">
+            <div class="text-center max-w-5xl px-6 flex flex-col items-center">
+                <div class="relative w-32 h-32 mb-10">
+                    <div class="absolute inset-0 bg-blue-500/30 rounded-full animate-ping"></div>
+                    <div class="relative w-full h-full bg-slate-800 border-4 border-blue-500 rounded-full flex items-center justify-center text-6xl text-blue-400 shadow-[0_0_30px_rgba(59,130,246,0.5)]">
+                        <i class="fa-solid fa-rocket"></i>
+                    </div>
+                </div>
+                
+                <h2 class="text-6xl font-heading font-black text-white mb-6">Invest in the Future of BD Tech</h2>
+                <p class="text-2xl text-slate-300 mb-8 leading-relaxed">We are currently 100% bootstrapped with immense traction. Join the movement. Let's democratize the software industry together.</p>
+                
+                <div class="flex flex-wrap justify-center gap-6">
+                    <div class="glass-panel px-8 py-4 border border-brand-green/30 inline-flex items-center gap-4 hover:bg-brand-green/10 transition-colors">
+                        <i class="fa-solid fa-globe text-brand-green text-2xl"></i>
+                        <span class="text-xl font-bold text-white tracking-widest">equisaas-bd.com</span>
+                    </div>
+                    <div class="glass-panel px-8 py-4 border border-blue-500/30 inline-flex items-center gap-4 hover:bg-blue-500/10 transition-colors">
+                        <i class="fa-solid fa-envelope text-blue-400 text-2xl"></i>
+                        <span class="text-xl font-bold text-white tracking-widest">ceo@equisaas-bd.com</span>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="nav-ui">
+        <button class="nav-btn" onclick="prevSlide()" title="Previous (Left Arrow)"><i class="fa-solid fa-chevron-left"></i></button>
+        <div class="nav-indicator"><span id="current-slide">1</span> / <span id="total-slides">8</span></div>
+        <button class="nav-btn" onclick="nextSlide()" title="Next (Right Arrow)"><i class="fa-solid fa-chevron-right"></i></button>
+        <div class="w-px h-6 bg-slate-600 mx-2"></div>
+        <div id="dot-nav" class="dot-nav" aria-label="Slide navigation"></div>
+        <div class="w-px h-6 bg-slate-600 mx-2"></div>
+        <button class="nav-btn" onclick="toggleFullScreen()" title="Full Screen (F11)"><i class="fa-solid fa-expand"></i></button>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const progressBar = document.getElementById('progress-bar');
+        const currentSlideEl = document.getElementById('current-slide');
+        const totalSlidesEl = document.getElementById('total-slides');
+        const slideTitleEl = document.getElementById('slide-title');
+        const dotNav = document.getElementById('dot-nav');
+        const navUI = document.querySelector('.nav-ui');
+        const deckHeader = document.querySelector('.deck-header');
+        const cursorDot = document.getElementById('cursor-dot');
+        const cursorRing = document.getElementById('cursor-ring');
+        const slideTitles = Array.from(slides).map((slide, idx) => slide.dataset.title || `Slide ${idx + 1}`);
+        const dotButtons = [];
+        let currentIdx = 0;
+
+        totalSlidesEl.innerText = slides.length;
+
+        function buildDotNav() {
+            dotNav.innerHTML = "";
+            slideTitles.forEach((title, idx) => {
+                const btn = document.createElement('button');
+                btn.type = "button";
+                btn.className = "dot-btn";
+                btn.setAttribute("data-title", title);
+                btn.setAttribute("aria-label", title);
+                btn.addEventListener("click", () => {
+                    lastInput = "mouse";
+                    currentIdx = idx;
+                    updateSlide();
+                    resetIdleTimer("mouse");
+                });
+                dotNav.appendChild(btn);
+                dotButtons.push(btn);
+            });
+        }
+
+        function updateSlide() {
+            slides.forEach((slide, idx) => {
+                if (idx === currentIdx) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+            
+            // Update Progress Bar
+            const progress = ((currentIdx + 1) / slides.length) * 100;
+            progressBar.style.width = `${progress}%`;
+            currentSlideEl.innerText = currentIdx + 1;
+            slideTitleEl.textContent = slideTitles[currentIdx] || `Slide ${currentIdx + 1}`;
+            dotButtons.forEach((btn, idx) => btn.classList.toggle("active", idx === currentIdx));
+            document.title = `EquiSaaS BD - Pitch Deck 2026 | ${slideTitles[currentIdx] || `Slide ${currentIdx + 1}`}`;
+        }
+
+        // Hide/show controls in fullscreen on idle
+        let idleTimer = null;
+        let lastInput = "keyboard";
+
+        function setCursorVisible(visible) {
+            if (!cursorDot || !cursorRing) return;
+            cursorDot.classList.toggle("cursor-off", !visible);
+            cursorRing.classList.toggle("cursor-off", !visible);
+        }
+
+        function showUi(source = "mouse") {
+            [navUI, deckHeader].forEach((el) => {
+                if (!el) return;
+                el.classList.remove("ui-hidden");
+            });
+            if (document.fullscreenElement) {
+                setCursorVisible(source === "mouse");
+            }
+        }
+
+        function hideUi() {
+            [navUI, deckHeader].forEach((el) => {
+                if (!el) return;
+                el.classList.add("ui-hidden");
+            });
+            if (document.fullscreenElement && lastInput === "mouse") {
+                setCursorVisible(false);
+            }
+        }
+
+        function resetIdleTimer(source) {
+            if(source) lastInput = source;
+            showUi(source);
+            clearTimeout(idleTimer);
+            if (document.fullscreenElement) {
+                idleTimer = setTimeout(hideUi, 2500);
+            }
+        }
+
+        function nextSlide() {
+            if (currentIdx < slides.length - 1) {
+                currentIdx++;
+                updateSlide();
+            }
+        }
+
+        function prevSlide() {
+            if (currentIdx > 0) {
+                currentIdx--;
+                updateSlide();
+            }
+        }
+
+        function toggleFullScreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(err => {
+                    console.error(`Error attempting to enable fullscreen: ${err.message}`);
+                });
+            } else {
+                document.exitFullscreen();
+            }
+        }
+
+        // Custom Cursor Logic
+        function initCursor() {
+            if (!cursorDot || !cursorRing) return;
+            
+            let mouseX = window.innerWidth / 2;
+            let mouseY = window.innerHeight / 2;
+            let ringX = mouseX;
+            let ringY = mouseY;
+            let isHovering = false;
+            let isMouseDown = false;
+
+            window.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+                cursorDot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+            });
+
+            window.addEventListener('mousedown', () => {
+                isMouseDown = true;
+                cursorRing.classList.add('is-down');
+            });
+
+            window.addEventListener('mouseup', () => {
+                isMouseDown = false;
+                cursorRing.classList.remove('is-down');
+            });
+
+            const interactiveElements = document.querySelectorAll('button, a, .glass-panel, .hint-chip');
+            interactiveElements.forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    isHovering = true;
+                    cursorRing.classList.add('is-hover');
+                });
+                el.addEventListener('mouseleave', () => {
+                    isHovering = false;
+                    cursorRing.classList.remove('is-hover');
+                });
+            });
+
+            function render() {
+                // Smooth follow logic for the ring
+                ringX += (mouseX - ringX) * 0.15;
+                ringY += (mouseY - ringY) * 0.15;
+                
+                let baseTransform = `translate3d(${ringX}px, ${ringY}px, 0)`;
+                if (isHovering) baseTransform += ' scale(1.25)';
+                else if (isMouseDown) baseTransform += ' scale(0.9)';
+                
+                cursorRing.style.transform = baseTransform;
+                requestAnimationFrame(render);
+            }
+            requestAnimationFrame(render);
+        }
+
+        // Event Listeners
+        window.addEventListener('keydown', (e) => {
+            resetIdleTimer("keyboard");
+            if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+                e.preventDefault();
+                nextSlide();
+            } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+                e.preventDefault();
+                prevSlide();
+            } else if (e.key === 'f' || e.key === 'F') {
+                e.preventDefault();
+                toggleFullScreen();
+            }
+        });
+
+        window.addEventListener('mousemove', () => resetIdleTimer("mouse"));
+        window.addEventListener('mousedown', () => resetIdleTimer("mouse"));
+        window.addEventListener('touchstart', () => resetIdleTimer("touch"));
+
+        document.addEventListener('fullscreenchange', () => {
+            if (document.fullscreenElement) {
+                document.documentElement.style.cursor = 'none';
+                resetIdleTimer("mouse");
+            } else {
+                document.documentElement.style.cursor = 'auto';
+                clearTimeout(idleTimer);
+                showUi("mouse");
+            }
+        });
+
+        // Init
+        buildDotNav();
+        updateSlide();
+        initCursor();
+        
+        // Ensure cursor resets correctly on load
+        cursorDot.style.transform = `translate3d(${window.innerWidth/2}px, ${window.innerHeight/2}px, 0)`;
+        cursorRing.style.transform = `translate3d(${window.innerWidth/2}px, ${window.innerHeight/2}px, 0)`;
+
+    </script>
+</body>
+</html>

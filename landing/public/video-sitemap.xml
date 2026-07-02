@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://equisaas-bd.com/orientation-2026/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://i.ytimg.com/vi/PoGoPVgrmUo/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>EquiSaaS BD Orientation 2026: Join the Tech Revolution &amp; Build Real SaaS!</video:title>
+      <video:description>Official EquiSaaS BD grand launching and orientation video covering the mission behind Bangladesh's first open tech cooperative, the 2-month roadmap, 9 core sub-departments, and the sweat equity path to shared ownership.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/PoGoPVgrmUo</video:player_loc>
+      <video:duration>2687</video:duration>
+      <video:publication_date>2026-03-17T00:00:00+06:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+      <video:tag>EquiSaaS BD</video:tag>
+      <video:tag>EquiSaaS</video:tag>
+      <video:tag>Orientation 2026</video:tag>
+      <video:tag>Bangladesh SaaS</video:tag>
+      <video:tag>Tech Cooperative</video:tag>
+      <video:tag>Bangladesh's First Open Tech Cooperative</video:tag>
+      <video:tag>LMS Bangladesh</video:tag>
+    </video:video>
+  </url>
+</urlset>

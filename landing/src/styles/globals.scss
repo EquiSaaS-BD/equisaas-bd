@@ -1,0 +1,425 @@
+@use "./tokens" as *;
+@use "./mixins" as *;
+
+// ============================================
+// EquiSaaS BD Design System - Globals
+// ============================================
+
+// ── CSS Custom Properties (CSS-in-JS Compatible) ──
+:root {
+  // Light Mode Colors
+  --color-background: #{$color-background};
+  --color-foreground: #{$color-foreground};
+  --color-card: #{$color-card};
+  --color-card-rgb: 255, 255, 255;
+  --color-card-foreground: #{$color-card-foreground};
+  --color-popover: #{$color-popover};
+  --color-popover-foreground: #{$color-popover-foreground};
+  --color-primary: #{$color-primary};
+  --color-primary-rgb: 15, 118, 110;
+  --color-primary-foreground: #{$color-primary-foreground};
+  --color-secondary: #{$color-secondary};
+  --color-secondary-rgb: 59, 130, 246;
+  --color-secondary-foreground: #{$color-secondary-foreground};
+  --color-muted: #{$color-muted};
+  --color-muted-foreground: #{$color-muted-foreground};
+  --color-accent: #{$color-accent};
+  --color-accent-rgb: 240, 249, 255;
+  --color-accent-foreground: #{$color-accent-foreground};
+  --color-destructive: #{$color-destructive};
+  --color-destructive-foreground: #{$color-destructive-foreground};
+  --color-border: #{$color-border};
+  --color-input: #{$color-input};
+  --color-ring: #{$color-ring};
+  --color-coop: #{$color-coop};
+  --color-coop-light: #{$color-coop-light};
+  --color-gold: #{$color-gold};
+  --color-gold-subtle: #{$color-gold-subtle};
+  --font-size-base: #{$font-size-base};
+  --font-size-lg: #{$font-size-lg};
+  --font-size-xl: #{$font-size-xl};
+  --font-size-2xl: #{$font-size-2xl};
+  --font-size-3xl: #{$font-size-3xl};
+  --font-size-4xl: #{$font-size-4xl};
+  --font-size-5xl: #{$font-size-5xl};
+  --font-size-6xl: #{$font-size-6xl};
+  --font-size-7xl: #{$font-size-7xl};
+
+  // Line Heights
+  --line-height-tight: #{$line-height-tight};
+  --line-height-snug: #{$line-height-snug};
+  --line-height-normal: #{$line-height-normal};
+  --line-height-relaxed: #{$line-height-relaxed};
+  --line-height-loose: #{$line-height-loose};
+
+  // Font Weights
+  --font-weight-normal: #{$font-weight-normal};
+  --font-weight-medium: #{$font-weight-medium};
+  --font-weight-semibold: #{$font-weight-semibold};
+  --font-weight-bold: #{$font-weight-bold};
+  --font-weight-black: #{$font-weight-black};
+
+  // Border Radius
+  --radius-sm: #{$radius-sm};
+  --radius-md: #{$radius-md};
+  --radius-lg: #{$radius-lg};
+  --radius-xl: #{$radius-xl};
+  --radius-2xl: #{$radius-2xl};
+  --radius-3xl: #{$radius-3xl};
+  --radius-full: #{$radius-full};
+
+  // Shadows
+  --shadow-sm: #{$shadow-sm};
+  --shadow-md: #{$shadow-md};
+  --shadow-lg: #{$shadow-lg};
+  --shadow-xl: #{$shadow-xl};
+  --shadow-2xl: #{$shadow-2xl};
+  --shadow-card: #{$shadow-card};
+  --shadow-card-hover: #{$shadow-card-hover};
+
+  // Transitions
+  --transition-fast: #{$transition-fast};
+  --transition-normal: #{$transition-normal};
+  --transition-slow: #{$transition-slow};
+  --transition-slower: #{$transition-slower};
+
+  // Z-Index
+  --z-dropdown: #{$z-dropdown};
+  --z-sticky: #{$z-sticky};
+  --z-fixed: #{$z-fixed};
+  --z-modal-backdrop: #{$z-modal-backdrop};
+  --z-modal: #{$z-modal};
+  --z-popover: #{$z-popover};
+  --z-tooltip: #{$z-tooltip};
+  --z-skip-link: #{$z-skip-link};
+
+  // Container Widths
+  --container-sm: #{$container-sm};
+  --container-md: #{$container-md};
+  --container-lg: #{$container-lg};
+  --container-xl: #{$container-xl};
+  --container-2xl: #{$container-2xl};
+}
+
+// Dark Mode
+[data-theme="dark"] {
+  @include dark-theme;
+  --color-card-rgb: 17, 24, 39;
+  --color-primary-rgb: 20, 184, 166;
+  --color-secondary-rgb: 96, 165, 250;
+  --color-accent-rgb: 30, 41, 59;
+}
+
+// ── Base Styles ──
+* {
+  box-sizing: border-box;
+  border-color: var(--color-border);
+}
+
+html {
+  scroll-behavior: smooth;
+  width: 100%;
+  overflow-x: hidden;
+  scrollbar-gutter: stable;
+
+  @include prefers-reduced-motion;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-family);
+  font-feature-settings: "rlig" 1, "calt" 1;
+  width: 100%;
+  min-width: 320px;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  // Premium gradient mesh background
+  background-image:
+    radial-gradient(ellipse 55% 40% at 5% 2%, rgba(15, 118, 110, 0.12) 0%, transparent),
+    radial-gradient(ellipse 50% 35% at 95% 5%, rgba(59, 130, 246, 0.10) 0%, transparent),
+    radial-gradient(ellipse 70% 30% at 50% 100%, rgba(15, 118, 110, 0.06) 0%, transparent),
+    linear-gradient(180deg, hsl(210 50% 99%) 0%, hsl(210 44% 97.5%) 40%, hsl(214 40% 96%) 100%);
+}
+
+// Dark mode background
+[data-theme="dark"] body {
+  background-image:
+    radial-gradient(ellipse 55% 40% at 3% 2%, rgba(20, 184, 166, 0.14) 0%, transparent),
+    radial-gradient(ellipse 50% 35% at 97% 4%, rgba(96, 165, 250, 0.10) 0%, transparent),
+    radial-gradient(ellipse 60% 50% at 50% 50%, rgba(7, 21, 28, 0.5) 0%, transparent 70%),
+    linear-gradient(180deg, hsl(223 38% 9%) 0%, hsl(223 34% 8%) 50%, hsl(225 36% 7%) 100%);
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+  margin: 0;
+  font-weight: var(--font-weight-black);
+  line-height: var(--line-height-tight);
+}
+
+p {
+  text-wrap: pretty;
+  margin: 0;
+  line-height: var(--line-height-relaxed);
+}
+
+// Selection
+::selection {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+// Focus styles
+*:focus-visible {
+  outline: 2px solid var(--color-ring);
+  outline-offset: 2px;
+}
+
+main a:focus-visible {
+  outline: 2px solid var(--color-ring);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+// Skip link
+.skip-link {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link:focus {
+  position: fixed;
+  left: var(--space-lg);
+  top: var(--space-lg);
+  z-index: var(--z-skip-link);
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: var(--space-md) var(--space-lg);
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+  border-radius: var(--radius-md);
+  background-color: var(--color-primary);
+  color: var(--color-primary-foreground);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  box-shadow: var(--shadow-lg);
+  outline: 2px solid var(--color-ring);
+  outline-offset: 2px;
+}
+
+// Scrollbar styling
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) var(--color-background);
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--color-primary), var(--color-coop));
+  border-radius: 999px;
+  border: 2px solid var(--color-background);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--color-primary), var(--color-coop));
+}
+
+// Container base
+.container {
+  max-width: var(--container-2xl);
+  margin: 0 auto;
+  padding: 0 var(--space-4xl);
+
+  @include mobile {
+    padding: 0 var(--space-3xl);
+  }
+
+  @include tablet {
+    padding: 0 var(--space-4xl);
+  }
+}
+
+// Grid background pattern
+.grid-bg {
+  background-image: linear-gradient(to right, var(--color-border) 1px, transparent 1px), linear-gradient(to bottom, var(--color-border) 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity: 0.4;
+}
+
+// Reduced motion
+@include prefers-reduced-motion;
+
+// Mobile font size adjustment for Bengali
+@media (max-width: 640px) {
+  html[lang="bn"] body {
+    font-size: 1.0625rem;
+  }
+}
+
+// Root element for React app
+#root {
+  overflow-x: hidden;
+}
+
+// Section base styles
+section {
+  scroll-margin-top: 80px;
+}
+
+// Responsive text classes
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
+
+// Utility classes
+.sr-only {
+  @include sr-only;
+}
+
+.visually-hidden-focusable {
+  @include visually-hidden-focusable;
+}
+
+.gradient-text {
+  @include gradient-text;
+}
+
+.backdrop-blur {
+  @include backdrop-blur;
+}
+
+.dark-backdrop-blur {
+  @include dark-backdrop-blur;
+}
+
+// Focus ring utility
+.focus-ring {
+  @include focus-ring;
+}
+
+// Button utilities
+.btn-primary {
+  @include button-primary;
+}
+
+.btn-secondary {
+  @include button-secondary;
+}
+
+.btn-base {
+  @include button-base;
+}
+
+// Badge utility
+.badge {
+  @include badge;
+}
+
+// Card utilities
+.card {
+  @include card-elevation(1);
+}
+
+.card-2 {
+  @include card-elevation(2);
+}
+
+.card-3 {
+  @include card-elevation(3);
+}
+
+// Section padding utilities
+.section-py {
+  @include section-padding($space-5xl, $space-5xl);
+}
+
+.section-py-sm {
+  @include section-padding($space-3xl, $space-3xl);
+}
+
+.section-py-lg {
+  @include section-padding($space-6xl, $space-6xl);
+}
+
+// Typography utilities
+.heading-1 {
+  @include heading-1;
+}
+
+.heading-2 {
+  @include heading-2;
+}
+
+.heading-3 {
+  @include heading-3;
+}
+
+.body-lg {
+  @include body-lg;
+}
+
+.body-md {
+  @include body-md;
+}
+
+.body-sm {
+  @include body-sm;
+}
+
+.caption {
+  @include caption;
+}
+
+// Animation utilities
+.fade-in-up {
+  @include fade-in-up(0, 0.5s);
+}
+
+.scale-in {
+  @include scale-in(0, 0.3s);
+}
+
+.shimmer {
+  @include shimmer;
+}
+
+// Responsive grid utility
+.grid-responsive {
+  @include responsive-grid(1, 2, 3);
+}
+
+// Dark mode toggle
+body.dark {
+  @include dark-theme;
+}

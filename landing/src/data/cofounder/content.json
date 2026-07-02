@@ -1,0 +1,230 @@
+{
+  "bn": {
+    "nav": { "lms": "LMS প্ল্যাটফর্মে যান", "apply": "এখনই আবেদন করুন", "home": "হোম" },
+    "hero": {
+      "badge": "ওপেন কো-ফাউন্ডার প্রোগ্রাম (৬৪ জেলা নেটওয়ার্ক)",
+      "title1": "আমাদের মাল্টি-প্রোডাক্ট",
+      "title2": "SaaS মিশন",
+      "desc": "আমরা বাংলাদেশের প্রথম উন্মুক্ত 'টেক কো-অপারেটিভ', যেখানে সবাই সমান মালিক। আমাদের লক্ষ্য অবৈতনিক ইন্টার্নশিপ প্রথা চিরতরে দূর করা এবং Sweat Equity মডেলের মাধ্যমে সবার সমান মালিকানা নিশ্চিত করা। 'একসাথে গড়ি সব, একসাথে মালিকানা'।",
+      "stats": ["Sweat Equity", "৯টি কোর ডিপার্টমেন্ট", "শেয়ার্ড প্রফিট"],
+      "lmsCTA": "এলএমএস অ্যাক্সেস",
+      "primaryCTA": "ডিসকোর্ড HQ-তে যোগ দিন",
+      "secondaryCTA": "রেজিস্ট্রেশন করুন"
+    },
+    "leadership": {
+      "title": "নেতৃত্ব ও সাংগঠনিক কাঠামো",
+      "board": {
+        "title": "পরিচালনা পর্ষদ (Board of Directors)",
+        "members": [
+          { "name": "খলিফা আহম্মেদ আল-আমিন", "role": "অপারেশনস ডিরেক্টর" },
+          { "name": "জান্নাতুল নাঈম", "role": "টেক ও প্রোডাক্ট ডিরেক্টর" },
+          { "name": "সন্দীপ্ত কর্মকার বর্ন", "role": "এইচআর ডিরেক্টর" },
+          { "name": "আবু হুরায়রা", "role": "কমিউনিটি ডিরেক্টর" },
+          { "name": "নাজমুল হোসেন শুভ", "role": "ফাইন্যান্স ডিরেক্টর" },
+          { "name": "আবিদ রহমান", "role": "গ্রোথ ডিরেক্টর" }
+        ]
+      },
+      "csuite": {
+        "title": "এক্সিকিউটিভ লিডারশিপ টিম (C-Suite)",
+        "members": [
+          { "name": "খলিফা আহম্মেদ আল-আমিন", "role": "CEO" },
+          { "name": "তানবিরুল হক আবিদ", "role": "COO" },
+          { "name": "মোঃ ওহিদুর রহমান", "role": "CTO" },
+          { "name": "সায়ান বিশ্বাস", "role": "CPO" },
+          { "name": "ওমর ফারুক সাজিদ", "role": "CFO" },
+          { "name": "তাসিন আহমেদ হাসান", "role": "CMO" },
+          { "name": "আবু বকর সিদ্দিক", "role": "CCO" }
+        ]
+      },
+      "heads": {
+        "title": "ডিপার্টমেন্ট হেডস",
+        "members": [
+          { "name": "এম জে পলক", "role": "লার্নিং ও ডেভেলপমেন্ট (Front-End)" },
+          { "name": "মোঃ পারভেজ মাহমুদ", "role": "ডেভঅপস (DevOps & QA)" },
+          { "name": "সানজিদা রহমান কাজল", "role": "ইউআই/ইউএক্স (Figma)" },
+          { "name": "মোঃ মুশফিকুর রহমান", "role": "বিজনেস অ্যানালাইসিস (Agile)" },
+          { "name": "জাওয়াদ হোসেন", "role": "হেড অব কমিউনিকেশন্স অ্যান্ড পিআর" }
+        ]
+      }
+    },
+    "squads": {
+      "title": "৯টি কোর সাব-ডিপার্টমেন্ট (৪টি স্কোয়াড)",
+      "items": [
+        { "name": "সফটওয়্যার ইঞ্জিনিয়ারিং", "sub": ["ফ্রন্ট-এন্ড ইঞ্জিনিয়ার", "ব্যাক-এন্ড ইঞ্জিনিয়ার", "ডেভঅপস ও কিউএ"] },
+        { "name": "ইউআই/ইউএক্স ও ডিজাইন", "sub": ["ইউআই/ইউএক্স (ফিগমা)", "গ্রাফিক ও সোশ্যাল ডিজাইন"] },
+        { "name": "প্রোডাক্ট ও বিজনেস অ্যানালাইসিস", "sub": ["বিজনেস/অ্যাজিল অ্যানালিস্ট", "প্রোডাক্ট ম্যানেজমেন্ট"] },
+        { "name": "মার্কেটিং ও কাস্টমার সাকসেস", "sub": ["ডিজিটাল মার্কেটিং", "সিআরএম ও কাস্টমার সাকসেস"] }
+      ]
+    },
+    "roadmap": {
+      "title": "আমাদের ভবিষ্যৎ পরিকল্পনা (Roadmap)",
+      "phases": [
+        { "id": "Phase 0", "title": "নেটওয়ার্কিং ও কমিউনিটি বিল্ডিং", "desc": "৬৪ জেলায় নেটওয়ার্ক তৈরি এবং সদস্যদের প্রশিক্ষণ প্রদান।" },
+        { "id": "Month 1", "title": "ইনটেনসিভ স্কিল ডেভেলপমেন্ট", "desc": "৯টি ডিপার্টমেন্টের জন্য আধুনিক টুলস ও টেকনিক শেখা।" },
+        { "id": "Month 2", "title": "MVP ডামি প্রজেক্ট", "desc": "সবাই মিলে একটি প্রোডাকশন-রেডি প্রোডাক্ট তৈরি করা।" },
+        { "id": "Month 3+", "title": "কোম্পানি লঞ্চ ও ডেপ্লয়মেন্ট", "desc": "লোকাল SME মার্কেটের জন্য B2B SaaS প্রোডাক্ট লঞ্চ।" }
+      ]
+    },
+    "strategy": {
+      "title": "কেন আমাদের প্ল্যান সফল হবে?",
+      "cards": [
+        { "title": "১. প্রি-সেলস ভ্যালিডেশন", "desc": "প্রোডাক্ট তৈরির আগেই কাস্টমার ডিমান্ড বোঝা।" },
+        { "title": "২. ২ মাসে MVP লঞ্চ", "desc": "অল্প সময়ে প্রোডাকশন রেডি প্রোডাক্ট বিল্ড।" },
+        { "title": "৩. ফিডব্যাক লুপ", "desc": "কমিউনিটি ও ইউজার ফিডব্যাক নিয়ে দ্রুত উন্নতি।" }
+      ]
+    },
+    "howItWorks": {
+      "title": "কিভাবে শুরু করবেন?",
+      "steps": [
+        { "title": "১. আবেদন করুন", "desc": "আপনার পছন্দের ডিপার্টমেন্টে যোগ দিন।" },
+        { "title": "২. শিখুন", "desc": "ফ্রি LMS মাধ্যমে স্কিল ডেভেলপ করুন।" },
+        { "title": "৩. বিল্ড করুন", "desc": "রিয়েল প্রজেক্টে আমাদের সাথে কাজ করুন।" },
+        { "title": "৪. আয় করুন", "desc": "Sweat Equity মডেলে লভ্যাংশ শেয়ার করুন।" }
+      ]
+    },
+    "faq": {
+      "title": "সাধারণ জিজ্ঞাসাসমূহ (FAQ)",
+      "items": [
+        { "q": "কো-অপারেটিভ বলতে কী বোঝায়?", "a": "সবার সমান মালিকানা এবং শেয়ারড প্রফিট।" },
+        { "q": "যোগ দিতে কি ফি লাগবে?", "a": "না, এটি ১০০% ফ্রি।" },
+        { "q": "আমি কি বিগিনার হিসেবে শুরু করতে পারি?", "a": "হ্যাঁ, আমরা জিরো থেকে ট্রেইন করি।" }
+      ]
+    },
+    "phase2": {
+      "badge": "ফেজ ২: ওয়ার্ল্ড-ক্লাস UX ও আর্কিটেকচার",
+      "title": "ইন্টার‌্যাকশন, ট্রান্সপারেন্সি ও ডিজাইন পলিশ",
+      "desc": "কো-অপারেটিভ ট্রাস্ট ফিচার, অনবোর্ডিং সাইকোলজি এবং প্রিমিয়াম UI মাইক্রো-ইন্টারঅ্যাকশন, যা তৈরি করবে আমাদের ইন-হাউজ UI/UX টিম।"
+    },
+    "deptSection": {
+      "title": "আপনার স্কিল ও ডিপার্টমেন্ট বেছে নিন",
+      "desc": "পুরো কোম্পানিকে আমরা ৯টি সুনির্দিষ্ট ডিপার্টমেন্টে (৪টি স্কোয়াড) ভাগ করেছি। আপনার আগ্রহ অনুযায়ী যেকোনো একটি বেছে নিন এবং আজই শেখা শুরু করুন।"
+    },
+    "profile": {
+      "title": "আপনার প্রোফাইল ও রোডম্যাপ",
+      "dept": "ডিপার্টমেন্ট:",
+      "btnBack": "ডিপার্টমেন্ট পরিবর্তন করুন",
+      "subDeptTitle": "সাব-ডিপার্টমেন্ট স্পেশালাইজেশন",
+      "roadmapTitle": "মাসিক মাস্টারক্লাস রোডম্যাপ",
+      "resourceTitle": "বেস্ট ফ্রি রিসোর্স (বাংলা ও ইংরেজি)"
+    },
+    "lmsModal": {
+      "title": "LMS প্ল্যাটফর্ম এখন লাইভ",
+      "desc": "Firebase Spark Plan ভিত্তিক আমাদের ফ্রি LMS এখন চালু আছে। আপনার পছন্দের ট্র্যাক বেছে নিয়ে শিখতে শুরু করুন।",
+      "closeBtn": "বন্ধ করুন"
+    }
+  },
+  "en": {
+    "nav": { "lms": "Go to LMS Platform", "apply": "Apply Now", "home": "Home" },
+    "hero": {
+      "badge": "Open Co-founder Program (64 Districts)",
+      "title1": "Our Multi-Product",
+      "title2": "SaaS Mission",
+      "desc": "Bangladesh's first open 'Tech Cooperative' where everyone is an equal owner. Eliminating unpaid internships via Sweat Equity. 'Together We Build, Together We Own'.",
+      "stats": ["Sweat Equity", "9 Core Departments", "Shared Profits"],
+      "lmsCTA": "LMS Access",
+      "primaryCTA": "Contact Support",
+      "secondaryCTA": "Register Now"
+    },
+    "leadership": {
+      "title": "Leadership & Structure",
+      "board": {
+        "title": "Board of Directors",
+        "members": [
+          { "name": "Kholipha Ahmmad Al-Amin", "role": "Operations Director" },
+          { "name": "Jannatul Nayeem", "role": "Tech & Product Director" },
+          { "name": "Sandipta Karmakar Barno", "role": "HR Director" },
+          { "name": "Abu Hurayra", "role": "Community Director" },
+          { "name": "Nazmul Hossen Shuvo", "role": "Finance Director" },
+          { "name": "Abid Rahman", "role": "Growth Director" }
+        ]
+      },
+      "csuite": {
+        "title": "Executive Leadership (C-Suite)",
+        "members": [
+          { "name": "Kholipha Ahmmad Al-Amin", "role": "CEO" },
+          { "name": "Tanbirul Haque Abid", "role": "COO" },
+          { "name": "MD Ohidur Rahman", "role": "CTO" },
+          { "name": "Sayan Biswas", "role": "CPO" },
+          { "name": "Omar Faruk Sajid", "role": "CFO" },
+          { "name": "Tasin Ahmed Hasan", "role": "CMO" },
+          { "name": "Abu Bakar Siddique", "role": "CCO" }
+        ]
+      },
+      "heads": {
+        "title": "Department Heads",
+        "members": [
+          { "name": "MJ Polok", "role": "L&D (Front-End Engineering)" },
+          { "name": "MD Parvez Mahmud", "role": "DevOps & QA" },
+          { "name": "Sanzida Rahman Kajal", "role": "UI/UX Design (Figma)" },
+          { "name": "Md Mushfiqur Rahman", "role": "Business Analysis (Agile)" },
+          { "name": "Zawad Hossain", "role": "Head of Communications & PR" }
+        ]
+      }
+    },
+    "squads": {
+      "title": "9 Core Sub-Departments (4 Squads)",
+      "items": [
+        { "name": "Software Engineering", "sub": ["Front-end Engineer", "Back-end Engineer", "DevOps & QA"] },
+        { "name": "UI/UX & Design", "sub": ["UI/UX (Figma)", "Graphic & Social Design"] },
+        { "name": "Product & Business Analysis", "sub": ["Business Analyst / Agile Analyst", "Product Management"] },
+        { "name": "Marketing & Customer Success", "sub": ["Digital Marketing", "CRM & Customer Success"] }
+      ]
+    },
+    "roadmap": {
+      "title": "Our Roadmap",
+      "phases": [
+        { "id": "Phase 0", "title": "Networking & Community Building", "desc": "Building a 64-district network and training members." },
+        { "id": "Month 1", "title": "Intensive Skill Development", "desc": "Mastering tools for all 9 departments." },
+        { "id": "Month 2", "title": "MVP Dummy Project", "desc": "Building a production-ready product together." },
+        { "id": "Month 3+", "title": "Company Launch & Deployment", "desc": "Deploying B2B SaaS for the SME market." }
+      ]
+    },
+    "strategy": {
+      "title": "Why Our Plan Succeeds?",
+      "cards": [
+        { "title": "1. Pre-sales Validation", "desc": "Customer demand analysis before coding." },
+        { "title": "2. 2-Month MVP Launch", "desc": "Rapid prototyping and deployment." },
+        { "title": "3. Feedback Loop", "desc": "Community-driven improvements." }
+      ]
+    },
+    "howItWorks": {
+      "title": "How It Works?",
+      "steps": [
+        { "title": "1. Apply", "desc": "Join your preferred department." },
+        { "title": "2. Learn", "desc": "Upskill via our free LMS platform." },
+        { "title": "3. Build", "desc": "Collaborate on real-life B2B projects." },
+        { "title": "4. Earn", "desc": "Share profits through Sweat Equity." }
+      ]
+    },
+    "faq": {
+      "title": "Frequently Asked Questions (FAQ)",
+      "items": [
+        { "q": "What is a Tech Cooperative?", "a": "Shared ownership and profit distribution." },
+        { "q": "Is there any fee?", "a": "No, it is 100% free forever." },
+        { "q": "Can beginners join?", "a": "Yes, we teach everything from scratch." }
+      ]
+    },
+    "phase2": {
+      "badge": "Phase 2: World-Class UX & Architecture",
+      "title": "Interaction, Transparency, and Design Polish",
+      "desc": "Co-op trust features, onboarding psychology, and premium UI micro-interactions built by our in-house UI/UX Figma team."
+    },
+    "deptSection": {
+      "title": "Choose Your Skill & Department",
+      "desc": "We have divided our workforce into 4 squads consisting of 9 specific departments. Choose your passion."
+    },
+    "profile": {
+      "title": "Your Profile & Roadmap",
+      "dept": "Department:",
+      "btnBack": "Change Department",
+      "subDeptTitle": "Sub-Department Specialization",
+      "roadmapTitle": "Monthly Masterclass Roadmap",
+      "resourceTitle": "Best Free Resources (Bengali & English)"
+    },
+    "lmsModal": {
+      "title": "LMS Platform Is Live",
+      "desc": "Our free LMS is now operational. Pick your track and start upskilling immediately.",
+      "closeBtn": "Close"
+    }
+  }
+}

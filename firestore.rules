@@ -1,0 +1,818 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function viewerExists() {
+      return signedIn() && exists(/databases/$(database)/documents/users/$(request.auth.uid));
+    }
+
+    function viewer() {
+      return viewerExists()
+        ? get(/databases/$(database)/documents/users/$(request.auth.uid)).data
+        : {};
+    }
+
+    function viewerRole() {
+      return viewer().role is string ? viewer().role : 'member';
+    }
+
+    function requestRoleList() {
+      return request.resource.data.roles is list
+        ? request.resource.data.roles
+        : [request.resource.data.role];
+    }
+
+    function validRoleList(roleIds) {
+      return roleIds is list &&
+        roleIds.size() > 0 &&
+        roleIds.size() <= 5 &&
+        roleIds.hasOnly(['super_admin', 'director', 'department_head', 'mentor', 'member']);
+    }
+
+    function primaryRoleMatchesRoleList(primaryRole, roleIds) {
+      return validRoleList(roleIds) &&
+        roleIds.hasAny([primaryRole]) &&
+        (
+          (primaryRole == 'super_admin' && roleIds.hasAny(['super_admin'])) ||
+          (primaryRole == 'director' &&
+            !roleIds.hasAny(['super_admin']) &&
+            roleIds.hasAny(['director'])) ||
+          (primaryRole == 'department_head' &&
+            !roleIds.hasAny(['super_admin', 'director']) &&
+            roleIds.hasAny(['department_head'])) ||
+          (primaryRole == 'mentor' &&
+            !roleIds.hasAny(['super_admin', 'director', 'department_head']) &&
+            roleIds.hasAny(['mentor'])) ||
+          (primaryRole == 'member' &&
+            !roleIds.hasAny(['super_admin', 'director', 'department_head', 'mentor']) &&
+            roleIds.hasAny(['member']))
+        );
+    }
+
+    function rolesRequireDepartment(roleIds) {
+      return validRoleList(roleIds) &&
+        roleIds.hasAny(['department_head', 'mentor', 'member']);
+    }
+
+    function viewerDepartmentId() {
+      return viewer().departmentId is string ? viewer().departmentId : '';
+    }
+
+    function selfBeforeDepartmentId() {
+      return (signedIn() && exists(/databases/$(database)/documents/users/$(request.auth.uid)))
+        ? get(/databases/$(database)/documents/users/$(request.auth.uid)).data.get('departmentId', '')
+        : '';
+    }
+
+    function selfAfterDepartmentId() {
+      return (signedIn() && existsAfter(/databases/$(database)/documents/users/$(request.auth.uid)))
+        ? getAfter(/databases/$(database)/documents/users/$(request.auth.uid)).data.get('departmentId', '')
+        : '';
+    }
+
+
+
+    function selfDepartmentCounterSyncAllowed(departmentId) {
+      return signedIn() &&
+        selfBeforeDepartmentId() != selfAfterDepartmentId() &&
+        request.resource.data.diff(resource.data).affectedKeys().hasOnly(['memberCount', 'updatedAt']) &&
+        (
+          (
+            departmentId == selfAfterDepartmentId() &&
+            request.resource.data.memberCount == (resource.data.get('memberCount', 0) + 1)
+          ) ||
+          (
+            departmentId == selfBeforeDepartmentId() &&
+            request.resource.data.memberCount == (resource.data.get('memberCount', 0) - 1)
+          )
+        );
+    }
+
+    function isSelf(uid) {
+      return signedIn() && request.auth.uid == uid;
+    }
+
+    function isSuperAdmin() {
+      return signedIn() && viewerRole() == 'super_admin';
+    }
+
+    function isDirector() {
+      return signedIn() && viewerRole() == 'director';
+    }
+
+    function isDepartmentHead() {
+      return signedIn() && viewerRole() == 'department_head';
+    }
+
+    function isMentor() {
+      return signedIn() && viewerRole() == 'mentor';
+    }
+
+    function isManagement() {
+      return isSuperAdmin() || isDirector() || isDepartmentHead();
+    }
+
+    function validRole(roleId) {
+      return ['super_admin', 'director', 'department_head', 'mentor', 'member'].hasAny([roleId]);
+    }
+
+    function validDepartmentId(departmentId) {
+      return ['frontend', 'backend', 'devopsqa', 'uiux', 'design', 'baagile', 'pm', 'marketing', 'crmcs'].hasAny([departmentId]);
+    }
+
+    function validParentDepartmentId(parentDepartmentId) {
+      return ['engineering', 'design', 'product', 'marketing'].hasAny([parentDepartmentId]);
+    }
+
+    function expectedParentDepartmentId(departmentId) {
+      return departmentId == 'frontend' || departmentId == 'backend' || departmentId == 'devopsqa'
+        ? 'engineering'
+        : departmentId == 'uiux' || departmentId == 'design'
+          ? 'design'
+          : departmentId == 'baagile' || departmentId == 'pm'
+            ? 'product'
+            : departmentId == 'marketing' || departmentId == 'crmcs'
+              ? 'marketing'
+              : '';
+    }
+
+    function validTaskStatus(status) {
+      return ['draft', 'open', 'closed', 'published'].hasAny([status]);
+    }
+
+    function validSubmissionStatus(status) {
+      return ['pending', 'approved', 'revision_requested', 'rejected'].hasAny([status]);
+    }
+
+    function validCertificateStatus(status) {
+      return ['draft', 'active', 'revoked'].hasAny([status]);
+    }
+
+    function validCertificateKind(kind) {
+      return ['general', 'workshop'].hasAny([kind]);
+    }
+
+    function founderSpotlightGalleryKeysAllowed() {
+      return request.resource.data.keys().hasOnly([
+        'title',
+        'titleBn',
+        'notice',
+        'noticeBn',
+        'altText',
+        'altTextBn',
+        'imageDataUrl',
+        'accent',
+        'featured',
+        'sortOrder',
+        'createdAt',
+        'createdBy',
+        'updatedAt',
+        'updatedBy'
+      ]);
+    }
+
+    function certificateKeysAllowed() {
+      return request.resource.data.keys().hasOnly([
+        'certificateNumber',
+        'certificateKind',
+        'verificationCode',
+        'verificationUrl',
+        'status',
+        'certificateTitle',
+        'subjectTitle',
+        'achievementSummary',
+        'recipientName',
+        'departmentId',
+        'departmentTitle',
+        'parentDepartmentId',
+        'courseId',
+        'courseTitle',
+        'workshopId',
+        'workshopTitle',
+        'workshopDateKey',
+        'completionDateKey',
+        'issueDateKey',
+        'issuedAt',
+        'signerName',
+        'signerTitle',
+        'issuerOrganization',
+        'templateId',
+        'themeStyle',
+        'labelOverrides',
+        'customColors',
+        'revokedAt',
+        'createdAt',
+        'updatedAt'
+      ]);
+    }
+
+    function reviewWindowOpen(data) {
+      return (data is map) && ['pending', 'revision_requested'].hasAny([data.status]);
+    }
+
+    function canManageCurriculumFor(departmentId) {
+      return isSuperAdmin() ||
+        isDirector() ||
+        (isDepartmentHead() && departmentId is string && departmentId == viewerDepartmentId());
+    }
+
+    function canReviewScoped(data) {
+      return (data is map) && (
+        isSuperAdmin() ||
+        isDirector() ||
+        ((isDepartmentHead() || isMentor()) &&
+          data.departmentId is string &&
+          data.departmentId == viewerDepartmentId())
+      );
+    }
+
+    function canAwardPointsFor(departmentId) {
+      return isSuperAdmin() ||
+        isDirector() ||
+        (isDepartmentHead() && departmentId is string && departmentId == viewerDepartmentId());
+    }
+
+    function canReadDepartmentLeaderboard(departmentId) {
+      return signedIn() && (
+        isSuperAdmin() ||
+        isDirector() ||
+        (departmentId is string && departmentId == viewerDepartmentId())
+      );
+    }
+
+    function notSelf(targetUserId) {
+      return signedIn() && targetUserId is string && targetUserId != request.auth.uid;
+    }
+
+    function canReadUser(target) {
+      return (target is map) && (
+        isSelf(target.uid) ||
+        isSuperAdmin() ||
+        isDirector() ||
+        (((isDepartmentHead() || isMentor()) &&
+          target.departmentId is string &&
+          target.departmentId == viewerDepartmentId()))
+      );
+    }
+
+    function userCreateKeysAllowed() {
+      return request.resource.data.keys().hasOnly([
+        'uid',
+        'fullName',
+        'displayName',
+        'email',
+        'phone',
+        'departmentId',
+        'parentDepartmentId',
+        'role',
+        'roles',
+        'status',
+        'joinedAt',
+        'joinDate',
+        'photoURL',
+        'totalPoints',
+        'completedTaskCount',
+        'currentStage',
+        'isActive',
+        'updatedAt'
+      ]);
+    }
+
+    function managedRoleDepartmentValid() {
+      return !rolesRequireDepartment(requestRoleList()) ||
+        (
+          request.resource.data.get('departmentId', '') is string &&
+          request.resource.data.get('parentDepartmentId', '') is string &&
+          validDepartmentId(request.resource.data.get('departmentId', '')) &&
+          validParentDepartmentId(request.resource.data.get('parentDepartmentId', '')) &&
+          request.resource.data.get('parentDepartmentId', '') == expectedParentDepartmentId(request.resource.data.get('departmentId', ''))
+        );
+    }
+
+    function managementAccessFieldsOnly() {
+      return request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+        'role',
+        'roles',
+        'status',
+        'departmentId',
+        'parentDepartmentId',
+        'isActive',
+        'updatedAt',
+        'updatedBy'
+      ]);
+    }
+
+    function requestedManagedPrimaryRole() {
+      return request.resource.data.get('role', resource.data.role);
+    }
+
+    function managementAccessUpdateAllowed(userId) {
+      return signedIn() &&
+        !isSelf(userId) &&
+        managementAccessFieldsOnly() &&
+        userIdentityUnchanged() &&
+        validRole(requestedManagedPrimaryRole()) &&
+        validRoleList(requestRoleList()) &&
+        primaryRoleMatchesRoleList(requestedManagedPrimaryRole(), requestRoleList()) &&
+        managedRoleDepartmentValid() &&
+        request.resource.data.get('totalPoints', 0) == resource.data.get('totalPoints', 0) &&
+        request.resource.data.get('completedTaskCount', 0) == resource.data.get('completedTaskCount', 0) &&
+        request.resource.data.get('lastLedgerId', '') == resource.data.get('lastLedgerId', '') &&
+        (
+          isSuperAdmin() ||
+          (
+            isDirector() &&
+            resource.data.role != 'super_admin' &&
+            resource.data.role != 'director' &&
+            !requestRoleList().hasAny(['super_admin', 'director'])
+          ) ||
+          (
+            isDepartmentHead() &&
+            resource.data.role != 'super_admin' &&
+            resource.data.role != 'director' &&
+            resource.data.role != 'department_head' &&
+            resource.data.departmentId == viewerDepartmentId() &&
+            request.resource.data.get('departmentId', '') == viewerDepartmentId() &&
+            !requestRoleList().hasAny(['super_admin', 'director', 'department_head'])
+          )
+        );
+    }
+
+    function userIdentityUnchanged() {
+      return request.resource.data.uid == resource.data.uid &&
+        request.resource.data.email == resource.data.email;
+    }
+
+    function selfProfileFieldsOnly() {
+      return request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+        'fullName',
+        'displayName',
+        'phone',
+        'photoURL',
+        'currentStage',
+        'departmentId',
+        'parentDepartmentId',
+        'updatedAt'
+      ]);
+    }
+
+    function ownerDepartmentChangeAllowed() {
+      return !request.resource.data.diff(resource.data).affectedKeys().hasAny(['departmentId', 'parentDepartmentId']) ||
+        (
+          request.resource.data.get('departmentId', '') is string &&
+          request.resource.data.get('parentDepartmentId', '') is string &&
+          validDepartmentId(request.resource.data.get('departmentId', '')) &&
+          validParentDepartmentId(request.resource.data.get('parentDepartmentId', '')) &&
+          request.resource.data.get('parentDepartmentId', '') == expectedParentDepartmentId(request.resource.data.get('departmentId', ''))
+        );
+    }
+
+    function progressPayloadIsSafe() {
+      return request.resource.data.keys().hasOnly(['courseId', 'completedLessonIds', 'updatedAt']);
+    }
+
+    function submissionCreateKeysAllowed() {
+      return request.resource.data.keys().hasOnly([
+        'taskId',
+        'taskTitle',
+        'resourceTitle',
+        'userId',
+        'userDisplayName',
+        'departmentId',
+        'courseId',
+        'lessonId',
+        'taskSource',
+        'taskReferenceUrl',
+        'taskOrigin',
+        'submittedText',
+        'submissionLinks',
+        'status',
+        'recommendation',
+        'reviewComment',
+        'reviewedBy',
+        'reviewedAt',
+        'recommendedBy',
+        'recommendedAt',
+        'recommendedPoints',
+        'awardedPoints',
+        'submittedAt',
+        'updatedAt'
+      ]);
+    }
+
+    function submissionCreateDefaultsAreSafe() {
+      return request.resource.data.get('recommendation', '') == '' &&
+        request.resource.data.get('reviewComment', '') == '' &&
+        request.resource.data.get('reviewedBy', '') == '' &&
+        request.resource.data.get('reviewedAt', null) == null &&
+        request.resource.data.get('recommendedBy', '') == '' &&
+        request.resource.data.get('recommendedAt', null) == null &&
+        request.resource.data.get('recommendedPoints', 0) == 0;
+    }
+
+    function submissionIdentityUnchanged() {
+      return request.resource.data.taskId == resource.data.taskId &&
+        request.resource.data.userId == resource.data.userId &&
+        request.resource.data.departmentId == resource.data.departmentId &&
+        request.resource.data.courseId == resource.data.courseId &&
+        request.resource.data.lessonId == resource.data.lessonId &&
+        request.resource.data.submittedAt == resource.data.submittedAt;
+    }
+
+    function ownerSubmissionKeysOnly() {
+      return request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+        'taskTitle',
+        'resourceTitle',
+        'taskReferenceUrl',
+        'taskOrigin',
+        'submittedText',
+        'submissionLinks',
+        'status',
+        'updatedAt'
+      ]) &&
+      (
+        !request.resource.data.diff(resource.data).affectedKeys().hasAny([
+          'taskTitle',
+          'resourceTitle',
+          'taskReferenceUrl',
+          'taskOrigin'
+        ]) ||
+        resource.data.taskSource == 'custom'
+      );
+    }
+
+    function mentorSubmissionKeysOnly() {
+      return request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+        'recommendation',
+        'reviewComment',
+        'recommendedBy',
+        'recommendedAt',
+        'recommendedPoints',
+        'updatedAt'
+      ]);
+    }
+
+    function approverSubmissionKeysOnly() {
+      return request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+        'status',
+        'reviewComment',
+        'reviewedBy',
+        'reviewedAt',
+        'awardedPoints',
+        'updatedAt',
+        'recommendation',
+        'recommendedBy',
+        'recommendedAt',
+        'recommendedPoints'
+      ]);
+    }
+
+    function linkedLedgerExists() {
+      return request.resource.data.get('lastLedgerId', '') is string &&
+        request.resource.data.get('lastLedgerId', '') != '' &&
+        (
+          exists(/databases/$(database)/documents/pointsLedger/$(request.resource.data.get('lastLedgerId', ''))) ||
+          existsAfter(/databases/$(database)/documents/pointsLedger/$(request.resource.data.get('lastLedgerId', '')))
+        );
+    }
+
+    function pointsSummaryFieldsOnly() {
+      return request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+        'totalPoints',
+        'completedTaskCount',
+        'lastLedgerId',
+        'updatedAt',
+        'updatedBy'
+      ]);
+    }
+
+    function pointsSummaryIdentityStable() {
+      return request.resource.data.uid == resource.data.uid &&
+        request.resource.data.email == resource.data.email &&
+        request.resource.data.role == resource.data.role &&
+        request.resource.data.get('roles', []) == resource.data.get('roles', []) &&
+        request.resource.data.get('status', '') == resource.data.get('status', '') &&
+        request.resource.data.get('departmentId', '') == resource.data.get('departmentId', '') &&
+        request.resource.data.get('parentDepartmentId', '') == resource.data.get('parentDepartmentId', '') &&
+        request.resource.data.get('isActive', true) == resource.data.get('isActive', true);
+    }
+
+    function pointsSummaryUpdateAllowed(userId) {
+      return signedIn() &&
+        notSelf(userId) &&
+        canAwardPointsFor(resource.data.departmentId) &&
+        pointsSummaryFieldsOnly() &&
+        linkedLedgerExists() &&
+        pointsSummaryIdentityStable();
+    }
+
+    function userUpdatesSafe() {
+      return !request.resource.data.diff(resource.data).affectedKeys().hasAny(['totalPoints', 'completedTaskCount']) ||
+        (
+          request.resource.data.diff(resource.data).affectedKeys().hasAll(['lastLedgerId']) &&
+          linkedLedgerExists()
+        );
+    }
+
+    match /users/{userId} {
+      allow read: if signedIn() && (isSelf(userId) || canReadUser(resource.data));
+      allow create: if isSelf(userId) &&
+        userCreateKeysAllowed() &&
+        request.resource.data.uid == userId &&
+        request.resource.data.role == 'member' &&
+        primaryRoleMatchesRoleList(request.resource.data.role, requestRoleList()) &&
+        request.resource.data.totalPoints == 0 &&
+        request.resource.data.completedTaskCount == 0;
+      allow update: if signedIn() && userUpdatesSafe() && (
+        (isSelf(userId) &&
+          selfProfileFieldsOnly() &&
+          ownerDepartmentChangeAllowed() &&
+          userIdentityUnchanged()) ||
+        pointsSummaryUpdateAllowed(userId) ||
+        managementAccessUpdateAllowed(userId)
+      );
+      allow delete: if isSuperAdmin();
+
+      match /progress/{courseId} {
+        allow read: if isSelf(userId) ||
+          (signedIn() &&
+            exists(/databases/$(database)/documents/users/$(userId)) &&
+            canReadUser(get(/databases/$(database)/documents/users/$(userId)).data));
+        allow write: if isSelf(userId) && progressPayloadIsSafe();
+      }
+    }
+
+    match /departments/{departmentId} {
+      allow read: if signedIn();
+      allow create: if canManageCurriculumFor(departmentId);
+      allow update: if canManageCurriculumFor(departmentId) || selfDepartmentCounterSyncAllowed(departmentId);
+      allow delete: if isSuperAdmin() || isDirector();
+    }
+
+    match /courses/{courseId} {
+      allow read: if signedIn() && (
+        (resource.data.status == 'published' && resource.data.departmentId == viewerDepartmentId()) ||
+        canReviewScoped(resource.data) ||
+        canManageCurriculumFor(resource.data.departmentId)
+      );
+      allow create, update: if canManageCurriculumFor(request.resource.data.departmentId);
+      allow delete: if isSuperAdmin() || isDirector();
+    }
+
+    match /lessons/{lessonId} {
+      allow read: if signedIn() && (
+        (resource.data.status == 'published' && resource.data.departmentId == viewerDepartmentId()) ||
+        canReviewScoped(resource.data) ||
+        canManageCurriculumFor(resource.data.departmentId)
+      );
+      allow create, update: if canManageCurriculumFor(request.resource.data.departmentId);
+      allow delete: if isSuperAdmin() || isDirector();
+    }
+
+    match /tasks/{taskId} {
+      allow read: if signedIn() && (
+        ((resource.data.status == 'open' || resource.data.status == 'closed') &&
+          resource.data.departmentId == viewerDepartmentId()) ||
+        canReviewScoped(resource.data) ||
+        canManageCurriculumFor(resource.data.departmentId)
+      );
+      allow create, update: if canManageCurriculumFor(request.resource.data.departmentId) &&
+        validTaskStatus(request.resource.data.status);
+      allow delete: if isSuperAdmin() || isDirector();
+    }
+
+    match /submissions/{submissionId} {
+      allow read: if signedIn() && (
+        isSelf(resource.data.userId) ||
+        canReviewScoped(resource.data)
+      );
+      allow create: if signedIn() &&
+        submissionCreateKeysAllowed() &&
+        submissionCreateDefaultsAreSafe() &&
+        request.resource.data.userId == request.auth.uid &&
+        request.resource.data.departmentId == viewerDepartmentId() &&
+        request.resource.data.status == 'pending' &&
+        request.resource.data.awardedPoints == 0;
+      allow update: if signedIn() && (
+        (isSelf(resource.data.userId) &&
+          ownerSubmissionKeysOnly() &&
+          submissionIdentityUnchanged() &&
+          reviewWindowOpen(resource.data) &&
+          request.resource.data.status == 'pending') ||
+        (canReviewScoped(resource.data) &&
+          reviewWindowOpen(resource.data) &&
+          mentorSubmissionKeysOnly() &&
+          submissionIdentityUnchanged()) ||
+        (canAwardPointsFor(resource.data.departmentId) &&
+          notSelf(resource.data.userId) &&
+          reviewWindowOpen(resource.data) &&
+          approverSubmissionKeysOnly() &&
+          submissionIdentityUnchanged() &&
+          validSubmissionStatus(request.resource.data.status))
+      );
+      allow delete: if false;
+    }
+
+    match /pointsLedger/{entryId} {
+      allow read: if signedIn() && (
+        isSelf(resource.data.userId) ||
+        canReviewScoped(resource.data)
+      );
+      allow create: if (
+        canAwardPointsFor(request.resource.data.departmentId) &&
+        notSelf(request.resource.data.userId) &&
+        request.resource.data.approvedBy == request.auth.uid &&
+        request.resource.data.direction == 'credit'
+      ) || (
+        isSuperAdmin() &&
+        request.resource.data.approvedBy == request.auth.uid &&
+        request.resource.data.userId is string &&
+        ['credit', 'debit'].hasAny([request.resource.data.direction])
+      );
+      allow update, delete: if false;
+    }
+
+    match /attendance/{attendanceId} {
+      allow read: if signedIn() && (
+        isSelf(resource.data.userId) ||
+        canReviewScoped(resource.data)
+      );
+      allow create, update: if canAwardPointsFor(request.resource.data.departmentId) &&
+        notSelf(request.resource.data.userId) &&
+        request.resource.data.recordedBy == request.auth.uid;
+      allow delete: if false;
+    }
+
+    match /departmentLeaderboards/{weekKey} {
+      allow read, write: if false;
+
+      match /departments/{departmentId} {
+        allow read: if canReadDepartmentLeaderboard(departmentId);
+        allow write: if false;
+
+        match /participants/{participantId} {
+          allow read: if canReadDepartmentLeaderboard(departmentId);
+          allow write: if false;
+        }
+      }
+    }
+
+    match /departmentMonthlyLeaderboards/{monthKey} {
+      allow read, write: if false;
+
+      match /departments/{departmentId} {
+        allow read: if canReadDepartmentLeaderboard(departmentId);
+        allow write: if false;
+
+        match /participants/{participantId} {
+          allow read: if canReadDepartmentLeaderboard(departmentId);
+          allow write: if false;
+        }
+      }
+    }
+
+    match /departmentOverallLeaderboards/{boardKey} {
+      allow read, write: if false;
+
+      match /departments/{departmentId} {
+        allow read: if canReadDepartmentLeaderboard(departmentId);
+        allow write: if false;
+
+        match /participants/{participantId} {
+          allow read: if canReadDepartmentLeaderboard(departmentId);
+          allow write: if false;
+        }
+      }
+    }
+
+    match /announcements/{announcementId} {
+      allow read: if signedIn() && (
+        resource.data.scope == 'global' ||
+        resource.data.departmentId == viewerDepartmentId() ||
+        isManagement()
+      );
+      allow create, update: if (
+        (request.resource.data.scope == 'global' && (isSuperAdmin() || isDirector())) ||
+        (request.resource.data.scope == 'department' &&
+          canManageCurriculumFor(request.resource.data.departmentId))
+      );
+      allow delete: if isSuperAdmin() || isDirector();
+    }
+
+    match /certificates/{certificateId} {
+      allow read: if isSuperAdmin() || ['active', 'revoked'].hasAny([resource.data.status]);
+      allow create, update: if isSuperAdmin() &&
+        certificateKeysAllowed() &&
+        request.resource.data.departmentId is string &&
+        validDepartmentId(request.resource.data.departmentId) &&
+        request.resource.data.parentDepartmentId is string &&
+        request.resource.data.parentDepartmentId == expectedParentDepartmentId(request.resource.data.departmentId) &&
+        validCertificateStatus(request.resource.data.status) &&
+        validCertificateKind(request.resource.data.get('certificateKind', 'general')) &&
+        request.resource.data.recipientName is string &&
+        request.resource.data.subjectTitle is string &&
+        request.resource.data.certificateTitle is string &&
+        request.resource.data.certificateNumber is string &&
+        request.resource.data.verificationCode is string &&
+        request.resource.data.verificationUrl is string &&
+        request.resource.data.get('certificateKind', 'general') is string &&
+        request.resource.data.get('workshopId', '') is string &&
+        request.resource.data.get('workshopTitle', '') is string &&
+        request.resource.data.get('workshopDateKey', '') is string &&
+        request.resource.data.templateId is string &&
+        request.resource.data.themeStyle is string &&
+        request.resource.data.labelOverrides is map &&
+        request.resource.data.labelOverrides.keys().hasOnly(['department', 'issueDate']) &&
+        request.resource.data.customColors is map &&
+        request.resource.data.customColors.keys().hasOnly(['bgTheme', 'cardBg', 'textMain', 'textPrimary', 'borderOuter']);
+      allow delete: if isSuperAdmin();
+    }
+
+    match /founderSpotlightGalleryItems/{itemId} {
+      allow read: if true;
+      allow create, update: if isSuperAdmin() &&
+        founderSpotlightGalleryKeysAllowed() &&
+        request.resource.data.title is string &&
+        request.resource.data.title != '' &&
+        request.resource.data.titleBn is string &&
+        request.resource.data.notice is string &&
+        request.resource.data.noticeBn is string &&
+        request.resource.data.altText is string &&
+        request.resource.data.altTextBn is string &&
+        request.resource.data.imageDataUrl is string &&
+        request.resource.data.imageDataUrl.matches('^data:image/.*') &&
+        request.resource.data.accent is string &&
+        ['teal', 'blue', 'gold'].hasAny([request.resource.data.accent]) &&
+        request.resource.data.featured is bool &&
+        request.resource.data.sortOrder is int &&
+        request.resource.data.updatedBy is string;
+      allow delete: if isSuperAdmin();
+    }
+
+    match /configs/{configId} {
+      allow read: if signedIn();
+      allow create, update, delete: if isSuperAdmin();
+    }
+
+    match /certificateTemplates/{templateId} {
+      allow read: if isSuperAdmin();
+      allow create, update, delete: if isSuperAdmin();
+    }
+
+    match /adminAuditLogs/{logId} {
+      allow read, create: if isSuperAdmin();
+      allow update, delete: if false;
+    }
+
+    match /restoreBin/{entryId} {
+      allow read, create: if isSuperAdmin();
+      allow update: if isSuperAdmin();
+      allow delete: if false;
+    }
+
+    match /glcApplications/{applicationId} {
+      allow read, update, delete: if isSuperAdmin();
+      allow create: if true;
+    }
+
+    /* ── Future Dimensions: Governance ── */
+    match /proposals/{proposalId} {
+      allow read: if signedIn();
+      allow create, update, delete: if isManagement();
+    }
+
+    match /votes/{voteId} {
+      allow read: if signedIn();
+      allow create: if signedIn() && 
+        viewer().get('governanceEligible', false) == true &&
+        request.resource.data.userId == request.auth.uid &&
+        request.resource.data.proposalId is string &&
+        request.resource.data.weight is number &&
+        request.resource.data.weight == viewer().get('totalPoints', 0);
+      allow update, delete: if false;
+    }
+
+    /* ── Future Dimensions: Community ── */
+    match /feeds/{feedId} {
+      allow read: if signedIn();
+      allow create: if signedIn() && 
+        request.resource.data.userId == request.auth.uid &&
+        request.resource.data.keys().hasOnly(['userId', 'userDisplayName', 'type', 'message', 'departmentId', 'createdAt']);
+      allow update, delete: if false;
+    }
+
+    /* ── Future Dimensions: Public Profiles ── */
+    match /publicProfiles/{userId} {
+      allow read: if true;
+      allow create, update: if isSelf(userId) &&
+        request.resource.data.keys().hasOnly(['uid', 'displayName', 'bio', 'socialLinks', 'featuredWorkIds', 'updatedAt']);
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

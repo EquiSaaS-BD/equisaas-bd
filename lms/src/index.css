@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Brand Primitives */
+    --brand-blue: 217 91% 60%; /* #3b82f6 */
+    --brand-deep-blue: 221 83% 40%; /* #1e40af */
+    --brand-green: 160 84% 39%; /* #10b981 */
+    --brand-deep-green: 161 94% 30%; /* #059669 */
+    --brand-slate: 222 47% 11%; /* #0f172a */
+    --brand-muted: 215 16% 47%; /* #64748b */
+
+    /* Light Mode */
+    --background: 210 40% 98%; /* #f8fafc */
+    --foreground: 222 47% 11%; /* #0f172a */
+    --card: 0 0% 100%; /* #ffffff */
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 217 91% 60%; /* #3b82f6 */
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%; /* #f1f5f9 */
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 96%; /* #f1f5f9 */
+    --muted-foreground: 215 16% 47%; /* #64748b */
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+
+    --coop: 160 84% 39%;
+  }
+
+  .dark {
+    /* Dark Mode */
+    --background: 222 47% 4%; /* #0b1120 */
+    --foreground: 210 40% 98%; /* #f8fafc */
+    --card: 222 47% 11%; /* #0f172a */
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217 91% 60%; /* #3b82f6 */
+    --primary-foreground: 210 40% 98%;
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%; /* #94a3b8 */
+    --accent: 217 33% 17%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217 33% 32%; /* #334155 adapted */
+    --input: 217 33% 17%;
+    --ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: "Inter", "Hind Siliguri", sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  ::selection { @apply bg-primary/20 text-primary; }
+}
+
+@layer components {
+  .card-premium { @apply rounded-2xl border border-white/10 bg-card p-5 shadow-2xl backdrop-blur-md; }
+  .shiny-btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-sm font-bold transition-all active:scale-[0.98] disabled:opacity-50;
+    background: linear-gradient(-45deg, #3b82f6, #1e40af, #10b981, #059669);
+    background-size: 400% 400%;
+    animation: shiny-flow 15s ease infinite;
+    color: white;
+  }
+  .glass-card {
+    @apply border border-white/10 dark:border-white/5 shadow-2xl;
+    background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
+    backdrop-filter: blur(12px);
+  }
+}
+
+@keyframes shiny-flow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.cursor-hidden { cursor: none; }
+.premium-cursor-dot,
+.premium-cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.premium-cursor-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, #ffffff, hsl(var(--primary)));
+  box-shadow: 0 0 14px hsl(var(--primary) / 0.6);
+}
+
+.premium-cursor-ring {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: 1px solid hsl(var(--primary) / 0.5);
+  background: radial-gradient(circle, hsl(var(--primary) / 0.08), transparent 60%);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 24px hsl(var(--coop) / 0.35);
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.premium-cursor-ring.is-hover {
+  transform: translate3d(-50%, -50%, 0) scale(1.25);
+  border-color: hsl(var(--coop) / 0.9);
+}
+
+.premium-cursor-ring.is-down {
+  transform: translate3d(-50%, -50%, 0) scale(0.9);
+}
+
+@media (pointer: coarse) {
+  .premium-cursor-dot,
+  .premium-cursor-ring {
+    display: none;
+  }
+}

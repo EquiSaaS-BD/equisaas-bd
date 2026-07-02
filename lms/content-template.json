@@ -1,0 +1,29 @@
+{
+  "courses": [
+    {
+      "id": "course-react",
+      "titleBn": "React + Next.js মাস্টারক্লাস",
+      "titleEn": "React + Next.js Masterclass",
+      "descBn": "App Router, স্টেট আর্কিটেকচার, পারফরম্যান্স ও প্রোডাকশন প্যাটার্ন।",
+      "descEn": "App Router, state architecture, performance, and production patterns.",
+      "level": "Intermediate",
+      "lang": "EN+BN",
+      "badgeBn": "ফ্রন্টএন্ড",
+      "badgeEn": "Frontend",
+      "lessons": 12,
+      "published": true,
+      "lessonsData": [
+        {
+          "titleBn": "App Router ও RSC বেসিক",
+          "titleEn": "App Router & RSC basics",
+          "order": 1
+        },
+        {
+          "titleBn": "TanStack Query দিয়ে স্টেট আর্কিটেকচার",
+          "titleEn": "State architecture with TanStack Query",
+          "order": 2
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "hosting": {
+    "public": "dist_deploy",
+    "cleanUrls": true,
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**",
+      "**/*.exe",
+      "**/*.nupkg",
+      "**/*.zip"
+    ],
+    "redirects": [ { "source": "/glc-apply", "destination": "/lms/glc-apply", "type": 301 } ],
+    "headers": [
+      {
+        "source": "**",
+        "headers": [
+          { "key": "Strict-Transport-Security", "value": "max-age=31536000; includeSubDomains; preload" },
+          { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+          { "key": "X-XSS-Protection", "value": "1; mode=block" },
+          { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+          { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
+        ]
+      },
+      {
+        "source": "/@(logo.svg,logo-bn.svg,logo.png,logo-bn.png,favicon.ico,favicon.svg,favicon.png,og-image.svg,og-image.png,og-image-bn.svg,og-image-bn.png)",
+        "headers": [
+          { "key": "Cache-Control", "value": "public, max-age=0, s-maxage=31536000, must-revalidate" }
+        ]
+      },
+      {
+        "source": "/lms/assets/**",
+        "headers": [
+          { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" },
+          { "key": "X-Content-Type-Options", "value": "nosniff" }
+        ]
+      },
+      {
+        "source": "/main-assets/**",
+        "headers": [
+          { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" },
+          { "key": "X-Content-Type-Options", "value": "nosniff" }
+        ]
+      },
+      {
+        "source": "**/*.@(js|mjs|css|woff|woff2|ttf|eot)",
+        "headers": [
+          { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" },
+          { "key": "X-Content-Type-Options", "value": "nosniff" }
+        ]
+      },
+      {
+        "source": "**/*.@(png|jpg|jpeg|gif|svg|webp|ico)",
+        "headers": [
+          { "key": "Cache-Control", "value": "public, max-age=2592000, must-revalidate" }
+        ]
+      },
+      {
+        "source": "**/sw.js",
+        "headers": [
+          { "key": "Cache-Control", "value": "public, max-age=0, s-maxage=31536000, must-revalidate" }
+        ]
+      },
+      {
+        "source": "**/registerSW.js",
+        "headers": [
+          { "key": "Cache-Control", "value": "public, max-age=0, s-maxage=31536000, must-revalidate" }
+        ]
+      },
+      {
+        "source": "**/version.json",
+        "headers": [
+          { "key": "Cache-Control", "value": "public, max-age=0, s-maxage=31536000, must-revalidate" },
+          { "key": "Content-Type", "value": "application/json; charset=utf-8" }
+        ]
+      },
+      {
+        "source": "/erp-pos/stable/@(RELEASES|releases.win.json|assets.win.json)",
+        "headers": [
+          { "key": "Cache-Control", "value": "public, max-age=0, s-maxage=31536000, must-revalidate" },
+          { "key": "X-Content-Type-Options", "value": "nosniff" }
+        ]
+      },
+      {
+        "source": "/erp-pos/stable/**/*.@(nupkg|zip|exe)",
+        "headers": [
+          { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" },
+          { "key": "X-Content-Type-Options", "value": "nosniff" }
+        ]
+      },
+      {
+        "source": "/downloads/bd-erp-pos/**/*.exe",
+        "headers": [
+          { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" },
+          { "key": "X-Content-Type-Options", "value": "nosniff" }
+        ]
+      },
+      {
+        "regex": "^/(?:$|(?:[^./]+/?)+)$",
+        "headers": [
+          { "key": "Cache-Control", "value": "public, max-age=0, s-maxage=31536000, must-revalidate" },
+          { "key": "Cross-Origin-Opener-Policy", "value": "same-origin-allow-popups" }
+        ]
+      },
+      {
+        "source": "**/*.html",
+        "headers": [
+          { "key": "Cache-Control", "value": "public, max-age=0, s-maxage=31536000, must-revalidate" },
+          { "key": "Cross-Origin-Opener-Policy", "value": "same-origin-allow-popups" }
+        ]
+      },
+      {
+        "source": "**/*.webmanifest",
+        "headers": [
+          { "key": "Cache-Control", "value": "public, max-age=86400" },
+          { "key": "Content-Type", "value": "application/manifest+json" }
+        ]
+      },
+      {
+        "source": "**/*.xml",
+        "headers": [
+          { "key": "Cache-Control", "value": "public, max-age=0, s-maxage=31536000, must-revalidate" },
+          { "key": "Content-Type", "value": "application/xml; charset=utf-8" },
+          { "key": "X-Content-Type-Options", "value": "nosniff" }
+        ]
+      },
+      {
+        "source": "**/*.txt",
+        "headers": [
+          { "key": "Cache-Control", "value": "public, max-age=0, s-maxage=31536000, must-revalidate" },
+          { "key": "Content-Type", "value": "text/plain; charset=utf-8" },
+          { "key": "X-Content-Type-Options", "value": "nosniff" }
+        ]
+      }
+    ]
+  },
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  }
+}

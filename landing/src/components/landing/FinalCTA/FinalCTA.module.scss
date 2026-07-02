@@ -1,0 +1,207 @@
+@use "../../../styles/mixins" as *;
+
+// ── Final CTA Section ──
+.final-cta {
+  padding: var(--space-6xl) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+// ── Background ──
+.final-cta__background {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(15, 118, 110, 0.08), rgba(59, 130, 246, 0.08));
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120%;
+    height: 100%;
+    background: radial-gradient(ellipse at top, rgba(15, 118, 110, 0.12), transparent 60%);
+    pointer-events: none;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120%;
+    height: 100%;
+    background: radial-gradient(ellipse at bottom, rgba(59, 130, 246, 0.12), transparent 60%);
+    pointer-events: none;
+  }
+}
+
+// ── Content ──
+.final-cta__content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xl);
+}
+
+.final-cta__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-xs) var(--space-lg);
+  background-color: rgba(15, 118, 110, 0.1);
+  border: 1px solid rgba(15, 118, 110, 0.2);
+  border-radius: var(--radius-full);
+  color: var(--color-primary);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.final-cta__title {
+  font-size: clamp(1.75rem, 5vw, 3rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--color-foreground);
+  margin: 0;
+}
+
+.final-cta__description {
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+  line-height: 1.625;
+  color: var(--color-muted-foreground);
+  margin: 0;
+  max-width: 600px;
+}
+
+// ── Actions ──
+.final-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  justify-content: center;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-2xl);
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: var(--radius-xl);
+  transition: all var(--transition-normal);
+  cursor: pointer;
+  border: none;
+
+  &--primary {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: white;
+    box-shadow: 0 8px 20px rgba(15, 118, 110, 0.3);
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 25px rgba(15, 118, 110, 0.4);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+
+  &--secondary {
+    background-color: transparent;
+    color: var(--color-foreground);
+    border: 2px solid var(--color-border);
+
+    &:hover {
+      background-color: var(--color-muted);
+      border-color: var(--color-primary);
+      transform: translateY(-1px);
+    }
+  }
+
+  &__icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  &__arrow {
+    width: 16px;
+    height: 16px;
+    transition: transform var(--transition-fast);
+  }
+
+  &:hover &__arrow {
+    transform: translateX(2px);
+  }
+}
+
+// ── Reassurance ──
+.final-cta__reassurance {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-muted-foreground);
+  margin: 0;
+  opacity: 0.8;
+}
+
+// ── Dark Mode Adjustments ──
+[data-theme="dark"] {
+  .final-cta__background {
+    background: linear-gradient(135deg, rgba(20, 184, 166, 0.1), rgba(96, 165, 250, 0.1));
+    border-top-color: rgba(255, 255, 255, 0.1);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+
+    &::before {
+      background: radial-gradient(ellipse at top, rgba(20, 184, 166, 0.15), transparent 60%);
+    }
+
+    &::after {
+      background: radial-gradient(ellipse at bottom, rgba(96, 165, 250, 0.15), transparent 60%);
+    }
+  }
+
+  .final-cta__badge {
+    background-color: rgba(20, 184, 166, 0.15);
+    border-color: rgba(20, 184, 166, 0.3);
+    color: var(--color-coop);
+  }
+}
+
+// ── Responsive ──
+@include mobile {
+  .final-cta {
+    padding: var(--space-5xl) 0;
+  }
+
+  .final-cta__actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+
+@include tablet {
+  .final-cta {
+    padding: var(--space-6xl) 0;
+  }
+}
