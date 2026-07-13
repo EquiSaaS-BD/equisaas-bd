@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { MotionConfig, motion } from "framer-motion";
-import { ArrowUpRight, Code, Database, LayoutTemplate, Megaphone, Server, Target, GraduationCap, Clock, X, AlertCircle } from "lucide-react";
+import { ArrowUpRight, Code, Database, LayoutTemplate, Megaphone, Server, Target, GraduationCap, Clock, X, AlertCircle, Activity } from "lucide-react";
 
 import AmbientBackdrop from "@/components/landing/AmbientBackdrop";
 import Footer from "@/components/landing/Footer";
@@ -163,6 +163,20 @@ const projectsList = [
     descBn: "বিজনেস গ্রোথ এবং অপারেশনাল স্কেলিং ত্বরান্বিত করার জন্য একটি কম্প্রিহেনসিভ ডিজিটাল প্লেবুক এবং স্ট্র্যাটেজিক ফ্রেমওয়ার্ক।",
     tags: ["Strategy", "Playbook", "Firebase"],
     color: "from-violet-500 to-purple-700"
+  },
+  {
+    id: "shushthota",
+    titleEn: "Shushthota AI",
+    titleBn: "সুস্থতা এআই",
+    domain: "shushthota.equisaas-bd.com",
+    url: "https://shushthota.equisaas-bd.com/",
+    categoryEn: "HealthTech",
+    categoryBn: "হেলথটেক",
+    icon: Activity,
+    descEn: "An advanced digital healthcare platform offering instant AI-driven medical advice. It simplifies symptom analysis, prescription scanning, and finding expert doctors while serving as an integrated health dashboard.",
+    descBn: "কৃত্রিম বুদ্ধিমত্তার মাধ্যমে তাৎক্ষণিক চিকিৎসা পরামর্শ প্রদানের একটি অত্যাধুনিক ডিজিটাল স্বাস্থ্যসেবা প্ল্যাটফর্ম। এটি লক্ষণ বিশ্লেষণ, প্রেসক্রিপশন স্ক্যান এবং বিশেষজ্ঞ ডাক্তার খুঁজে পাওয়ার প্রক্রিয়াকে সহজতর করে।",
+    tags: ["AI", "HealthTech", "Web"],
+    color: "from-rose-500 to-pink-700"
   },
   {
     id: "cheesel",
